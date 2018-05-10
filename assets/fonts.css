@@ -1,0 +1,8 @@
+/* Fonts: Hagin */
+@font-face {
+  font-family: 'Hagin';
+  src: url('fonts/hagin/HaginCapsMedium.eot?#iefix') format('embedded-opentype'),  url('fonts/hagin/HaginCapsMedium.otf')  format('opentype'),
+	     url('fonts/hagin/HaginCapsMedium.woff') format('woff'), url('fonts/hagin/HaginCapsMedium.ttf')  format('truetype'), url('fonts/hagin/HaginCapsMedium.svg#HaginCapsMedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
