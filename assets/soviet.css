@@ -45,8 +45,6 @@ main.night
 	padding-top: 7px;
 	line-height: 64px;
 	
-	background: url('sprites/bottom.png');
-
 	background: rgba(0,0,0,0);
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
