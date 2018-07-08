@@ -313,7 +313,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 20px;
+		margin-top: 60px;
 		position: static;
 		width: 100%;
 		text-align: center;
@@ -400,7 +400,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 10px;
+		margin-top: 60px; /* fest tmp */
 	}
 
 	.player-track
@@ -421,4 +421,23 @@ main.night
 	{
 		display: none;
 	}
+}
+
+
+.sv-fest
+{
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	color: #f5f5f5;
+	background: rgba(20, 20, 20, 0.6);
+	text-align: center;
+}
+
+.sv-fest a 
+{
+	color: #f5f5f5;
+	font-size: 24pt;
 }
