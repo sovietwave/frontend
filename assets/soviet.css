@@ -312,7 +312,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 60px;
+		margin-top: 75px; /* fest tmp */
 		position: static;
 		width: 100%;
 		text-align: center;
