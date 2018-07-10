@@ -266,7 +266,6 @@ main.night
 
 .player-track.night
 {
-	font-size: 48pt;
 	text-shadow: 0px 1px 10px rgba(255, 255, 255, 100);
 	-webkit-text-shadow: 0px 1px 10px rgba(255, 255, 255, 100);
 
@@ -439,5 +438,5 @@ main.night
 .sv-fest a 
 {
 	color: #f5f5f5;
-	font-size: 24pt;
+	font-size: 20pt;
 }
