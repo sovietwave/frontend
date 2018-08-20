@@ -63,9 +63,11 @@ function init()
 	    // Callback function
 	    onSlideEnd: function(position, value) { radioSetVolume(value, true); }
 	});
-	
-	// HOTFIX: remove me
-	switchBackground(SITE_MODE);
+
+	// Randomize fist pic
+	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
+
+	setTheme(SITE_MODE);
 
 	if (SITE_MODE != 'event' || !siteModeOverridden)
 		setInterval(function() {
@@ -75,9 +77,7 @@ function init()
 				var
 					d = new Date(),
 					nd = new Date(d.getTime() + (10800000)), // 3600000 * 3 (3 - MSK, UTC+3)
-					t = nd.getUTCHours();
-
-			   
+					t = nd.getUTCHours();  
 
 				if (t >= 0 && t < 7) // night
 				{
@@ -157,6 +157,9 @@ function setTheme (mode)
 			$('.navi-button').removeClass('evening');
 			$('.navi-button').addClass('night');
 
+			$('.navi-button').removeClass('enlarged');
+			$('#navi-button-night').addClass('enlarged');
+
 			$('.dev-info').removeClass('day');
 			$('.dev-info').removeClass('evening');
 			$('.dev-info').addClass('night');
@@ -166,7 +169,6 @@ function setTheme (mode)
 			$('.rangeslider__fill').addClass('night');
 
 			$('body').css({'background-color':'#202020'});
-			$('body').css({'background-image':'url(/assets/sprites/night0.jpg)'});
 			break;
 
 		case 'evening' :
@@ -178,6 +180,9 @@ function setTheme (mode)
 			$('.navi-button').removeClass('night');
 			$('.navi-button').addClass('evening');
 
+			$('.navi-button').removeClass('enlarged');
+			$('#navi-button-evening').addClass('enlarged');
+
 			$('.dev-info').removeClass('day');
 			$('.dev-info').removeClass('night');
 			$('.dev-info').addClass('evening');
@@ -187,7 +192,6 @@ function setTheme (mode)
 			$('.rangeslider__fill').addClass('evening');
 
 			$('body').css({'background-color':'#202020'});
-			$('body').css({'background-image':'url(/assets/sprites/evening0.jpg)'});
 			break;
 
 		case 'day'   :
@@ -199,6 +203,9 @@ function setTheme (mode)
 			$('.navi-button').removeClass('evening');
 			$('.navi-button').addClass('day');
 
+			$('.navi-button').removeClass('enlarged');
+			$('#navi-button-day').addClass('enlarged');
+
 			$('.dev-info').removeClass('night');
 			$('.dev-info').removeClass('evening');
 			$('.dev-info').addClass('day');
@@ -208,13 +215,14 @@ function setTheme (mode)
 			$('.rangeslider__fill').addClass('day');
 
 			$('body').css({'background-color':'#5fb0e8'});
-			$('body').css({'background-image':'url(/assets/sprites/day0.jpg)'});
 			break;
 
 		default :
 			console.warn ('Bad theme requested: '+mode);
 			break;
 	}
+
+	switchBackground(SITE_MODE);
 }
 
 function switchBackground (mode)
@@ -234,8 +242,12 @@ function switchBackground (mode)
 	if (currentIndex > backsCount - 1)
 		currentIndex = 0;
 
+	nextIndex = currentIndex + 1;
+	if (nextIndex > backsCount - 1)
+		nextIndex = 0;
+
 	$('body').css({'background-image':'url('+currentModeAssets.backs[currentIndex]+')'});
-	$('#navi-button-'+SITE_MODE).css({'background-image':'url('+currentModeAssets.buttons[currentIndex]+')'});
+	$('#navi-button-'+SITE_MODE).css({'background-image':'url('+currentModeAssets.buttons[nextIndex]+')'});
 }
 
 $(document).ready(init);

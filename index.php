@@ -2,7 +2,7 @@
 require_once ('engine/content.php');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 23);
+define ('CLIENT_VERSION', 24);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
