@@ -7,36 +7,42 @@ var backs =
 	"day" : {
 		"backs" : [
 			"/assets/sprites/day0.jpg",
-			"/assets/sprites/day1.jpg"
+			"/assets/sprites/day1.jpg",
+			"/assets/sprites/day2.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-day0.png",
-			"/assets/sprites/btn-day1.png"
+			"/assets/sprites/btn-day1.png",
+			"/assets/sprites/btn-day2.png"
 		]
 	},
 
 	"evening" : {
 		"backs" : [
 			"/assets/sprites/evening0.jpg",
-			"/assets/sprites/evening1.jpg"
+			"/assets/sprites/evening1.jpg",
+			"/assets/sprites/evening2.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-evening0.png",
-			"/assets/sprites/btn-evening1.png"
+			"/assets/sprites/btn-evening1.png",
+			"/assets/sprites/btn-evening2.png"
 		]
 	},
 
 	"night" : {
 		"backs" : [
 			"/assets/sprites/night0.jpg",
-			"/assets/sprites/night1.jpg"
+			"/assets/sprites/night1.jpg",
+			"/assets/sprites/night2.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-night0.png",
-			"/assets/sprites/btn-night1.png"
+			"/assets/sprites/btn-night1.png",
+			"/assets/sprites/btn-night2.png"
 		]
 	}
 };
