@@ -73,7 +73,7 @@
   },
   {
     "artist": "Elektrodepo",
-    "bandcamp": "https://soundcloud.com/user-853145749/sets/preludes",
+    "bandcamp": "https://soundcloud.com/user-853145749",
     "vk": "https://vk.com/elektro_depo",
     "city": "Екатеринбург"
   },
@@ -223,7 +223,7 @@
   },
   {
     "artist": "Рыба",
-    "bandcamp": "https://soundcloud.com/ritmodel-ryba",
+    "bandcamp": "https://soundcloud.com/rybarenko",
     "vk": "https://vk.com/beatmakerfish",
     "city": "Уссурийск"
   },
@@ -247,7 +247,7 @@
   },
   {
     "artist": "Удары синтезаторов",
-    "bandcamp": "",
+    "bandcamp": "https://soundcloud.com/analog_days",
     "vk": "https://vk.com/analog_days",
     "city": "Тула"
   },
@@ -439,9 +439,9 @@
   },
   {
     "artist": "Rumble D.P.",
-    "bandcamp": "",
-    "vk": "",
-    "city": ""
+    "bandcamp": "https://kachkin.bandcamp.com/",
+    "vk": "https://vk.com/kachkinmusic",
+    "city": "Томск"
   },
   {
     "artist": "vtoma",
@@ -453,7 +453,7 @@
     "artist": "Андрей Климковский",
     "bandcamp": "https://klimkovsky.bandcamp.com/",
     "vk": "http://klimkovsky.ru",
-    "city": ""
+    "city": "Москва"
   },
   {
     "artist": "заземление",
@@ -517,8 +517,8 @@
   },
   {
     "artist": "Озверин",
-    "bandcamp": "",
-    "vk": "",
+    "bandcamp": "https://soundcloud.com/ozverin83",
+    "vk": "https://vk.com/ozverin83",
     "city": "Шахтёрск"
   },
   {
@@ -870,10 +870,10 @@
     "city": "Мурманск"
   },
   {
-    "artist": "OMFO",
-    "bandcamp": "",
-    "vk": "https://vk.com/omfo_official",
-    "city": "Амстердам"
+    "artist": "Electrosoul System",
+    "bandcamp": "https://soundcloud.com/electrosoul-system",
+    "vk": "https://vk.com/essmusic",
+    "city": ""
   },
   {
     "artist": "Аметистовые Вены",
@@ -916,5 +916,179 @@
     "bandcamp": "https://soundcloud.com/gummyboyprod",
     "vk": "https://vk.com/gummyboy",
     "city": "Воронеж"
+  },
+  {
+    "artist": "Andromeda Dreams",
+    "bandcamp": "https://soundcloud.com/andromedadreams",
+    "vk": "https://vk.com/andromeda_dreams",
+    "city": "Киев"
+  },
+  {
+    "artist": "FPRFproject",
+    "bandcamp": "https://fprf.bandcamp.com/",
+    "vk": "https://vk.com/fprfband",
+    "city": ""
+  },
+  {
+    "artist": "Intuite",
+    "bandcamp": "",
+    "vk": "https://vk.com/club100689916",
+    "city": ""
+  },
+  {
+    "artist": "Scaly Whale",
+    "bandcamp": "",
+    "vk": "",
+    "city": ""
+  },
+  {
+    "artist": "Sugroboff BOR",
+    "bandcamp": "",
+    "vk": "https://vk.com/bunker_jakobs",
+    "city": ""
+  },
+  {
+    "artist": "Ulos",
+    "bandcamp": "https://ulos.bandcamp.com/",
+    "vk": "",
+    "city": ""
+  },
+  {
+    "artist": "Veselitsya Tansevat",
+    "bandcamp": "https://soundcloud.com/user-575570395",
+    "vk": "https://vk.com/veselitsyatansevat",
+    "city": ""
+  },
+  {
+    "artist": "Буран",
+    "bandcamp": "",
+    "vk": "https://vk.com/buran_retro",
+    "city": ""
+  },
+  {
+    "artist": "Весна опять",
+    "bandcamp": "https://springagain.bandcamp.com/",
+    "vk": "https://vk.com/springagain",
+    "city": ""
+  },
+  {
+    "artist": "m-fast",
+    "bandcamp": "https://soundcloud.com/m-fast",
+    "vk": "https://vk.com/club71683435",
+    "city": ""
+  },
+  {
+    "artist": "Друг по переписке",
+    "bandcamp": "https://penfriend.bandcamp.com/",
+    "vk": "https://vk.com/penfriendmusic",
+    "city": "Санкт-Петербург"
+  },
+  {
+    "artist": "Pluto(134340)",
+    "bandcamp": "https://pluto134340.bandcamp.com/",
+    "vk": "https://vk.com/pluto_134340",
+    "city": "Первоуральск"
+  },
+  {
+    "artist": "Rybarenko",
+    "bandcamp": "https://soundcloud.com/rybarenko",
+    "vk": "https://vk.com/beatmakerfish",
+    "city": "Уссурийск"
+  },
+  {
+    "artist": "Sintipon",
+    "bandcamp": "https://soundcloud.com/sintiponmusic",
+    "vk": "https://vk.com/sintiponmusic",
+    "city": "Москва"
+  },
+  {
+    "artist": "Время ждёт",
+    "bandcamp": "https://kovernastene.bandcamp.com/",
+    "vk": "https://vk.com/kovernakovre",
+    "city": ""
+  },
+  {
+    "artist": "Деревянные киты",
+    "bandcamp": "",
+    "vk": "https://vk.com/dereviannyekity",
+    "city": "Мурманск"
+  },
+  {
+    "artist": "Наадя & Maria Teriaeva",
+    "bandcamp": "",
+    "vk": "https://vk.com/naadiamusic",
+    "city": "Москва"
+  },
+  {
+    "artist": "malibu dj's party",
+    "bandcamp": "",
+    "vk": "https://vk.com/malibudjs",
+    "city": ""
+  },
+  {
+    "artist": "Neverbeen",
+    "bandcamp": "https://vk.com/simonsstuff",
+    "vk": "",
+    "city": ""
+  },
+  {
+    "artist": "Комсомольск",
+    "bandcamp": "https://lnk.to/kmsmlsk",
+    "vk": "https://vk.com/komsomolskband",
+    "city": ""
+  },
+  {
+    "artist": "Муся Тотибадзе",
+    "bandcamp": "",
+    "vk": "https://vk.com/moosiatotibadze",
+    "city": ""
+  },
+  {
+    "artist": "Гербарий",
+    "bandcamp": "https://soundcloud.com/gerbaarijj",
+    "vk": "https://vk.com/gerbarijj",
+    "city": "Курск"
+  },
+  {
+    "artist": "Neverbeen",
+    "bandcamp": "",
+    "vk": "https://vk.com/simonsstuff",
+    "city": ""
+  },
+  {
+    "artist": "Электросон",
+    "bandcamp": "https://soundcloud.com/electrosoooon",
+    "vk": "https://vk.com/elektroson",
+    "city": "Москва"
+  },
+  {
+    "artist": "яблоня",
+    "bandcamp": "https://yablonya.bandcamp.com/",
+    "vk": "https://vk.com/gr.yablonya",
+    "city": ""
+  },
+  {
+    "artist": "Фивы",
+    "bandcamp": "",
+    "vk": "",
+    "city": ""
+  },
+  {
+    "artist": "Рыцарь Диких Яблок",
+    "bandcamp": "https://appleknight.bandcamp.com/",
+    "vk": "https://vk.com/rytsardikihyablok",
+    "city": ""
+  },
+  {
+    "artist": "молчат дома",
+    "bandcamp": "https://domamolchat.bandcamp.com/",
+    "vk": "https://vk.com/molchatdoma",
+    "city": ""
+  },
+  {
+    "artist": "",
+    "bandcamp": "https://saim.bandcamp.com/",
+    "vk": "https://vk.com/fivyfivy",
+    "city": ""
   }
 ]
