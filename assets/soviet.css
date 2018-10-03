@@ -160,8 +160,6 @@ main.night
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
     filter: grayscale(100%);
-
-
 }
 
 .navi-button:hover
@@ -182,19 +180,22 @@ main.night
 
 #navi-button-vk
 {
-	width: 70px;
-	height: 70px;
-	background-size: 70px 70px !important;
+	background-size: 50px 50px !important;
 	background: url('sprites/icon_vk.png') no-repeat center;
 	background-position: center!important;
-	margin-right: 5px;
-	margin-top: -3px;
 }
 
 #navi-button-t
 {
 	background-size: 50px 50px !important;
 	background: url('sprites/icon_t.png') no-repeat center;
+	background-position: center!important;
+}
+
+#navi-button-chat
+{
+	background-size: 50px 50px !important;
+	background: url('sprites/icon_chat.png') no-repeat center;
 	background-position: center!important;
 }
 
@@ -243,6 +244,19 @@ main.night
 	background-image: url('sprites/btn-evening0.png');
 	background-repeat: no-repeat;
 	background-position: center!important;
+}
+
+#listeners
+{
+	background-size: 50px;
+	background-image: url('sprites/listeners.png');
+	background-repeat: no-repeat;
+	background-position: center!important;
+
+	position: absolute;
+	right: 340px;
+	width: 50px;
+	opacity: 0.6;
 }
 
 #player
@@ -311,7 +325,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 40px; /* fest tmp */
+		margin-top: 10px; 
 		position: static;
 		width: 100%;
 		text-align: center;
@@ -361,6 +375,11 @@ main.night
 		display: none;
 	}
 
+	#navi-button-chat
+	{
+		display: none;
+	}
+
 	#navi-button-fb
 	{
 		display: none;
@@ -385,7 +404,15 @@ main.night
 		opacity: 1;
 	}
 
+	#listeners
+	{
+		position: absolute;
+		left: 10px;
+		width: 50px;
+	}
+
 	#navi-left {
+		left: 70px;
 		width: 60%;
 	}
 

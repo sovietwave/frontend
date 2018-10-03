@@ -13,6 +13,8 @@
 
 						<a href="https://t.me/sovietwave" id="navi-button-t" title="Советская волна в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 
+						<a href="https://t.me/sovietwave_chat" id="navi-button-chat" title="Чат в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+
 						<!--
 						<a href="https://sovietwave.su/listen.m3u" id="navi-button-m3u" title="Слушать в проигрывателе" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 						-->
@@ -24,7 +26,13 @@
 
 					<img src="assets/sprites/logo.png" width="100%" id="navi-logo">
 
-					<div id="navi-modes">						
+					<div id="listeners">
+						120
+					</div>
+
+					<div id="navi-modes">
+						
+
 						<a href="javascript:void(0)" id="navi-button-day" title="Дневной эфир - с 7 утра до 7 вечера (по Москве)" class="navi-button<?php if ($content['site_mode'] == 'day') echo (' enlarged'); ?>" onclick="switchBackground('day')"></a>
 
 						<a href="javascript:void(0)" id="navi-button-evening" title="Вечерний эфир - с 7 вечера до полуночи (по Москве)" class="navi-button<?php if ($content['site_mode'] == 'evening') echo (' enlarged'); ?>"  onclick="switchBackground('evening')"></a>
