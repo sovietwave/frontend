@@ -359,19 +359,17 @@ function setTempTitle(title)
 // Sovietwave-specific code but may be used anywhere
 function requestListenersCount()
 {
-	setTimeout(requestTrackInfo, 15000);
+	setTimeout(requestListenersCount, 15000);
 
     $.ajax({
         url: '//station.waveradio.org/status-json.xsl',
         dataType: 'json',
         crossDomain: true
-    }).done(calculateListenersCount).fail(console.warn('WAЯNING! Cannot connect to icecast servers'));
+    }).done(calculateListenersCount);
 }
 
 
 function calculateListenersCount(data) {
-
-	console.log(data);
 
 	var listenersCount = 0,
 		currentPos = 1;
