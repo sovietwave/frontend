@@ -26,9 +26,7 @@
 
 					<img src="assets/sprites/logo.png" width="100%" id="navi-logo">
 
-					<div id="listeners">
-						120
-					</div>
+					<div id="listeners">228</div>
 
 					<div id="navi-modes">
 						

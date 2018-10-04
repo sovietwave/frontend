@@ -56,6 +56,8 @@ function radioInit()
 		// Initialize track info.
 		requestTrackInfo();
 
+		requestListenersCount();
+
 		playerReady = true;
 	}
 	catch (e)
@@ -351,4 +353,36 @@ function setTempTitle(title)
 	setTrackInfo(title);
 	clearTimeout(trackTimer);
 	trackTimer = setTimeout(function() {tempShowing = false; setTrackInfo(RADIO_CURRENT_TRACK); }, 5000);
+}
+
+
+// Sovietwave-specific code but may be used anywhere
+function requestListenersCount()
+{
+	setTimeout(requestTrackInfo, 15000);
+
+    $.ajax({
+        url: '//station.waveradio.org/status-json.xsl',
+        dataType: 'json',
+        crossDomain: true
+    }).done(calculateListenersCount).fail(console.warn('WAЯNING! Cannot connect to icecast servers'));
+}
+
+
+function calculateListenersCount(data) {
+
+	console.log(data);
+
+	var listenersCount = 0,
+		currentPos = 1;
+
+	data.icestats.source.forEach(function (mount) {
+		currentPos++;
+
+		if (mount.server_name.indexOf('Sovietwave') > -1)
+			listenersCount += mount.listeners;
+
+		if (currentPos === data.icestats.source.length)
+			$('#listeners').text(listenersCount);
+	});
 }
