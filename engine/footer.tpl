@@ -1,6 +1,7 @@
 		</main>
 
 		<footer>	
+			<img src="assets/sprites/logo_ssw.png" id="logo-ssw">
 			<div id="navi">
 
 					<div id="navi-left">
@@ -24,9 +25,9 @@
 						<a href="https://sovietwave.su/listen.m3u" id="navi-button-m3u" title="Слушать в проигрывателе" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 					</div>
 
-					<img src="assets/sprites/logo.png" width="100%" id="navi-logo">
-
-					<div id="listeners">228</div>
+					<!--<img src="assets/sprites/logo.png" width="100%" id="navi-logo">-->
+					
+					<div id="listeners">0</div>
 
 					<div id="navi-modes">
 						

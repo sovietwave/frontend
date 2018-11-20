@@ -5,7 +5,7 @@ require_once ('engine/content.php');
 define ('CLIENT_VERSION', 24);
 
 // Set me to true when the site works in a special (event) mode
-define ('EVENT_OVERRIDE', false);
+define ('EVENT_OVERRIDE', true);
 
 
 

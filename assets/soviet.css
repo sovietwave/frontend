@@ -120,6 +120,38 @@ main.night
 	color: #777777;
 }
 
+#logo-ssw {
+	position: absolute;
+    top: 100%;
+    left: 100%;
+    margin-top: -500px;
+    margin-left: -475px;
+    width: 400px;
+    height: 400px;
+    transform: rotate(-20deg); 
+   	cursor: pointer;
+}
+
+#logo-ssw:not(:active) {
+    animation-name: ssw_click;
+    animation-duration: 350ms;
+    animation-iteration-count: 2;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+}
+
+#logo-ssw:active {
+
+}
+
+@keyframes ssw_click { 
+    from { 
+        transform: rotate(-20deg) scale(1); 
+    } to { 
+        transform: rotate(-5deg) scale(1.15); 
+    }
+}
+
 .navi-text
 {
 	display: inline;
