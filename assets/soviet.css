@@ -471,6 +471,18 @@ main.night
 	{
 		display: none;
 	}	
+
+
+	#logo-ssw {
+	    top: 100%;
+	    left: 50%;
+	    margin-top: -300px;
+	    margin-left: -125px;
+	    width: 250px;
+	    height: 250px;
+	    transform: rotate(-20deg); 
+	   	cursor: pointer;
+	}
 }
 
 @media handheld, (orientation: landscape) and (max-width: 1024px)
