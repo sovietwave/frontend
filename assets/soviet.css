@@ -138,17 +138,36 @@ main.night
     animation-iteration-count: 2;
     animation-timing-function: ease;
     animation-direction: alternate;
+
+    -webkit-animation-name: ssw_click;
+    -webkit-animation-duration: 350ms;
+    -webkit-animation-iteration-count: 2;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-direction: alternate;
 }
 
 #logo-ssw:active {
 
 }
 
+
+@-webkit-keyframes ssw_click { 
+    from { 
+        transform: rotate(-20deg) scale(1); 
+        -webkit-transform: rotate(-20deg) scale(1); 
+    } to { 
+        transform: rotate(-5deg) scale(1.15); 
+        -webkit-transform: rotate(-5deg) scale(1.15); 
+    }
+}
+
 @keyframes ssw_click { 
     from { 
         transform: rotate(-20deg) scale(1); 
+        -webkit-transform: rotate(-20deg) scale(1); 
     } to { 
         transform: rotate(-5deg) scale(1.15); 
+        -webkit-transform: rotate(-5deg) scale(1.15); 
     }
 }
 
