@@ -434,12 +434,9 @@ main.night
 	#logo-ssw {
 	    top: 100%;
 	    left: 50%;
-	    margin-top: -300px;
+	    margin-top: -125px;
 	    margin-left: -125px;
 	    width: 250px;
-	    height: 250px;
-	    transform: rotate(-20deg); 
-	   	cursor: pointer;
 	}
 }
 
