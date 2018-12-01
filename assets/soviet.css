@@ -123,52 +123,10 @@ main.night
 #logo-ssw {
 	position: absolute;
     top: 100%;
-    left: 100%;
-    margin-top: -500px;
-    margin-left: -475px;
-    width: 400px;
-    height: 400px;
-    transform: rotate(-20deg); 
-   	cursor: pointer;
-}
-
-#logo-ssw:not(:active) {
-    animation-name: ssw_click;
-    animation-duration: 350ms;
-    animation-iteration-count: 2;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-
-    -webkit-animation-name: ssw_click;
-    -webkit-animation-duration: 350ms;
-    -webkit-animation-iteration-count: 2;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-direction: alternate;
-}
-
-#logo-ssw:active {
-
-}
-
-
-@-webkit-keyframes ssw_click { 
-    from { 
-        transform: rotate(-20deg) scale(1); 
-        -webkit-transform: rotate(-20deg) scale(1); 
-    } to { 
-        transform: rotate(-5deg) scale(1.15); 
-        -webkit-transform: rotate(-5deg) scale(1.15); 
-    }
-}
-
-@keyframes ssw_click { 
-    from { 
-        transform: rotate(-20deg) scale(1); 
-        -webkit-transform: rotate(-20deg) scale(1); 
-    } to { 
-        transform: rotate(-5deg) scale(1.15); 
-        -webkit-transform: rotate(-5deg) scale(1.15); 
-    }
+    left: 50%;
+    margin-top: -57px;
+    margin-left: -150px;
+    width: 300px;
 }
 
 .navi-text
@@ -324,8 +282,8 @@ main.night
 .player-track
 {
 	font-size: 48pt;
-	text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-	-webkit-text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+	text-shadow: 0px 3px 8px rgba(0, 0, 0, 1);
+	-webkit-text-shadow: 0px 3px 8px rgba(0, 0, 0, 1);
 
 	margin: 10px 15% 0 15%;
 }

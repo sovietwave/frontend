@@ -1,7 +1,7 @@
 		</main>
 
 		<footer>	
-			<img src="assets/sprites/logo_ssw.png" id="logo-ssw">
+			
 			<div id="navi">
 
 					<div id="navi-left">
@@ -26,7 +26,7 @@
 					</div>
 
 					<!--<img src="assets/sprites/logo.png" width="100%" id="navi-logo">-->
-					
+					<img src="assets/sprites/logo_chill.png" id="logo-ssw">
 					<div id="listeners">0</div>
 
 					<div id="navi-modes">
