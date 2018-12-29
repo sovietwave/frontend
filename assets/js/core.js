@@ -1,5 +1,5 @@
 var localStorageAvailable = false,
-	siteModeOverridden = false,
+	siteModeOverridden = true,
 	currentIndex = 0;
 
 var backs =
@@ -222,7 +222,7 @@ function setTheme (mode)
 			break;
 	}
 
-	switchBackground(SITE_MODE);
+	switchBackground(mode);
 }
 
 function switchBackground (mode)

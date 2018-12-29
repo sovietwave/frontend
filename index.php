@@ -1,8 +1,9 @@
 <?php
 require_once ('engine/content.php');
+require_once ('engine/trackstate.php');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 24);
+define ('CLIENT_VERSION', 25);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
@@ -14,6 +15,29 @@ $route = explode('/', $_GET['route']);
 if (empty(trim($route[0])))
 {
 	$route[0] = 'index';
+}
+
+if ($route[0] === 'tracktype') {
+	$trackType = getCurrentTrackType();
+
+	header ('Content-Type: text/plain');
+	switch ($trackType) {
+		case 'night':
+			die('night');
+			break;
+
+		case 'day':
+			die('day');
+			break;
+
+		case 'evening':
+			die('evening');
+			break;
+		
+		default:
+			die('evening');
+			break;
+	}
 }
 
 $content_template = get_template ($route[0]);
@@ -51,12 +75,31 @@ else
 	}
 	else
 	{
-		if ($nowtime >= 0 && $nowtime < 7)
+		/* if ($nowtime >= 0 && $nowtime < 7)
 			$site_mode = 'night';
 		else if ($nowtime >= 7 && $nowtime < 19)
 			$site_mode = 'day';
 		else
-			$site_mode = 'evening';
+			$site_mode = 'evening'; */
+
+		$currentTrackType = getCurrentTrackType();
+		switch ($currentTrackType) {
+			case 'night':
+				$site_mode = 'night';
+				break;
+
+			case 'day':
+				$site_mode = 'day';
+				break;
+
+			case 'evening':
+				$site_mode = 'evening';
+				break;
+			
+			default:
+				$site_mode = 'evening';
+				break;
+		}
 	}
 }
 

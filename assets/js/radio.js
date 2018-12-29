@@ -267,6 +267,19 @@ function processResult(csRes)
 
 		RADIO_CURRENT_TRACK = a;
 
+		$.ajax(
+	    {
+	        url: '/tracktype',
+	        dataType: 'text',
+	        crossDomain: true
+	    }).done(
+	        function (data)
+	        {
+	        	SITE_MODE = data;
+	            setTheme(data);
+	        }
+	    ).fail(function(jq, jx) { console.warn ('bad data', jq, jx) });
+
 		setTrackInfo (a);
 	}
 }
