@@ -21,8 +21,8 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="/assets/sprites/icon-apple.png">
 		<link rel="shortcut icon" sizes="128x128" href="/assets/sprites/icon-android.png">
 
-		<script src="//static.https.cat/js/jquery.js" type="text/javascript"></script>
-		<script src="//static.https.cat/js/util.js" type="text/javascript"></script>
+		<script src="//static.nay.su/js/jquery.js" type="text/javascript"></script>
+		<script src="//static.nay.su/js/util.js" type="text/javascript"></script>
 
 		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>

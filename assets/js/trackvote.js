@@ -23,7 +23,7 @@ function trackVote (isClass)
 	var method = (isClass) ? 'class' : 'disclass';
 	
 	setTempTitle('Голосуем...');
-	$.getJSON('//api.https.cat/airin/trackvote/'+method, {'auth' : auth}, onVoted);
+	$.getJSON('//api.nay.su/airin/trackvote/'+method, {'auth' : auth}, onVoted);
 	
 }
 
