@@ -1,5 +1,5 @@
 var localStorageAvailable = false,
-	siteModeOverridden = true,
+	siteModeOverridden = false,
 	currentIndex = 0;
 
 var backs =

@@ -3,7 +3,7 @@ require_once ('engine/content.php');
 require_once ('engine/trackstate.php');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 25);
+define ('CLIENT_VERSION', 26);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
@@ -75,14 +75,14 @@ else
 	}
 	else
 	{
-		/* if ($nowtime >= 0 && $nowtime < 7)
+		if ($nowtime >= 0 && $nowtime < 7)
 			$site_mode = 'night';
 		else if ($nowtime >= 7 && $nowtime < 19)
 			$site_mode = 'day';
 		else
-			$site_mode = 'evening'; */
+			$site_mode = 'evening'; 
 
-		$currentTrackType = getCurrentTrackType();
+		/*$currentTrackType = getCurrentTrackType();
 		switch ($currentTrackType) {
 			case 'night':
 				$site_mode = 'night';
@@ -99,7 +99,7 @@ else
 			default:
 				$site_mode = 'evening';
 				break;
-		}
+		}*/
 	}
 }
 

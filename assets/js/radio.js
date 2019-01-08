@@ -267,7 +267,7 @@ function processResult(csRes)
 
 		RADIO_CURRENT_TRACK = a;
 
-		$.ajax(
+		/*$.ajax(
 	    {
 	        url: '/tracktype',
 	        dataType: 'text',
@@ -278,7 +278,7 @@ function processResult(csRes)
 	        	SITE_MODE = data;
 	            setTheme(data);
 	        }
-	    ).fail(function(jq, jx) { console.warn ('bad data', jq, jx) });
+	    ).fail(function(jq, jx) { console.warn ('bad data', jq, jx) });*/
 
 		setTrackInfo (a);
 	}
