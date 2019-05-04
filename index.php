@@ -6,7 +6,7 @@ require_once ('engine/trackstate.php');
 define ('CLIENT_VERSION', 26);
 
 // Set me to true when the site works in a special (event) mode
-define ('EVENT_OVERRIDE', false);
+define ('EVENT_OVERRIDE', true);
 
 
 

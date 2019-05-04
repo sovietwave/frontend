@@ -1,5 +1,5 @@
 var localStorageAvailable = false,
-	siteModeOverridden = false,
+	siteModeOverridden = true,
 	currentIndex = 0;
 
 var backs =
@@ -44,6 +44,14 @@ var backs =
 			"/assets/sprites/btn-night1.png",
 			"/assets/sprites/btn-night2.png"
 		]
+	},
+
+	"event" : {
+		"backs" : [
+			"/assets/sprites/event0.jpg"
+		],
+
+		"buttons" : [] // no buttons for event
 	}
 };
 
