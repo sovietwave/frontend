@@ -44,4 +44,6 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 		<title>Радио &laquo;Советская волна&raquo;</title>
 	</head>
 	<body>
-		<main<?php if ($content['site_mode'] == 'night') echo (' class="night"'); ?>>
+		<div id="bright"></div>
+		<div id="grid">
+		<!--<main<?php if ($content['site_mode'] == 'night') echo (' class="night"'); ?>>-->

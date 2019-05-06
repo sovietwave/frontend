@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'stereonic_m';
+	src: url('Stereonic-M.woff2') format('WOFF2'),
+		url('Stereonic-M.woff') format('WOFF'),
+		url('Stereonic-M.eot') format('EOT'),
+		url('Stereonic-M.svg') format('SVG');
+	font-weight: normal;
+	font-style: normal;
+}

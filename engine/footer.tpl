@@ -1,56 +1,49 @@
-		</main>
+		<!--<main>-->
 
-		<footer>	
-			<div id="navi">
 
-					<div id="navi-left">
+		
+		<div id="panel">
+			
+				
 
-						<div class="navi-text-pconly">
-						<a href="https://vk.com/soviet_wave" target="_blank">#sovietwave</a>		
-						</div>
+			<div id="links">
+					<div id="links-title">#sovietwave</div>
 
-						<a href="https://vk.com/soviet_wave" id="navi-button-vk" title="Советская волна в ВК" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+					<a href="https://vk.com/soviet_wave" id="links-button-vk" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/vk.png" class="links-icon">Сообщество</a>
 
-						<a href="https://t.me/sovietwave" id="navi-button-t" title="Советская волна в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+					<a href="https://t.me/sovietwave" id="links-button-telegram" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/telegram.png" class="links-icon">Канал</a><br>
 
-						<a href="https://t.me/sovietwave_chat" id="navi-button-chat" title="Чат в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+					<a href="https://t.me/sovietwave_chat" id="links-button-chat" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/chat.png" class="links-icon">Кухонька</a>
+				
+					<a href="https://soundcloud.com/sovietwave" id="links-button-soundcloud" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/soundcloud.png" class="links-icon">Soundcloud</a>
 
-						<!--
-						<a href="https://sovietwave.su/listen.m3u" id="navi-button-m3u" title="Слушать в проигрывателе" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
-						-->
-						<a href="https://fb.me/sovietwave" id="navi-button-fb" title="Facebook" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
-						<a href="https://soundcloud.com/sovietwave" id="navi-button-sc" title="Soundcloud" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+					<a href="https://fb.me/sovietwave" id="links-button-facebook" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/facebook.png" class="links-icon">Facebook</a>
 					
-						<a href="https://sovietwave.su/listen.m3u" id="navi-button-m3u" title="Слушать в проигрывателе" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
-					</div>
+					<a href="" id="links-button-back" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/back.png" class="links-icon">Сменить фон</a>
+					
+					<a href="https://sovietwave.su/listen.m3u" id="links-button-m3u" class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img src="assets/sprites/icons/m3u.png" class="links-icon">Playlist.m3u</a>
+					
+					<div id="links-text-m3u">Файл позволяет слушать радио в сторонних проигрывателях</div>
 
-					<img src="assets/sprites/logo.png" width="100%" id="navi-logo">
-
-					<div id="listeners">228</div>
-
-					<div id="navi-modes">
-						
-
-						<a href="javascript:void(0)" id="navi-button-day" title="Дневной эфир - с 7 утра до 7 вечера (по Москве)" class="navi-button<?php if ($content['site_mode'] == 'day') echo (' enlarged'); ?>" onclick="switchBackground('day')"></a>
-
-						<a href="javascript:void(0)" id="navi-button-evening" title="Вечерний эфир - с 7 вечера до полуночи (по Москве)" class="navi-button<?php if ($content['site_mode'] == 'evening') echo (' enlarged'); ?>"  onclick="switchBackground('evening')"></a>
-
-						<a href="javascript:void(0)" id="navi-button-night" title="Ночной эфир - с полуночи до 7 утра (по Москве)" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' enlarged'); ?>"  onclick="switchBackground('night')"></a>
-					</div>
-
-					<a href="https://asterleen.com" target="_blank" id="footer-madeby">
-						<div id="navi-right">						
-							Сделано в<br><u>Астерлин</u>
-						</div>
-					</a>
+					<div id="links-madeby">Сделано в<br><a href="https://asterleen.com" target="_blank">«Астерлин»</a></div>
+					
+			
 			</div>
+		</div>
+	
+		<div id="panel-top-gradient"></div>
+		<div id="panel-bottom-gradient"></div>
 
-
-			<!--
-			<div class="dev-info<?php if ($content['site_mode'] == 'night') echo (' night'); ?>">Сделано в <a href="https://asterleen.com" target="_blank">Asterleen</a></div>
-		-->
-		</footer>
-
+		<!--<footer>-->
+			<div id="navi">
+					<div id="navi-links">Ссылки</div>
+					<div id="navi-air">Эфир</div>
+					<div id="navi-logo"><img src="assets/sprites/logo.png"></div>
+					<div id="player-volume"><img src="assets/sprites/icons/volume.png" align="absmiddle"><input type="range" min="0" max="100" step="5" id="volume"></div>
+					<div id="listeners"><img src="assets/sprites/icons/listeners.png" align="absmiddle">?</div>
+			</div>
+		<!--</footer>-->
+		</div>
 		<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45463833 = new Ya.Metrika2({ id:45463833, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/45463833" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 	</body>
 </html>
