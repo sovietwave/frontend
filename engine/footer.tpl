@@ -1,7 +1,7 @@
 		<!--<main>-->
 
 
-		
+		<!--
 		<div id="panel">
 			
 				
@@ -33,7 +33,8 @@
 	
 		<div id="panel-top-gradient"></div>
 		<div id="panel-bottom-gradient"></div>
-
+		-->
+		
 		<!--<footer>-->
 			<div id="navi">
 					<div id="navi-links">Ссылки</div>

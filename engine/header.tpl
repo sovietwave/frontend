@@ -31,19 +31,17 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 		<style type="text/css">
 			body, html
 			{
-				background: #<?php echo ($content['background_color']); ?> url(/assets/sprites/<?php echo ($content['background_mode']); ?>0.jpg) no-repeat center;
+				/*background: #<?php echo ($content['background_color']); ?> url(/assets/sprites/<?php echo ($content['background_mode']); ?>0.jpg) no-repeat center;*/
+				background: url(/assets/sprites/day4.jpg) no-repeat center;
 				background-size: cover;
 				background-attachment: fixed;
 			}
 		</style>
 
-		<script type="text/javascript">
-			var SITE_MODE = '<?php echo ($content['site_mode']); ?>';
-		</script>
 
 		<title>Радио &laquo;Советская волна&raquo;</title>
 	</head>
 	<body>
-		<div id="bright"></div>
+		<!--<div id="bright"></div>-->
 		<div id="grid">
 		<!--<main<?php if ($content['site_mode'] == 'night') echo (' class="night"'); ?>>-->
