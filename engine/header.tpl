@@ -42,4 +42,7 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 	</head>
 
 <body>
-  <div id="grid">
+	<script type="text/javascript">
+		var SITE_MODE = '<?php echo ($content['site_mode']); ?>';
+	</script>
+	<div id="grid">

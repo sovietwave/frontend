@@ -27,7 +27,7 @@
             src="assets/sprites/icons/facebook.png" class="links-icon" />Facebook</a>
 
         <a href="#" id="links-button-back"
-          class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
+          class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" onclick="switchCurrentBackground(); return false;"><img
             src="assets/sprites/icons/back.png" class="links-icon" />Сменить фон</a>
 
         <a href="/listen.m3u" id="links-button-m3u"

@@ -108,51 +108,7 @@ function init() {
 				}
 			}
 		}, 30000); // check every 30s
-
-	$(window).click(function () {
-		var linksElement = $("#panel");
-		if (linksElement) {
-			linksElement.hide();
-		}
-	});
-
-	$('#panel').click(function (event) {
-		event.stopPropagation();
-	});
 }
-
-function error(tx) {
-	alert(tx);
-}
-
-
-function mkactive(name) {
-	$('.menu-item').removeClass('active');
-	$('#menu-item-' + name).addClass('active');
-}
-
-function resetEvents() {
-	$(document).off();
-	$(window).off();
-}
-
-function loadContent(name) {
-	resetEvents();
-	$.ajax({ url: '/' + name + '?ajax', }).done(function (c) { showContent(name, c); }).fail(function (jq, jx) { error('ERR: ' + jx); });
-	return false;
-}
-
-function showContent(name, content) {
-	history.pushState(null, null, name);
-
-	if (typeof saria_disconnect == 'function')
-		saria_disconnect();
-
-	mkactive(name);
-
-	$('#content').html(content);
-}
-
 
 function setTheme(mode) {
 	switch (mode) {
@@ -256,6 +212,9 @@ function switchBackground(mode) {
 	$('#navi-button-' + SITE_MODE).css({ 'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')' });
 }
 
+function switchCurrentBackground() {
+	switchBackground(SITE_MODE);
+}
 
 // yeah there could be more elegant solution
 // PRs are welcome ;3
