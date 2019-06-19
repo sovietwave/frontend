@@ -227,10 +227,10 @@ function setVolValue(value)
 function requestTrackInfo() {
 	setTimeout(requestTrackInfo, 5000);
 
-	publicApiRequest(processBriefResult, true);
+	getCurrentTrack(processBriefResult, true);
 }
 
-function publicApiRequest(onSuccess, isBrief) {
+function getCurrentTrack(onSuccess, isBrief) {
 	$.ajax({
 	        url: 'https://core.waveradio.org/public/current',
 	        data: {
@@ -244,6 +244,7 @@ function publicApiRequest(onSuccess, isBrief) {
 	    }).fail(function(jq, jx) { setTrackInfo('- bad connection -'); });
 }
 
+
 function processBriefResult(csRes) {
 	
 	if (tempShowing)
@@ -252,7 +253,7 @@ function processBriefResult(csRes) {
 	if (csRes['payload'] !== lastTrack) {
 		lastTrack = csRes['payload'];
 
-		publicApiRequest(setTrackInfo);
+		getCurrentTrack(setTrackInfo);
 	}
 }
 
