@@ -201,13 +201,13 @@ a.night
 	align-items: center; 
 }
 
-#listeners
+.listeners
 {
 	grid-column: 11 / 12;
 	font-size: 18pt;
 }
 
-#listeners img, #player-volume img {
+.listeners img, #player-volume img {
 	width: 18pt;
 	height: auto;
 }
@@ -547,7 +547,7 @@ a.night
 		opacity: 1;
 	}
 
-	#listeners
+	.listeners
 	{
 		position: absolute;
 		left: 10px;

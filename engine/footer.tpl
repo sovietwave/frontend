@@ -26,11 +26,11 @@
           class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
             src="assets/sprites/icons/facebook.png" class="links-icon" />Facebook</a>
 
-        <a href="" id="links-button-back"
+        <a href="#" id="links-button-back"
           class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
             src="assets/sprites/icons/back.png" class="links-icon" />Сменить фон</a>
 
-        <a href="https://sovietwave.su/listen.m3u" id="links-button-m3u"
+        <a href="/listen.m3u" id="links-button-m3u"
           class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
             src="assets/sprites/icons/m3u.png" class="links-icon" />Playlist.m3u</a>
 
@@ -39,7 +39,7 @@
         </div>
 
         <div id="links-madeby">
-          Сделано в<br /><a href="https://asterleen.com" target="_blank">«Астерлин»</a>
+          Сделано в «<a href="https://asterleen.com" target="_blank">Астерлин</a>»
         </div>
         <div id="panel-bottom-gradient"></div>
 
@@ -68,10 +68,10 @@
           </div>
           <div class="air-song">
             <span class="air-band">
-              Праздность
+              -
             </span>&nbsp;&mdash;&nbsp;
             <span id="air-song-title">
-              Панельный Дом
+              -
             </span>
           </div>
           <div class="air-time">
@@ -94,13 +94,13 @@
     <div id="navi">
       <div id="navi-links" onclick="toggleLinks()">Ссылки</div>
       <div id="navi-air" onclick="toggleAirPanel()">Эфир</div>
-      <div id="navi-logo"><img src="assets/sprites/logo.png" /></div>
+      <div id="navi-logo"><img src="/assets/sprites/logo.png" /></div>
       <div id="player-volume">
-        <img src="assets/sprites/icons/volume.png" align="absmiddle" /><input type="range" min="0" max="100" step="5"
+        <img src="/assets/sprites/icons/volume.png" align="absmiddle" /><input type="range" min="0" max="100" step="5"
           id="volume" />
       </div>
-      <div id="listeners">
-        <img src="assets/sprites/icons/listeners.png" align="absmiddle" />?
+      <div class="listeners">
+        <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">-1</span>
       </div>
     </div>
   </div>
