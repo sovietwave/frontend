@@ -232,7 +232,7 @@ function requestTrackInfo() {
 
 function getCurrentTrack(onSuccess, isBrief) {
 	$.ajax({
-	        url: 'https://core.waveradio.org/public/current',
+	        url: '//core.waveradio.org/public/current',
 	        data: {
 	        	station: 'soviet',
 	        	brief: (isBrief ? '1' : '0')
@@ -246,7 +246,7 @@ function getCurrentTrack(onSuccess, isBrief) {
 
 function getTrackHistory(onSuccess) {
 	$.ajax({
-	        url: 'https://core.waveradio.org/public/history',
+	        url: '//core.waveradio.org/public/history',
 	        data: {
 	        	station: 'soviet'
 	        },
