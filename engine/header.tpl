@@ -31,8 +31,7 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 		<style type="text/css">
 			body, html
 			{
-				/*background: #<?php echo ($content['background_color']); ?> url(/assets/sprites/<?php echo ($content['background_mode']); ?>0.jpg) no-repeat center;*/
-				background: url(/assets/sprites/night3.jpg) no-repeat center;
+				background: #<?php echo ($content['background_color']); ?> url(/assets/sprites/<?php echo ($content['background_mode']); ?>0.jpg) no-repeat center;
 				background-size: cover;
 				background-attachment: fixed;
 			}
@@ -44,9 +43,3 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 
 <body>
   <div id="grid">
-
-
-
-		<!--<a href="javascript:void(0)" onclick="screenMain()"><div id="bright"></div></a>
-		<div id="grid">
-		<!--<main<?php if ($content['site_mode'] == 'night') echo (' class="night"'); ?>>-->

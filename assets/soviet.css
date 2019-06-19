@@ -462,7 +462,7 @@ a.night
 }
 
 .air-band {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 
 @media handheld, only screen and (max-width: 975px)

@@ -62,29 +62,9 @@
             7:00
           </div>
         </div>
+
         <div id="air-playlist">
-          <div class="air-time">
-            0:01
-          </div>
-          <div class="air-song">
-            <span class="air-band">
-              -
-            </span>&nbsp;&mdash;&nbsp;
-            <span id="air-song-title">
-              -
-            </span>
-          </div>
-          <div class="air-time">
-            0:03
-          </div>
-          <div class="air-song">
-            <span class="air-band">
-              Пожар
-            </span>&nbsp;&mdash;&nbsp;
-            <span id="air-song-title">
-              Мир
-            </span>
-          </div>
+          Ждём ответа из Центра...
         </div>
         <div id="panel-top-gradient"></div>
         <div id="panel-bottom-gradient"></div>

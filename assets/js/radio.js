@@ -244,7 +244,7 @@ function getCurrentTrack(onSuccess, isBrief) {
 	    }).fail(function(jq, jx) { setTrackInfo('- нет связи -'); });
 }
 
-function getTrackHistory(onSuccess) {
+function getTrackHistory() {
 	$.ajax({
 	        url: '//core.waveradio.org/public/history',
 	        data: {
@@ -253,8 +253,63 @@ function getTrackHistory(onSuccess) {
 	        dataType: 'json',
 	        crossDomain: true
 	    }).done(function (data) {
-	       	onSuccess(data);
+	       	processTrackHistory(data);
 	    }).fail(function(jq, jx) { console.warn("History error:", jq, jx); });
+}
+
+/*
+
+<div class="air-time">
+0:01
+</div>
+<div class="air-song">
+<span class="air-band">
+  -
+</span>&nbsp;&mdash;&nbsp;
+<span id="air-song-title">
+  -
+</span>
+</div>
+
+*/
+
+function processTrackHistory(data) {
+	if (!data || data['status'] === undefined) {
+		return;
+	}
+
+	var historyHtml = "";
+
+	switch (+data['status']) {
+		case 0:
+
+			data['payload'].forEach(function(track) {
+				var trackDate = new Date(+track['start_time']*1000);
+
+				// Time
+				historyHtml +=  '<div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' + 
+														   ((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() + 
+								'</div>';
+
+
+				// Song
+				historyHtml += '<div class="air-song">';
+				// artist
+				historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
+				// separator
+				historyHtml += '&nbsp;&mdash;&nbsp;';
+				// title
+				historyHtml += '<span class="air-song-title">' + track['track_title'] + '</span>';
+				historyHtml += '</div>';
+			});
+			break;
+
+		default:
+			historyHtml = '<div class="history-error">Не удалось получить историю эфира, ошибка #' + data['status'] + " (" + data['payload'] + ")</div>";
+			break;
+	}
+
+	$('#air-playlist').html(historyHtml);
 }
 
 function processBriefResult(csRes) {
@@ -265,6 +320,7 @@ function processBriefResult(csRes) {
 	if (csRes['payload'] !== lastTrack) {
 		lastTrack = csRes['payload'];
 
+		getTrackHistory();
 		getCurrentTrack(setTrackInfo);
 	}
 }
