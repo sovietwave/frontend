@@ -4,72 +4,71 @@ var localStorageAvailable = false,
 
 var backs =
 {
-	"day" : {
-		"backs" : [
+	"day": {
+		"backs": [
 			"/assets/sprites/day0.jpg",
 			"/assets/sprites/day1.jpg",
 			"/assets/sprites/day2.jpg"
 		],
 
-		"buttons" : [
+		"buttons": [
 			"/assets/sprites/btn-day0.png",
 			"/assets/sprites/btn-day1.png",
 			"/assets/sprites/btn-day2.png"
 		]
 	},
 
-	"evening" : {
-		"backs" : [
+	"evening": {
+		"backs": [
 			"/assets/sprites/evening0.jpg",
 			"/assets/sprites/evening1.jpg",
 			"/assets/sprites/evening2.jpg"
 		],
 
-		"buttons" : [
+		"buttons": [
 			"/assets/sprites/btn-evening0.png",
 			"/assets/sprites/btn-evening1.png",
 			"/assets/sprites/btn-evening2.png"
 		]
 	},
 
-	"night" : {
-		"backs" : [
+	"night": {
+		"backs": [
 			"/assets/sprites/night0.jpg",
 			"/assets/sprites/night1.jpg",
 			"/assets/sprites/night2.jpg"
 		],
 
-		"buttons" : [
+		"buttons": [
 			"/assets/sprites/btn-night0.png",
 			"/assets/sprites/btn-night1.png",
 			"/assets/sprites/btn-night2.png"
 		]
 	},
 
-	"event" : {
-		"backs" : [
+	"event": {
+		"backs": [
 			"/assets/sprites/event0.jpg"
 		],
 
-		"buttons" : [] // no buttons for event
+		"buttons": [] // no buttons for event
 	}
 };
 
-function init()
-{
+function init() {
 	localStorageAvailable = isLSAvailable();
 
 	$('#volume').rangeslider({
-	    polyfill: false,
+		polyfill: false,
 
-	    // Callback function
-	    onInit: function() { radioInit(); },
+		// Callback function
+		onInit: function () { radioInit(); },
 
-	    // Callback function
-	    onSlide: function(position, value) { if (radioPlayer) radioPlayer.volume = (value / 100); },
+		// Callback function
+		onSlide: function (position, value) { if (radioPlayer) radioPlayer.volume = (value / 100); },
 
-	    // Callback function
-	    onSlideEnd: function(position, value) { radioSetVolume(value, true); }
+		// Callback function
+		onSlideEnd: function (position, value) { radioSetVolume(value, true); }
 	});
 
 	// Randomize fist pic
@@ -78,85 +77,86 @@ function init()
 	setTheme(SITE_MODE);
 
 	if (SITE_MODE != 'event' || !siteModeOverridden)
-		setInterval(function() {
-				if (siteModeOverridden)
-					return;
+		setInterval(function () {
+			if (siteModeOverridden)
+				return;
 
-				var
-					d = new Date(),
-					nd = new Date(d.getTime() + (10800000)), // 3600000 * 3 (3 - MSK, UTC+3)
-					t = nd.getUTCHours();  
+			var
+				d = new Date(),
+				nd = new Date(d.getTime() + (10800000)), // 3600000 * 3 (3 - MSK, UTC+3)
+				t = nd.getUTCHours();
 
-				if (t >= 0 && t < 7) // night
-				{
-					if (SITE_MODE != 'night')
-					{
-						SITE_MODE = 'night';
-						setTheme('night');
-					}
+			if (t >= 0 && t < 7) // night
+			{
+				if (SITE_MODE != 'night') {
+					SITE_MODE = 'night';
+					setTheme('night');
 				}
-					else if (t >= 7 && t < 19) // day
-				{
-					if (SITE_MODE != 'day')
-					{
-						SITE_MODE = 'day';
-						setTheme('day');
-					}
+			}
+			else if (t >= 7 && t < 19) // day
+			{
+				if (SITE_MODE != 'day') {
+					SITE_MODE = 'day';
+					setTheme('day');
 				}
-					else // evening
-				{
-					if (SITE_MODE != 'evening')
-					{
-						SITE_MODE = 'evening';
-						setTheme('evening');
-					}
+			}
+			else // evening
+			{
+				if (SITE_MODE != 'evening') {
+					SITE_MODE = 'evening';
+					setTheme('evening');
 				}
-			}, 30000); // check every 30s
+			}
+		}, 30000); // check every 30s
+
+	$(window).click(function () {
+		var linksElement = $("#panel");
+		if (linksElement) {
+			linksElement.hide();
+		}
+	});
+
+	$('#panel').click(function (event) {
+		event.stopPropagation();
+	});
 }
 
-function error (tx)
-{
-	alert (tx);
+function error(tx) {
+	alert(tx);
 }
 
 
-function mkactive(name)
-{
+function mkactive(name) {
 	$('.menu-item').removeClass('active');
-	$('#menu-item-'+name).addClass('active');
+	$('#menu-item-' + name).addClass('active');
 }
 
-function resetEvents()
-{
+function resetEvents() {
 	$(document).off();
 	$(window).off();
 }
 
-function loadContent(name)
-{
+function loadContent(name) {
 	resetEvents();
-	$.ajax({url: '/'+name+'?ajax',}).done(function (c) {showContent(name, c);}).fail(function(jq, jx) {error ('ERR: '+jx);});
+	$.ajax({ url: '/' + name + '?ajax', }).done(function (c) { showContent(name, c); }).fail(function (jq, jx) { error('ERR: ' + jx); });
 	return false;
 }
 
-function showContent (name, content)
-{
+function showContent(name, content) {
 	history.pushState(null, null, name);
-	
+
 	if (typeof saria_disconnect == 'function')
 		saria_disconnect();
 
 	mkactive(name);
-	
+
 	$('#content').html(content);
 }
 
 
-function setTheme (mode)
-{
-	switch (mode)
-	{
-		case 'night' :
+function setTheme(mode) {
+	switch (mode) {
+		case 'night':
 			$('#navi-logo').attr('class', 'night');
 			$('main').attr('class', 'night');
 			$('main a').attr('class', 'night');
@@ -176,10 +176,10 @@ function setTheme (mode)
 			$('.rangeslider__fill').removeClass('evening');
 			$('.rangeslider__fill').addClass('night');
 
-			$('body').css({'background-color':'#202020'});
+			$('body').css({ 'background-color': '#202020' });
 			break;
 
-		case 'evening' :
+		case 'evening':
 			$('#navi-logo').attr('class', 'evening');
 			$('main').attr('class', 'evening');
 			$('main a').attr('class', 'evening');
@@ -199,10 +199,10 @@ function setTheme (mode)
 			$('.rangeslider__fill').removeClass('night');
 			$('.rangeslider__fill').addClass('evening');
 
-			$('body').css({'background-color':'#202020'});
+			$('body').css({ 'background-color': '#202020' });
 			break;
 
-		case 'day'   :
+		case 'day':
 			$('#navi-logo').attr('class', 'day');
 			$('main').attr('class', 'day');
 			$('main a').attr('class', 'day');
@@ -222,22 +222,20 @@ function setTheme (mode)
 			$('.rangeslider__fill').removeClass('evening');
 			$('.rangeslider__fill').addClass('day');
 
-			$('body').css({'background-color':'#5fb0e8'});
+			$('body').css({ 'background-color': '#5fb0e8' });
 			break;
 
-		default :
-			console.warn ('Bad theme requested: '+mode);
+		default:
+			console.warn('Bad theme requested: ' + mode);
 			break;
 	}
 
 	switchBackground(mode);
 }
 
-function switchBackground (mode)
-{
-	if (mode != SITE_MODE)
-	{
-		console.log("Backgrounds can be changed only for current ("+SITE_MODE+") site mode");
+function switchBackground(mode) {
+	if (mode != SITE_MODE) {
+		console.log("Backgrounds can be changed only for current (" + SITE_MODE + ") site mode");
 		return;
 	}
 
@@ -254,8 +252,16 @@ function switchBackground (mode)
 	if (nextIndex > backsCount - 1)
 		nextIndex = 0;
 
-	$('body').css({'background-image':'url('+currentModeAssets.backs[currentIndex]+')'});
-	$('#navi-button-'+SITE_MODE).css({'background-image':'url('+currentModeAssets.buttons[nextIndex]+')'});
+	$('body').css({ 'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')' });
+	$('#navi-button-' + SITE_MODE).css({ 'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')' });
+}
+
+function toggleLinks() {
+	$("#panel").toggle();
+}
+
+function toggleAirPanel() {
+	$("#air-panel").toggle();
 }
 
 $(document).ready(init);

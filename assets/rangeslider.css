@@ -48,8 +48,8 @@
   border: 1px solid #ccc;
   cursor: pointer;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   position: absolute;
 
   background-size: 100%;
@@ -64,7 +64,7 @@
 
 
 .rangeslider--horizontal .rangeslider__handle {
-  top: -10px;
+  top: -7px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
 }
