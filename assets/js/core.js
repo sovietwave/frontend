@@ -256,12 +256,25 @@ function switchBackground(mode) {
 	$('#navi-button-' + SITE_MODE).css({ 'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')' });
 }
 
+
+// yeah there could be more elegant solution
+// PRs are welcome ;3
 function toggleLinks() {
-	$("#panel").toggle();
+	if ($("#panel").is(':visible')) {
+		$("#panel").hide();
+	} else {
+		$("#air-panel").hide();
+		$("#panel").show();
+	}
 }
 
 function toggleAirPanel() {
-	$("#air-panel").toggle();
+	if ($("#air-panel").is(':visible')) {
+		$("#air-panel").hide();
+	} else {
+		$("#panel").hide();
+		$("#air-panel").show();
+	}
 }
 
 $(document).ready(init);

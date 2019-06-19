@@ -222,6 +222,8 @@ a.night
     background: rgba(0,0,0,0.5);
     z-index: 10;
     box-shadow: 0 0 8px rgba(255, 222, 128, 1);
+
+    display: none;
 }
 
 #panel-top-gradient
