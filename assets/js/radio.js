@@ -278,8 +278,6 @@ function setTrackInfo (track) {
 		
 		$("#player-title").text(track);
 
-		artistObj.css({'border-bottom' : 'none'});
-		artistObj.css({'box-shadow' : 'none'});
 		artistObj.attr('href', '#');
 		artistObj.click(function(){ return false; });
 		artistObj.html('&nbsp;');
@@ -316,13 +314,9 @@ function setTrackInfo (track) {
 		}
 
 		if (artistLink) {
-			artistObj.css({'border-bottom' : '2px solid #ececec'});
-			artistObj.css({'box-shadow' : '0px 2px 2px -2px rgba(0, 0, 0, 0.5)'});
 			artistObj.attr('href', artistLink);
 			artistObj.off();
 		} else {
-			artistObj.css({'border-bottom' : 'none'});
-			artistObj.css({'box-shadow' : 'none'});
 			artistObj.attr('href', '#');
 			artistObj.click(function(){ return false; });
 		}

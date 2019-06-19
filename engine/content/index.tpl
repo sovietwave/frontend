@@ -16,7 +16,3 @@
         </div>
       </div>
     </div>
-
-			<script type="text/javascript">
-				<?php include ('engine/content/links.json'); ?>
-			</script>
