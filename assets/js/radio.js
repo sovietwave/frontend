@@ -1,4 +1,7 @@
-var RADIO_CURRENT_TRACK;
+var
+	lastTrack,
+	showingTrack,
+	showingTrackStruct;
 
 function rnd(min, max)
 {
@@ -77,7 +80,7 @@ function radioPlay(channel)
 		// Create a player object
 		radioPlayer = document.createElement('audio');
 		radioPlayer.src = '//station.waveradio.org/'+channel+'?'+randword(); // fixes buffering
-		radioPlayer.title = RADIO_CURRENT_TRACK;
+		radioPlayer.title = showingTrack;
 		radioPlayer.volume = radioGetVolume() / 100;
 
 		radioPlayer.onerror = function()
@@ -96,7 +99,7 @@ function radioPlay(channel)
 
 		radioPlayer.oncanplay = function()
 		{
-			setTrackInfo(RADIO_CURRENT_TRACK);
+			setTrackInfo(showingTrackStruct);
 			clearTimeout(playerRestartTimer);
 		}
 
@@ -221,134 +224,58 @@ function setVolValue(value)
 }
 
 
-function requestTrackInfo()
-{
-	setTimeout(requestTrackInfo, 15000);
+function requestTrackInfo() {
+	setTimeout(requestTrackInfo, 5000);
 
-    $.ajax(
-    {
-        url: '//bits.waveradio.org/api/track/soviet',
-        dataType: 'json',
-        crossDomain: true
-    }).done(
-        function (data)
-        {
-            processResult(data);
-        }
-    ).fail(function(jq, jx) { setTrackInfo('- проблема связи -') });
+	publicApiRequest(processBriefResult, true);
 }
 
-
-function processResult(csRes)
-{	
-	try
-	{
-		var a = csRes["track"];
-	}
-	catch (e)
-	{
-		setTrackInfo('- отказ Центра управления -');
-		return;
-	}
-
-    if (a == null || typeof a == 'undefined')
-    {
-        setTrackInfo('- ЦУ недоступен -');
-        return;
-    }
-
-    if (a == "" || a == '-')
-	{
-        a = "- неверные данные -";
-	}
-	
-	if (a != RADIO_CURRENT_TRACK)
-	{
-
-		RADIO_CURRENT_TRACK = a;
-
-		/*$.ajax(
-	    {
-	        url: '/tracktype',
-	        dataType: 'text',
+function publicApiRequest(onSuccess, isBrief) {
+	$.ajax({
+	        url: 'https://core.waveradio.org/public/current',
+	        data: {
+	        	station: 'soviet',
+	        	brief: (isBrief ? '1' : '0')
+	        },
+	        dataType: 'json',
 	        crossDomain: true
-	    }).done(
-	        function (data)
-	        {
-	        	SITE_MODE = data;
-	            setTheme(data);
-	        }
-	    ).fail(function(jq, jx) { console.warn ('bad data', jq, jx) });*/
+	    }).done(function (data) {
+	       	onSuccess(data);
+	    }).fail(function(jq, jx) { setTrackInfo('- bad connection -'); });
+}
 
-		setTrackInfo (a);
+function processBriefResult(csRes) {
+	
+	if (tempShowing)
+		return;
+	
+	if (csRes['payload'] !== lastTrack) {
+		lastTrack = csRes['payload'];
+
+		publicApiRequest(setTrackInfo);
 	}
 }
 
-function searchArtist(name)
-{
-	for (i = 0; i < artists.length; i++)
-	{
-		if (artists[i]['artist'] == name)
-		{
-			return artists[i]['bandcamp'] ||
-				artists[i]['soundcloud'] ||
-				artists[i]['vk'] || false;
-
-			break;
-		}
-	}
-
-	return false;
+function splitTrackInfo (track) {
+	return {
+		artist: track.substr(0, track.indexOf(' - ')),
+		title: track.substr(track.indexOf(' - ') + 3)
+	};
 }
 
-function setTrackInfo (track)
-{
+function setTrackInfo (track) {
 
 	if (!track)
 		return;
 
-	var trackParts = track.split(/\s\-\s/),
+	var trackToDisplay = '',
+		trackStruct = {},
+		artistLink = "",
 		artistObj  = $('#player-artist');
 
-	if (trackParts.length == 2) // A correct track info sent
-	{
-		var
-			artistLow  = trackParts[0].toLowerCase(),
-			artistLink = searchArtist(artistLow);
-
-		if (artistLink)
-		{
-			artistObj.css({'border-bottom' : '2px solid #ececec'});
-			artistObj.css({'box-shadow' : '0px 2px 2px -2px rgba(0, 0, 0, 0.5)'});
-			artistObj.attr('href', artistLink);
-			artistObj.off();
-		}
-			else
-		{
-			artistObj.css({'border-bottom' : 'none'});
-			artistObj.css({'box-shadow' : 'none'});
-			artistObj.attr('href', '#');
-			artistObj.click(function(){ return false; });
-		}
-
-		artistObj.text(trackParts[0]);
-		$("#player-title").text(trackParts[1]);
-
-		// iOS
-		if (radioPlayer != null)
-			radioPlayer.title = trackParts[0] + ' – ' + trackParts[1];
-
-		// Android/Chrome
-		if ('mediaSession' in navigator && radioPlayer != null)
-		{
-			navigator.mediaSession.metadata = new MediaMetadata({
-			    title: trackParts[1],
-			    artist: trackParts[0]
-			  });
-		}
-	}
-		else // some system info sent
-	{
+	if (typeof track === 'string') {
+		trackToDisplay = track;
+		
 		$("#player-title").text(track);
 
 		artistObj.css({'border-bottom' : 'none'});
@@ -356,23 +283,78 @@ function setTrackInfo (track)
 		artistObj.attr('href', '#');
 		artistObj.click(function(){ return false; });
 		artistObj.html('&nbsp;');
+
+	} else if (typeof track === 'object') {
+		switch (track['status']) {
+			case 0: // ok
+			case 2: // some db problems but still splitted
+				trackToDisplay = track['payload']['artist'] + ' – ' + track['payload']['title'];
+				trackStruct = track['payload'];
+
+				showingTrackStruct = track;
+				showingTrack = trackToDisplay;
+
+				if (track['payload']['links'] && track['payload']['links'].length > 0) {
+					artistLink = track['payload']['links'][0]['link_text'];
+				}
+
+				break;
+
+			case 1: // server couldn't parse track info and sends us what it had
+				trackStruct = splitTrackInfo(track['payload']['raw_title']);
+
+				showingTrackStruct = {payload: trackStruct};
+				trackToDisplay = showingTrackStruct['payload']['artist'] + ' – ' + showingTrackStruct['payload']['title'];
+
+				showingTrack = trackToDisplay;
+
+				break;
+
+			default:
+				error ('Bad track info');
+				return;
+		}
+
+		if (artistLink) {
+			artistObj.css({'border-bottom' : '2px solid #ececec'});
+			artistObj.css({'box-shadow' : '0px 2px 2px -2px rgba(0, 0, 0, 0.5)'});
+			artistObj.attr('href', artistLink);
+			artistObj.off();
+		} else {
+			artistObj.css({'border-bottom' : 'none'});
+			artistObj.css({'box-shadow' : 'none'});
+			artistObj.attr('href', '#');
+			artistObj.click(function(){ return false; });
+		}
+
+		artistObj.text(trackStruct['artist']);
+		$("#player-title").text(trackStruct['title']);
+
+		// iOS
+		if (radioPlayer != null) {
+			radioPlayer.title = trackToDisplay;
+		}
+
+		// Android/Chrome
+		if ('mediaSession' in navigator && radioPlayer != null) {
+			navigator.mediaSession.metadata = new MediaMetadata(trackStruct);
+		}
 	}
 }
 
-function setTempTitle(title)
-{
+function setTempTitle(title) {
 	tempShowing = true;
 	
 	setTrackInfo(title);
 	clearTimeout(trackTimer);
-	trackTimer = setTimeout(function() {tempShowing = false; setTrackInfo(RADIO_CURRENT_TRACK); }, 5000);
+	trackTimer = setTimeout(function() {tempShowing = false; setTrackInfo(showingTrackStruct); }, 5000);
 }
 
 
 // Sovietwave-specific code but may be used anywhere
 function requestListenersCount()
 {
-	setTimeout(requestListenersCount, 15000);
+	setTimeout(requestListenersCount, 20000);
 
     $.ajax({
         url: '//station.waveradio.org/status-json.xsl',
