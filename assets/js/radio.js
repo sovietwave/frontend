@@ -241,9 +241,8 @@ function getCurrentTrack(onSuccess, isBrief) {
 	        crossDomain: true
 	    }).done(function (data) {
 	       	onSuccess(data);
-	    }).fail(function(jq, jx) { setTrackInfo('- bad connection -'); });
+	    }).fail(function(jq, jx) { setTrackInfo('- нет связи -'); });
 }
-
 
 function processBriefResult(csRes) {
 	
