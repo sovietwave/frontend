@@ -88,13 +88,12 @@ a.night
     height: 50px;
 }
 
-#player-artist
+.player-artist
 {
     font-size: 40px;
     /* grid-row: 10 / 12; */
     grid-row: 18/21;
     text-align: center;
-    text-decoration: underline;
 }
 
 #player-city
@@ -500,7 +499,7 @@ a.night
 		padding-bottom: 10px;
 	}
 
-	#player-artist
+	.player-artist
 	{
 		font-size: 20pt;
 	}

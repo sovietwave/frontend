@@ -278,6 +278,7 @@ function setTrackInfo (track) {
 		
 		$("#player-title").text(track);
 
+		artistObj.css({'text-decoration' : 'none'});
 		artistObj.attr('href', '#');
 		artistObj.click(function(){ return false; });
 		artistObj.html('&nbsp;');
@@ -315,6 +316,7 @@ function setTrackInfo (track) {
 
 		if (artistLink) {
 			artistObj.attr('href', artistLink);
+			artistObj.css({'text-decoration' : 'underline'});
 			artistObj.off();
 		} else {
 			artistObj.attr('href', '#');
@@ -323,6 +325,12 @@ function setTrackInfo (track) {
 
 		artistObj.text(trackStruct['artist']);
 		$("#player-title").text(trackStruct['title']);
+
+		if (trackStruct['city']) {
+			$('#player-city').text(trackStruct['city']);
+		} else {
+			$('#player-city').html('&nbsp;');
+		}
 
 		// iOS
 		if (radioPlayer != null) {
