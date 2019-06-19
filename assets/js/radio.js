@@ -244,6 +244,19 @@ function getCurrentTrack(onSuccess, isBrief) {
 	    }).fail(function(jq, jx) { setTrackInfo('- нет связи -'); });
 }
 
+function getTrackHistory(onSuccess) {
+	$.ajax({
+	        url: 'https://core.waveradio.org/public/history',
+	        data: {
+	        	station: 'soviet'
+	        },
+	        dataType: 'json',
+	        crossDomain: true
+	    }).done(function (data) {
+	       	onSuccess(data);
+	    }).fail(function(jq, jx) { console.warn("History error:", jq, jx); });
+}
+
 function processBriefResult(csRes) {
 	
 	if (tempShowing)
