@@ -1,7 +1,10 @@
 var
 	lastTrack,
 	showingTrack,
-	showingTrackStruct;
+	showingTrackStruct,
+	trackHistoryItemHeight = 48, // average
+	airTitleHeight = 135,
+	trackHistoryAmount = 0;
 
 function rnd(min, max)
 {
@@ -214,8 +217,6 @@ function radioToggle(channel)
 
 function setVolValue(value)
 {	
-	console.log (value);
-
     if (value > 100)
         return;
 	
@@ -245,10 +246,16 @@ function getCurrentTrack(onSuccess, isBrief) {
 }
 
 function getTrackHistory() {
+
+	var amount = Math.floor(calculateHistoryViewport() / trackHistoryItemHeight);
+
+	console.log(calculateHistoryViewport(), trackHistoryItemHeight, amount);
+
 	$.ajax({
 	        url: '//core.waveradio.org/public/history',
 	        data: {
-	        	station: 'soviet'
+	        	station: 'soviet',
+	        	"amount": amount
 	        },
 	        dataType: 'json',
 	        crossDomain: true
@@ -272,6 +279,14 @@ function getTrackHistory() {
 </div>
 
 */
+
+function calculateHistoryViewport() {
+	var
+		naviHeight = $('#navi').height(),
+		docHeight = $(document).height();
+
+	return docHeight - (naviHeight + airTitleHeight);
+}
 
 function processTrackHistory(data) {
 	if (!data || data['status'] === undefined) {
