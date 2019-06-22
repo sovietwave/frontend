@@ -46,6 +46,7 @@
       </div>
     </div>
 
+    <div id="air-active-overlay"></div>
     <div id="air-panel">
       <div id="air-list">
         <div id="air-title-section">

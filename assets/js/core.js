@@ -221,18 +221,22 @@ function switchCurrentBackground() {
 function toggleLinks() {
 	if ($("#panel").is(':visible')) {
 		$("#panel").hide();
+		$('#air-active-overlay').hide();
 	} else {
 		$("#air-panel").hide();
 		$("#panel").show();
+		$('#air-active-overlay').show();
 	}
 }
 
 function toggleAirPanel() {
 	if ($("#air-panel").is(':visible')) {
 		$("#air-panel").hide();
+		$('#air-active-overlay').hide();
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
+		$('#air-active-overlay').show();
 	}
 }
 
