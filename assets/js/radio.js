@@ -255,7 +255,8 @@ function getTrackHistory() {
 	        url: '//core.waveradio.org/public/history',
 	        data: {
 	        	station: 'soviet',
-	        	"amount": amount
+	        	"amount": amount,
+	        	extend: 1 // to enable artist links
 	        },
 	        dataType: 'json',
 	        crossDomain: true
@@ -309,10 +310,19 @@ function processTrackHistory(data) {
 
 				// Song
 				historyHtml += '<div class="air-song">';
+
 				// artist
-				historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
+				if (track['artist_links'] && track['artist_links'].length > 0) {
+					var artistLink = track['artist_links'][0]['link_text'];
+					historyHtml += '<a class="air-band" href="' + artistLink + '">' + track['artist'] + '</a>';
+				} else {
+					historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
+				}
+
+				
 				// separator
 				historyHtml += '&nbsp;&mdash;&nbsp;';
+
 				// title
 				historyHtml += '<span class="air-song-title">' + track['track_title'] + '</span>';
 				historyHtml += '</div>';
