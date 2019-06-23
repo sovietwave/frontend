@@ -72,10 +72,11 @@
       </div>
     </div>
 
+    <div id="navi-logo-standalone"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
     <div id="navi">
       <div id="navi-links" onclick="toggleLinks()">Ссылки</div>
       <div id="navi-air" onclick="toggleAirPanel()">Эфир</div>
-      <div id="navi-logo"><img src="/assets/sprites/logo.png" /></div>
+      <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
       <div id="player-volume">
         <img src="/assets/sprites/icons/volume.png" align="absmiddle" /><input type="range" min="0" max="100" step="5"
           id="volume" />

@@ -240,4 +240,17 @@ function toggleAirPanel() {
 	}
 }
 
+function toggleNavi() {
+	var navi = $('#navi');
+
+	if (navi.is(':visible')) {
+		$('#navi-logo-standalone').show();
+		navi.hide();
+	} else {
+		navi.show();
+		$('#navi-logo-standalone').hide();
+		
+	}
+}
+
 $(document).ready(init);
