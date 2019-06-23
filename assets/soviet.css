@@ -74,7 +74,12 @@ a.night
 
     text-align: center;
     letter-spacing: 2pt;
+}
 
+#player-artist
+{
+	text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.75);
+	-webkit-text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.75);
 }
 
 #player-title
