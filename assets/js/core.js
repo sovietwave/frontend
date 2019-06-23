@@ -240,6 +240,12 @@ function toggleAirPanel() {
 	}
 }
 
+function hideLeftPanels() {
+	$("#air-panel").hide();
+	$("#panel").hide();
+	$('#air-active-overlay').hide();
+}
+
 function toggleNavi() {
 	var navi = $('#navi');
 
