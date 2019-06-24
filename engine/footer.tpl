@@ -50,18 +50,10 @@
     <div id="air-panel">
       <div id="air-list">
         <div id="air-title-section">
-          <div id="air-title">
-            КОСМОС НАШ
-          </div>
-          <div id="air-start-time">
-            0:00
-          </div>
-          <div id="air-tags">
-            #SOVIETWAVE #AMBIENT #EXPERIMENTAL
-          </div>
-          <div id="air-end-time">
-            7:00
-          </div>
+          <div id="air-title"></div>
+          <div id="air-start-time"></div>
+          <div id="air-tags"></div>
+          <div id="air-end-time"></div>
         </div>
 
         <div id="air-playlist">

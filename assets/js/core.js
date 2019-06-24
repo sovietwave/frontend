@@ -2,8 +2,7 @@ var localStorageAvailable = false,
 	siteModeOverridden = true,
 	currentIndex = 0;
 
-var backs =
-{
+var backs = {
 	"day": {
 		"backs": [
 			"/assets/sprites/day0.jpg",
@@ -61,6 +60,50 @@ var backs =
 	}
 };
 
+var modes = {
+	"day": {
+		"title": "Солнечный день",
+		"subtitle": "#chillwave #dreamwave #sovietwave",
+		"start": "07:00",
+		"finish": "19:00"
+	},
+
+	"evening": {
+		"title": "Грустные танцы",
+		"subtitle": "#synthpop #postpunk #sovietwave",
+		"start": "19:00",
+		"finish": "00:00"
+	},
+
+	"night": {
+		"title": "Космос наш",
+		"subtitle": "#ambient #experimental #sovietwave",
+		"start": "00:00",
+		"finish": "07:00"
+	},
+
+	"event1_space": {
+		"title": "День Космонавтики",
+		"subtitle": "#sovietwave",
+		"start": "12 апреля",
+		"finish": "14 апреля"
+	},
+
+	"event2_ssw": {
+		"title": "Советская советская волна",
+		"subtitle": "#psychedelic #retro",
+		"start": "20 ноября",
+		"finish": "21 ноября"
+	},
+
+	"event3_chillwave": {
+		"title": "#chillwave",
+		"subtitle": "#glofi #hypnagogic #dreamwave",
+		"start": "1 декабря",
+		"finish": "2 декабря"
+	}
+};
+
 function init() {
 	localStorageAvailable = isLSAvailable();
 
@@ -68,13 +111,19 @@ function init() {
 		polyfill: false,
 
 		// Callback function
-		onInit: function () { radioInit(); },
+		onInit: function() {
+			radioInit();
+		},
 
 		// Callback function
-		onSlide: function (position, value) { if (radioPlayer) radioPlayer.volume = (value / 100); },
+		onSlide: function(position, value) {
+			if (radioPlayer) radioPlayer.volume = (value / 100);
+		},
 
 		// Callback function
-		onSlideEnd: function (position, value) { radioSetVolume(value, true); }
+		onSlideEnd: function(position, value) {
+			radioSetVolume(value, true);
+		}
 	});
 
 	// Randomize fist pic
@@ -83,7 +132,7 @@ function init() {
 	setTheme(SITE_MODE);
 
 	if (SITE_MODE != 'event' || !siteModeOverridden)
-		setInterval(function () {
+		setInterval(function() {
 			if (siteModeOverridden)
 				return;
 
@@ -98,15 +147,13 @@ function init() {
 					SITE_MODE = 'night';
 					setTheme('night');
 				}
-			}
-			else if (t >= 7 && t < 19) // day
+			} else if (t >= 7 && t < 19) // day
 			{
 				if (SITE_MODE != 'day') {
 					SITE_MODE = 'day';
 					setTheme('day');
 				}
-			}
-			else // evening
+			} else // evening
 			{
 				if (SITE_MODE != 'evening') {
 					SITE_MODE = 'evening';
@@ -117,6 +164,16 @@ function init() {
 }
 
 function setTheme(mode) {
+
+	if (modes[mode]) {
+		var modeContent = modes[mode];
+
+		$('#air-title').text(modeContent['title']);
+		$('#air-tags').text(modeContent['subtitle']);
+		$('#air-start-time').text(modeContent['start']);
+		$('#air-end-time').text(modeContent['finish']);
+	}
+
 	switch (mode) {
 		case 'night':
 			$('#navi-logo').attr('class', 'night');
@@ -138,7 +195,9 @@ function setTheme(mode) {
 			$('.rangeslider__fill').removeClass('evening');
 			$('.rangeslider__fill').addClass('night');
 
-			$('body').css({ 'background-color': '#202020' });
+			$('body').css({
+				'background-color': '#202020'
+			});
 			break;
 
 		case 'evening':
@@ -161,7 +220,9 @@ function setTheme(mode) {
 			$('.rangeslider__fill').removeClass('night');
 			$('.rangeslider__fill').addClass('evening');
 
-			$('body').css({ 'background-color': '#202020' });
+			$('body').css({
+				'background-color': '#202020'
+			});
 			break;
 
 		case 'day':
@@ -184,11 +245,13 @@ function setTheme(mode) {
 			$('.rangeslider__fill').removeClass('evening');
 			$('.rangeslider__fill').addClass('day');
 
-			$('body').css({ 'background-color': '#5fb0e8' });
+			$('body').css({
+				'background-color': '#5fb0e8'
+			});
 			break;
 
 		default:
-			console.warn('Bad theme requested: ' + mode);
+			console.warn('Unknown color theme requested: ' + mode);
 			break;
 	}
 
@@ -214,8 +277,12 @@ function switchBackground(mode) {
 	if (nextIndex > backsCount - 1)
 		nextIndex = 0;
 
-	$('body').css({ 'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')' });
-	$('#navi-button-' + SITE_MODE).css({ 'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')' });
+	$('body').css({
+		'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')'
+	});
+	$('#navi-button-' + SITE_MODE).css({
+		'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')'
+	});
 }
 
 function switchCurrentBackground() {
@@ -261,7 +328,7 @@ function toggleNavi() {
 	} else {
 		navi.show();
 		$('#navi-logo-standalone').hide();
-		
+
 	}
 }
 
