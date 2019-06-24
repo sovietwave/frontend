@@ -420,7 +420,7 @@ function setTrackInfo (track) {
 		artistObj.text(trackStruct['artist']);
 		$("#player-title").text(trackStruct['title']);
 
-		if (trackStruct['city']) {
+		if (trackStruct['city'] && trackStruct['city'] !== "Unknown") {
 			$('#player-city').text(trackStruct['city']);
 		} else {
 			$('#player-city').html('&nbsp;');
