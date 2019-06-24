@@ -5,9 +5,9 @@ var localStorageAvailable = false,
 var backs = {
 	"day": {
 		"backs": [
-			"/assets/sprites/day0.jpg",
-			"/assets/sprites/day1.jpg",
-			"/assets/sprites/day2.jpg",
+			//"/assets/sprites/day0.jpg",
+			//"/assets/sprites/day1.jpg",
+			//"/assets/sprites/day2.jpg",
 			"/assets/sprites/day3.jpg",
 			"/assets/sprites/day4.jpg"
 		],
@@ -21,9 +21,9 @@ var backs = {
 
 	"evening": {
 		"backs": [
-			"/assets/sprites/evening0.jpg",
-			"/assets/sprites/evening1.jpg",
-			"/assets/sprites/evening2.jpg",
+			//"/assets/sprites/evening0.jpg",
+			//"/assets/sprites/evening1.jpg",
+			//"/assets/sprites/evening2.jpg",
 			"/assets/sprites/evening3.jpg",
 			"/assets/sprites/evening4.jpg"
 		],
@@ -37,9 +37,9 @@ var backs = {
 
 	"night": {
 		"backs": [
-			"/assets/sprites/night0.jpg",
-			"/assets/sprites/night1.jpg",
-			"/assets/sprites/night2.jpg",
+			//"/assets/sprites/night0.jpg",
+			//"/assets/sprites/night1.jpg",
+			//"/assets/sprites/night2.jpg",
 			"/assets/sprites/night3.jpg",
 			"/assets/sprites/night4.jpg"
 		],
