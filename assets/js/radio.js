@@ -329,6 +329,31 @@ function splitTrackInfo(track) {
 	};
 }
 
+function setArtistLink(link) {
+
+	var artistObj = $('#player-artist-link');
+
+	if (link) {
+		artistObj.attr('href', link);
+
+		artistObj.css({
+			'text-decoration': 'underline'
+		});
+
+		artistObj.off();
+	} else {
+		artistObj.attr('href', '#');
+
+		artistObj.css({
+			'text-decoration': 'none'
+		});
+
+		artistObj.click(function() {
+			return false;
+		});
+	}
+}
+
 function setTrackInfo(track) {
 
 	if (!track)
@@ -336,8 +361,7 @@ function setTrackInfo(track) {
 
 	var trackToDisplay = '',
 		trackStruct = {},
-		artistLink = "",
-		artistObj = $('#player-artist');
+		artistLink = "";
 
 	if (typeof track === 'string') {
 
@@ -353,15 +377,8 @@ function setTrackInfo(track) {
 
 			$("#player-title").text(track);
 
-			artistObj.css({
-				'text-decoration': 'none'
-			});
-
-			artistObj.attr('href', '#');
-			artistObj.click(function() {
-				return false;
-			});
-			artistObj.html('&nbsp;');
+			setArtistLink(undefined);
+			$("#player-artist-link").html('&nbsp;');
 		}
 
 
@@ -386,6 +403,7 @@ function setTrackInfo(track) {
 				trackStruct = splitTrackInfo(track['payload']['raw_title']);
 
 				showingTrackStruct = {
+					status: status,
 					payload: trackStruct
 				};
 				trackToDisplay = showingTrackStruct['payload']['artist'] + ' – ' + showingTrackStruct['payload']['title'];
@@ -400,19 +418,12 @@ function setTrackInfo(track) {
 		}
 
 		if (artistLink) {
-			artistObj.attr('href', artistLink);
-			artistObj.css({
-				'text-decoration': 'underline'
-			});
-			artistObj.off();
+			setArtistLink(artistLink);
 		} else {
-			artistObj.attr('href', '#');
-			artistObj.click(function() {
-				return false;
-			});
+			setArtistLink(undefined);
 		}
 
-		artistObj.text(trackStruct['artist']);
+		$("#player-artist-link").text(trackStruct['artist']);
 		$("#player-title").text(trackStruct['title']);
 
 		if (trackStruct['city'] && trackStruct['city'] !== "Unknown") {
