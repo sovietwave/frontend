@@ -8,7 +8,7 @@
 		<meta name="keywords" content="радио, ссср, советское, советская волна, советвейв, советвэйв,
 radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, ussr, soviet union">
 
-		<meta property="og:image" content="https://sovietwave.su/assets/sprites/social.jpg">
+		<meta property="og:image" content="https://<?php echo($_SERVER['HTTP_HOST']); ?>/assets/sprites/social.jpg">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-title" content="Советская волна">
 		<meta name="application-name" content="Советская волна">
