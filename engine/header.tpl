@@ -45,4 +45,17 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 	<script type="text/javascript">
 		var SITE_MODE = '<?php echo ($content['site_mode']); ?>';
 	</script>
+	
+	<a href="https://vk.com/volna2_fest" target="_blank">
+    <div id="sv-fest-2">
+    <table align="center" height="100%">
+      <tr valign="middle">
+      <td align="right" width="300">Музыкальный<br>фестиваль</td>
+      <td><img src="assets/sprites/volna2.png" hspace="7" height="52"></td>
+      <td align="left" width="300">10 Августа<br>Москва</td>
+      </tr>      
+    </table>
+    </div>
+    </a>
+
 	<div id="grid">

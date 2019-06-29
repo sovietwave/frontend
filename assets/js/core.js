@@ -5,7 +5,7 @@ var localStorageAvailable = false,
 var backs = {
 	"day": {
 		"backs": [
-			//"/assets/sprites/day0.jpg",
+			"/assets/sprites/day0.jpg",
 			//"/assets/sprites/day1.jpg",
 			//"/assets/sprites/day2.jpg",
 			"/assets/sprites/day3.jpg",
@@ -21,7 +21,7 @@ var backs = {
 
 	"evening": {
 		"backs": [
-			//"/assets/sprites/evening0.jpg",
+			"/assets/sprites/evening0.jpg",
 			//"/assets/sprites/evening1.jpg",
 			//"/assets/sprites/evening2.jpg",
 			"/assets/sprites/evening3.jpg",
@@ -37,7 +37,7 @@ var backs = {
 
 	"night": {
 		"backs": [
-			//"/assets/sprites/night0.jpg",
+			"/assets/sprites/night0.jpg",
 			//"/assets/sprites/night1.jpg",
 			//"/assets/sprites/night2.jpg",
 			"/assets/sprites/night3.jpg",
@@ -295,10 +295,12 @@ function toggleLinks() {
 	if ($("#panel").is(':visible')) {
 		$("#panel").hide();
 		$('#air-active-overlay').hide();
+		/*$('#sv-fest-2').show();*/
 	} else {
 		$("#air-panel").hide();
 		$("#panel").show();
 		$('#air-active-overlay').show();
+		/*$('#sv-fest-2').hide();*/
 	}
 }
 
@@ -306,10 +308,12 @@ function toggleAirPanel() {
 	if ($("#air-panel").is(':visible')) {
 		$("#air-panel").hide();
 		$('#air-active-overlay').hide();
+		/*$('#sv-fest-2').show();*/
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
 		$('#air-active-overlay').show();
+		/*$('#sv-fest-2').hide();*/
 	}
 }
 
@@ -317,19 +321,33 @@ function hideLeftPanels() {
 	$("#air-panel").hide();
 	$("#panel").hide();
 	$('#air-active-overlay').hide();
+	/*$('#sv-fest-2').show();*/
 }
 
 function toggleNavi() {
 	var navi = $('#navi');
 
-	if (navi.is(':visible')) {
-		$('#navi-logo-standalone').show();
-		navi.hide();
-	} else {
-		navi.show();
-		$('#navi-logo-standalone').hide();
 
+
+	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
+		$("#panel").hide();
+		$("#air-panel").hide();
+		$('#air-active-overlay').hide();
+
+	} else{
+
+		if (navi.is(':visible')) {
+			$('#navi-logo-standalone').show();
+			/*$("#sv-fest-2").hide();*/
+			navi.hide();
+		} else {
+			navi.show();
+			$('#navi-logo-standalone').hide();
+			/*$("#sv-fest-2").show();*/
+
+		}
 	}
+
 }
 
 $(document).ready(init);
