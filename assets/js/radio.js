@@ -6,20 +6,17 @@ var
 	airTitleHeight = 135,
 	trackHistoryAmount = 0;
 
-function rnd(min, max)
-{
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function rnd(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function randword()
-{
-    var s = '';
-    var ltr = 'qwertyuiopasdfghjklzxcvbnm';
-    while (s.length < 20)
-    {
-        s += ltr[rnd(0, 20)];
-    }
-    return s;
+function randword() {
+	var s = '';
+	var ltr = 'qwertyuiopasdfghjklzxcvbnm';
+	while (s.length < 20) {
+		s += ltr[rnd(0, 20)];
+	}
+	return s;
 }
 
 var radioPlayer = null,
@@ -31,20 +28,18 @@ var radioPlayer = null,
 	trackTimer = null;
 
 
-function radioInit()
-{
-	try
-	{
+function radioInit() {
+	try {
 
 		var a = document.createElement('audio');
 		if (a.canPlayType('audio/aac') != 'no' &&
 
 			// Opera has broken AAC decoder
 			(navigator.userAgent.indexOf("Opera") == -1 &&
-			navigator.userAgent.indexOf("OPR") == -1 &&
+				navigator.userAgent.indexOf("OPR") == -1 &&
 
-			// Some androids can't play AAC too.
-			navigator.userAgent.indexOf("Android") == -1))
+				// Some androids can't play AAC too.
+				navigator.userAgent.indexOf("Android") == -1))
 
 			currentChannel = 'soviet';
 		else
@@ -55,82 +50,70 @@ function radioInit()
 		delete a;
 
 		// setupVolumeControl(); 	
-		
+
 		// Restore volume settings
 		radioSetVolume(radioGetVolume(), false);
-		
+
 		// Initialize track info.
 		requestTrackInfo();
 
 		requestListenersCount();
 
 		playerReady = true;
-	}
-	catch (e)
-	{
-		error ("Error: " + e.message);
+	} catch (e) {
+		error("Error: " + e.message);
 		playerReady = false;
 	}
 }
 
-function radioPlay(channel)
-{
+function radioPlay(channel) {
 
-    channel = channel || currentChannel;
+	channel = channel || currentChannel;
 
-	if (playerReady)
-	{
+	if (playerReady) {
 		// Create a player object
 		radioPlayer = document.createElement('audio');
-		radioPlayer.src = '//station.waveradio.org/'+channel+'?'+randword(); // fixes buffering
+		radioPlayer.src = '//station.waveradio.org/' + channel + '?' + randword(); // fixes buffering
 		radioPlayer.title = showingTrack;
 		radioPlayer.volume = radioGetVolume() / 100;
 
-		radioPlayer.onerror = function()
-		{
-			if (nowPlaying)
-			{
+		radioPlayer.onerror = function() {
+			if (nowPlaying) {
 				setTempTitle('Сбой, рестарт через секунду...');
 				radioStop();
 
 				clearTimeout(playerRestartTimer);
 				playerRestartTimer = setTimeout(function() {
-						radioPlay();
-					}, 1000);
+					radioPlay();
+				}, 1000);
 			}
 		}
 
-		radioPlayer.oncanplay = function()
-		{
+		radioPlayer.oncanplay = function() {
 			setTrackInfo(showingTrackStruct);
 			clearTimeout(playerRestartTimer);
 		}
 
-		radioPlayer.onstalled = function()
-		{
+		radioPlayer.onstalled = function() {
 			setTempTitle('Низкая скорость, жду буфер...');
 		}
 
-		radioPlayer.onloadstart = function()
-		{
+		radioPlayer.onloadstart = function() {
 			if (nowPlaying)
 				setTempTitle('Буферизация...');
 		}
-		
+
 		radioPlayer.play();
-		
+
 		$('#player-switch').attr('class', 'player-switch-playing');
-		
+
 		setVal('player_on', 1);
-	}
-		else
-	error ('ERR: Still loading');
+	} else
+		error('ERR: Still loading');
 }
 
-function radioStop()
-{
-	if (playerReady && radioPlayer)
-	{
+function radioStop() {
+	if (playerReady && radioPlayer) {
 		radioPlayer.pause();
 		radioPlayer.src = '';
 		radioPlayer.remove();
@@ -138,90 +121,75 @@ function radioStop()
 
 		// Make an object to be NULL to get radioToggle() correct work
 		radioPlayer = null;
-		
+
 		$('#player-switch').attr('class', 'player-switch-stalled');
 		setVal('player_on', 0);
 	}
 }
 
 
-function radioGetVolume()
-{		
+function radioGetVolume() {
 	var savedVol = getVal('volume');
 
-    if (savedVol == null)
-        return 100;
-    else
-        return parseInt(savedVol);
+	if (savedVol == null)
+		return 100;
+	else
+		return parseInt(savedVol);
 }
 
-function radioSetVolume(value, userAct)
-{
+function radioSetVolume(value, userAct) {
 	userAct = userAct || false;
 	if (value > 100)
 		value = 100;
 	else if (value < 0)
 		value = 0;
-			
-    if (radioPlayer != null)
-    {
-        radioPlayer.volume = (value / 100);
-    }
-		
-	if (userAct)
-	{
+
+	if (radioPlayer != null) {
+		radioPlayer.volume = (value / 100);
+	}
+
+	if (userAct) {
 		radioSaveVolume(value);
 	}
-	
+
 	setVolValue(value);
 }
 
-function radioSaveVolume(value)
-{
-    setVal('volume', value);
+function radioSaveVolume(value) {
+	setVal('volume', value);
 }
 
-function radioToggle(channel)
-{
+function radioToggle(channel) {
 	channel = channel || currentChannel;
-	if (!playerReady)
-	{
-		error ('Cannot start player, did not initialize yet');
+	if (!playerReady) {
+		error('Cannot start player, did not initialize yet');
 		return false;
 	}
-    if (radioPlayer == null)
-    {
-        try
-        {
-        	nowPlaying = true;
-            radioPlay(channel);
-        }
-        catch (e)
-        {
-            error('Error: ' + e.message);
-        }
-    }
-    else
-    {
-        try
-        {
-        	nowPlaying = false;
-            radioStop();
-        }
-        catch (e)
-        {
-            error('Error: ' + e.message);
-        }
-    }
+	if (radioPlayer == null) {
+		try {
+			nowPlaying = true;
+			radioPlay(channel);
+		} catch (e) {
+			error('Error: ' + e.message);
+		}
+	} else {
+		try {
+			nowPlaying = false;
+			radioStop();
+		} catch (e) {
+			error('Error: ' + e.message);
+		}
+	}
 }
 
-function setVolValue(value)
-{	
-    if (value > 100)
-        return;
-	
+function setVolValue(value) {
+	if (value > 100)
+		return;
+
 	// Workaround for this shit called rangeslider
-	setTimeout(function(){$('#volume').val(value).change()}, 50);
+	setTimeout(function() {
+		$('#volume').val(value).change()
+	}, 50);
 }
 
 
@@ -233,16 +201,18 @@ function requestTrackInfo() {
 
 function getCurrentTrack(onSuccess, isBrief) {
 	$.ajax({
-	        url: '//core.waveradio.org/public/current',
-	        data: {
-	        	station: 'soviet',
-	        	brief: (isBrief ? '1' : '0')
-	        },
-	        dataType: 'json',
-	        crossDomain: true
-	    }).done(function (data) {
-	       	onSuccess(data);
-	    }).fail(function(jq, jx) { setTrackInfo('- нет связи -'); });
+		url: '//core.waveradio.org/public/current',
+		data: {
+			station: 'soviet',
+			brief: (isBrief ? '1' : '0')
+		},
+		dataType: 'json',
+		crossDomain: true
+	}).done(function(data) {
+		onSuccess(data);
+	}).fail(function(jq, jx) {
+		setTrackInfo('- нет связи -');
+	});
 }
 
 function getTrackHistory() {
@@ -252,17 +222,19 @@ function getTrackHistory() {
 	console.log(calculateHistoryViewport(), trackHistoryItemHeight, amount);
 
 	$.ajax({
-	        url: '//core.waveradio.org/public/history',
-	        data: {
-	        	station: 'soviet',
-	        	"amount": amount,
-	        	extend: 1 // to enable artist links
-	        },
-	        dataType: 'json',
-	        crossDomain: true
-	    }).done(function (data) {
-	       	processTrackHistory(data);
-	    }).fail(function(jq, jx) { console.warn("History error:", jq, jx); });
+		url: '//core.waveradio.org/public/history',
+		data: {
+			station: 'soviet',
+			"amount": amount,
+			extend: 1 // to enable artist links
+		},
+		dataType: 'json',
+		crossDomain: true
+	}).done(function(data) {
+		processTrackHistory(data);
+	}).fail(function(jq, jx) {
+		console.warn("History error:", jq, jx);
+	});
 }
 
 /*
@@ -300,12 +272,12 @@ function processTrackHistory(data) {
 		case 0:
 
 			data['payload'].forEach(function(track) {
-				var trackDate = new Date(+track['start_time']*1000);
+				var trackDate = new Date(+track['start_time'] * 1000);
 
 				// Time
-				historyHtml +=  '<div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' + 
-														   ((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() + 
-								'</div>';
+				historyHtml += '<div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' +
+					((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() +
+					'</div>';
 
 
 				// Song
@@ -319,7 +291,7 @@ function processTrackHistory(data) {
 					historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
 				}
 
-				
+
 				// separator
 				historyHtml += '&nbsp;&mdash;&nbsp;';
 
@@ -338,10 +310,10 @@ function processTrackHistory(data) {
 }
 
 function processBriefResult(csRes) {
-	
+
 	if (tempShowing)
 		return;
-	
+
 	if (csRes['payload'] !== lastTrack) {
 		lastTrack = csRes['payload'];
 
@@ -350,14 +322,14 @@ function processBriefResult(csRes) {
 	}
 }
 
-function splitTrackInfo (track) {
+function splitTrackInfo(track) {
 	return {
 		artist: track.substr(0, track.indexOf(' - ')),
 		title: track.substr(track.indexOf(' - ') + 3)
 	};
 }
 
-function setTrackInfo (track) {
+function setTrackInfo(track) {
 
 	if (!track)
 		return;
@@ -365,17 +337,34 @@ function setTrackInfo (track) {
 	var trackToDisplay = '',
 		trackStruct = {},
 		artistLink = "",
-		artistObj  = $('#player-artist');
+		artistObj = $('#player-artist');
 
 	if (typeof track === 'string') {
-		trackToDisplay = track;
-		
-		$("#player-title").text(track);
 
-		artistObj.css({'text-decoration' : 'none'});
-		artistObj.attr('href', '#');
-		artistObj.click(function(){ return false; });
-		artistObj.html('&nbsp;');
+		var splitAttempt = splitTrackInfo(track);
+
+		if (splitAttempt.artist && splitAttempt.title) {
+			setTrackInfo({ // simulate successful server response
+				status: 2,
+				payload: splitAttempt
+			});
+		} else {
+			trackToDisplay = track;
+
+			$("#player-title").text(track);
+
+			artistObj.css({
+				'text-decoration': 'none'
+			});
+
+			artistObj.attr('href', '#');
+			artistObj.click(function() {
+				return false;
+			});
+			artistObj.html('&nbsp;');
+		}
+
+
 
 	} else if (typeof track === 'object') {
 		switch (track['status']) {
@@ -396,7 +385,9 @@ function setTrackInfo (track) {
 			case 1: // server couldn't parse track info and sends us what it had
 				trackStruct = splitTrackInfo(track['payload']['raw_title']);
 
-				showingTrackStruct = {payload: trackStruct};
+				showingTrackStruct = {
+					payload: trackStruct
+				};
 				trackToDisplay = showingTrackStruct['payload']['artist'] + ' – ' + showingTrackStruct['payload']['title'];
 
 				showingTrack = trackToDisplay;
@@ -404,17 +395,21 @@ function setTrackInfo (track) {
 				break;
 
 			default:
-				error ('Bad track info');
+				error('Bad track info');
 				return;
 		}
 
 		if (artistLink) {
 			artistObj.attr('href', artistLink);
-			artistObj.css({'text-decoration' : 'underline'});
+			artistObj.css({
+				'text-decoration': 'underline'
+			});
 			artistObj.off();
 		} else {
 			artistObj.attr('href', '#');
-			artistObj.click(function(){ return false; });
+			artistObj.click(function() {
+				return false;
+			});
 		}
 
 		artistObj.text(trackStruct['artist']);
@@ -440,23 +435,25 @@ function setTrackInfo (track) {
 
 function setTempTitle(title) {
 	tempShowing = true;
-	
+
 	setTrackInfo(title);
 	clearTimeout(trackTimer);
-	trackTimer = setTimeout(function() {tempShowing = false; setTrackInfo(showingTrackStruct); }, 5000);
+	trackTimer = setTimeout(function() {
+		tempShowing = false;
+		setTrackInfo(showingTrackStruct);
+	}, 5000);
 }
 
 
 // Sovietwave-specific code but may be used anywhere
-function requestListenersCount()
-{
+function requestListenersCount() {
 	setTimeout(requestListenersCount, 20000);
 
-    $.ajax({
-        url: '//station.waveradio.org/status-json.xsl',
-        dataType: 'json',
-        crossDomain: true
-    }).done(calculateListenersCount);
+	$.ajax({
+		url: '//station.waveradio.org/status-json.xsl',
+		dataType: 'json',
+		crossDomain: true
+	}).done(calculateListenersCount);
 }
 
 
@@ -465,7 +462,7 @@ function calculateListenersCount(data) {
 	var listenersCount = 0,
 		currentPos = 1;
 
-	data.icestats.source.forEach(function (mount) {
+	data.icestats.source.forEach(function(mount) {
 		currentPos++;
 
 		if (mount.server_name.indexOf('Sovietwave') > -1)
