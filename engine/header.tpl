@@ -4,7 +4,7 @@
 		<meta name="viewport" content="initial-scale=1.0">
 		<meta charset="utf-8">
 
-		<meta name="description" content="Современная отечественная музыка, мечтающая о прошлом. Modern music dreaming of the past.">
+		<meta name="description" content="Современная отечественная музыка, мечтающая о прошлом.">
 		<meta name="keywords" content="радио, ссср, советское, советская волна, советвейв, советвэйв,
 radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, ussr, soviet union">
 
