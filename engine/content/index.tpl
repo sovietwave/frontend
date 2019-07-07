@@ -5,7 +5,9 @@
       <div id="player">
         
         <div id="player-artist" class="player-track<?php if ($content['site_mode'] == 'night') echo (' night'); ?>">
-          <a id="player-artist-link" target="_blank" title="Посетить страницу исполнителя">- связь с Центром -</a>
+          <a target="_blank" title="Посетить страницу исполнителя">
+            <span id="player-artist-link">- связь с Центром -</span>
+          </a>
         </div>
       
         <div id="player-title" class="player-track<?php if ($content['site_mode'] == 'night') echo (' night'); ?>">

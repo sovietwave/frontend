@@ -302,6 +302,8 @@ function toggleLinks() {
 		$('#air-active-overlay').show();
 		/*$('#sv-fest-2').hide();*/
 	}
+
+	this.togglePlayer();
 }
 
 function toggleAirPanel() {
@@ -314,6 +316,18 @@ function toggleAirPanel() {
 		$("#air-panel").show();
 		$('#air-active-overlay').show();
 		/*$('#sv-fest-2').hide();*/
+	}
+
+	this.togglePlayer();
+}
+
+function togglePlayer() {
+	if (window.screen.availWidth < 975) {
+		if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
+			$("#player-wrapper").hide();
+		} else {
+			$("#player-wrapper").show();
+		}
 	}
 }
 
@@ -334,20 +348,19 @@ function toggleNavi() {
 		$("#air-panel").hide();
 		$('#air-active-overlay').hide();
 
-	} else{
+	} else {
 
 		if (navi.is(':visible')) {
-			$('#navi-logo-standalone').show();
 			/*$("#sv-fest-2").hide();*/
 			navi.hide();
 		} else {
 			navi.show();
-			$('#navi-logo-standalone').hide();
 			/*$("#sv-fest-2").show();*/
 
 		}
 	}
 
+	this.togglePlayer();
 }
 
 $(document).ready(init);
