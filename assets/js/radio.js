@@ -271,11 +271,11 @@ function processTrackHistory(data) {
 	switch (+data['status']) {
 		case 0:
 
-			data['payload'].forEach(function(track) {
+			data['payload'].forEach(function (track) {
 				var trackDate = new Date(+track['start_time'] * 1000);
 
 				// Time
-				historyHtml += '<div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' +
+				historyHtml += '<div class="air-playlist-item"><div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' +
 					((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() +
 					'</div>';
 
@@ -297,7 +297,7 @@ function processTrackHistory(data) {
 
 				// title
 				historyHtml += '<span class="air-song-title">' + track['track_title'] + '</span>';
-				historyHtml += '</div>';
+				historyHtml += '</div></div>';
 			});
 			break;
 

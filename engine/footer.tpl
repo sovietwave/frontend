@@ -74,7 +74,7 @@
     </div>
 
     <!-- NAVI -->
-    <div id="navi-logo-standalone"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
+    <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
     <div id="navi">
 
        
@@ -87,15 +87,13 @@
         <div class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" >Фон</div>        
       </div>-->
 
-      <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
-
        <div class="listeners">
         <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">-1</span>
       </div>
       
       <div id="player-volume">
-        <img src="/assets/sprites/icons/volume.png" align="absmiddle" /><input type="range" min="0" max="100" step="5"
-          id="volume" />
+        <img src="/assets/sprites/icons/volume.png" align="absmiddle" />
+        <input class="range-input" type="range" min="0" max="100" step="5" id="volume" />
       </div>
     
        <div class="switch_back">
