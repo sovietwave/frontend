@@ -87,6 +87,7 @@ a.night
 	-ms-box-decoration-break: clone;
 	-o-box-decoration-break: clone;
 	box-decoration-break: clone;
+	text-decoration: none !important;
 }
 
 #player-title
