@@ -295,12 +295,12 @@ function toggleLinks() {
 	if ($("#panel").is(':visible')) {
 		$("#panel").hide();
 		$('#air-active-overlay').hide();
-		/*$('#sv-fest-2').show();*/
+		$('#sv-fest-2').show();
 	} else {
 		$("#air-panel").hide();
 		$("#panel").show();
 		$('#air-active-overlay').show();
-		/*$('#sv-fest-2').hide();*/
+		$('#sv-fest-2').hide();
 	}
 
 	this.togglePlayer();
@@ -310,12 +310,12 @@ function toggleAirPanel() {
 	if ($("#air-panel").is(':visible')) {
 		$("#air-panel").hide();
 		$('#air-active-overlay').hide();
-		/*$('#sv-fest-2').show();*/
+		$('#sv-fest-2').show();
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
 		$('#air-active-overlay').show();
-		/*$('#sv-fest-2').hide();*/
+		$('#sv-fest-2').hide();
 	}
 
 	this.togglePlayer();
@@ -335,7 +335,7 @@ function hideLeftPanels() {
 	$("#air-panel").hide();
 	$("#panel").hide();
 	$('#air-active-overlay').hide();
-	/*$('#sv-fest-2').show();*/
+	$('#sv-fest-2').show();
 }
 
 function toggleNavi() {
@@ -351,11 +351,11 @@ function toggleNavi() {
 	} else {
 
 		if (navi.is(':visible')) {
-			/*$("#sv-fest-2").hide();*/
+			$("#sv-fest-2").hide();
 			navi.hide();
 		} else {
 			navi.show();
-			/*$("#sv-fest-2").show();*/
+			$("#sv-fest-2").show();
 
 		}
 	}

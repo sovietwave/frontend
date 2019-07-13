@@ -6,10 +6,21 @@
         <div id="links-title">#sovietwave</div>
         <div id="panel-top-gradient"></div>
 
-<!--
-        <div id="links-volna2-icon"><a href="https://vk.com/soviet_wave" id="links-button-fest"
+        <!--
+        <a href="https://vk.com/soviet_wave" id="links-button-fest"
+          class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank">
+
+        <table align="center">
+
+          <tr><td><img src="assets/sprites/icons/volna2_sticker.png" id="links-button-fest-icon"/></td></tr>
+          <tr><td>Фестиваль</td></tr>
+        </table>
+        </a>
+      -->
+
+        <a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" id="links-button-fest"
           class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
-            src="assets/sprites/icons/volna2_sticker.png" class="links-icon" />Фестиваль</a></div>-->
+            src="assets/sprites/icons/volna2.png" class="links-icon" />Фестиваль</a>
 
         <a href="https://vk.com/soviet_wave" id="links-button-vk"
           class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"><img
@@ -44,8 +55,10 @@
         <div id="links-text-m3u">
           Файл для проигрывателей
         </div>
-
+        
+        <!--
         <div id="links-madeby"><a href="youth.su">Сделано в<br><img src="assets/sprites/icons/youth.png"></a></div>
+        -->
 
         <div id="panel-bottom-gradient"></div>
 
