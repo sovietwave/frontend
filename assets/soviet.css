@@ -627,10 +627,7 @@ a.night
 {
 	#player
 	{
-		margin-top: 10px; 
-		position: static;
-		width: 100%;
-		text-align: center;
+
 	}
 
 	.player-switch-stalled
@@ -645,12 +642,7 @@ a.night
 		background: url('sprites/paused.png') no-repeat center;
 	}
 
-	#player-controls
-	{
-		padding-top: 0px;
-	}
-
-	#player-volume, .listeners, .switch_back, #sv-fest-2
+	#player-volume, .listeners, .switch_back
 	{
 		display: none;
 	}
@@ -660,25 +652,6 @@ a.night
 		display: none;
 	}
 
-	#navi-button-chat
-	{
-		display: none;
-	}
-
-	#navi-button-fb
-	{
-		display: none;
-	}
-
-	#navi-button-sc
-	{
-		display: none;
-	}
-
-	#navi-modes
-	{
-		display: none;
-	}
 
 	.listeners
 	{
@@ -692,20 +665,15 @@ a.night
 		width: 60%;
 	}
 
-	#footer-madeby
-	{
-		display: none;
-	}
-
 	#navi-links
 	{
-		grid-column: 1/4;
-		font-size: 18px;
+		grid-column: 1/5;
+		font-size: 18pt;
 	}
 
 	#navi-air {
-		grid-column: 9/12;
-		font-size: 18px;
+		grid-column: 8/12;
+		font-size: 18pt;
 	}
 
 	#player-wrapper
@@ -713,13 +681,13 @@ a.night
 		grid-column-start: 2;
 		grid-column-end: 11;
 		grid-row-start: 5;
-		grid-row-end: 30;
+		grid-row-end: 20;
 	}
 
 	#player-artist
 	{
-		font-size: 20pt;
-		grid-row: 2/10;
+		font-size: 32pt;
+		grid-row: 2/7;
 	}
 
 	#player-artist span {
@@ -729,15 +697,15 @@ a.night
 
 	#player-title
 	{
-		font-size: 20pt;
-		grid-row: 11/19;
+		font-size: 32pt;
+		grid-row: 8/13;
 	}
 
 	#player-switch
 	{
 		width: 80px;
 		height: 80px;
-		grid-row: 19/20;
+		grid-row: 14/19;
 	}
 
 	#player-city
@@ -752,7 +720,7 @@ a.night
 
 	#links
 	{
-		font-size: 12pt;
+		font-size: 18pt;
 	}
 
 	#links img {
@@ -838,7 +806,7 @@ a.night
 	-o-transition: All 0.4s ease;
 	text-shadow: 0px 0px 2px rgba(240, 230, 210, 1);
 
-		-ms-user-select: none;
+	-ms-user-select: none;
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
