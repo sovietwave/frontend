@@ -138,7 +138,7 @@ a.night
 	width: 100%;
 
     z-index: 20;
-    background: rgba(255,255,255,0.5);
+
 
 	font-size: 22pt;
 	letter-spacing: 2pt;
@@ -593,7 +593,6 @@ a.night
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none;  /* IE 10+ */
-
 }
 
 #air-playlist::-webkit-scrollbar { /* WebKit */
@@ -623,7 +622,8 @@ a.night
 	/*text-decoration: underline;*/
 }
 
-@media handheld, only screen and (max-width: 975px)
+/* M ВЁРСТКА - Планшеты, Приложение ВК - Ландшафтный ширина < 1000px */
+@media handheld, only screen and (max-width: 1000px)
 {
 	#player
 	{
@@ -642,22 +642,25 @@ a.night
 		background: url('sprites/paused.png') no-repeat center;
 	}
 
-	#player-volume, .listeners, .switch_back
-	{
-		display: none;
-	}
-
 	.navi-text-pconly
 	{
 		display: none;
 	}
 
-
 	.listeners
 	{
-		position: absolute;
-		left: 10px;
-		width: 50px;
+		grid-column: 5;
+		font-size: 18pt;
+	}
+
+	.listeners img, #player-volume img {
+		height: 16pt;
+		width: auto;
+		padding-right: 10px;
+	}
+
+	.switch_back img {
+		height: 18pt;
 	}
 
 	#navi-left {
@@ -667,12 +670,10 @@ a.night
 
 	#navi-links
 	{
-		grid-column: 1/5;
 		font-size: 18pt;
 	}
 
 	#navi-air {
-		grid-column: 8/12;
 		font-size: 18pt;
 	}
 
@@ -686,7 +687,7 @@ a.night
 
 	#player-artist
 	{
-		font-size: 32pt;
+		font-size: 28pt;
 		grid-row: 2/7;
 	}
 
@@ -697,7 +698,7 @@ a.night
 
 	#player-title
 	{
-		font-size: 32pt;
+		font-size: 28pt;
 		grid-row: 8/13;
 	}
 
@@ -710,13 +711,9 @@ a.night
 
 	#player-city
 	{
-		font-size: 16pt;
+		font-size: 18pt;
 	}
 
-	#panel, #air-panel
-	{
-		grid-column: 1 / 12;		
-	}
 
 	#links
 	{
@@ -737,30 +734,147 @@ a.night
 	}
 }
 
-@media handheld, (orientation: landscape) and (max-width: 1024px)
+/* S ВЁРСТКА - Прортретная для телефонов */
+@media handheld, only screen and (max-width: 800px)
 {
 	#player
 	{
-		margin-top: 20px; /* fest tmp */
+		margin-top: 50px;
 	}
 
-	.player-track
-	{
-		font-size: 28pt;
-	}
-
-	#player-controls
-	{
-		padding-top: 0px;
-	}
-}
-
-/* Special for АЙФОУН and АЙПЭЭЭЭД */
-@media handheld, only screen and (max-width: 640px)
-{
-	#navi-button-m3u
+	#player-volume, .switch_back
 	{
 		display: none;
+	}
+
+	.listeners
+	{
+		position: absolute;
+		left: 50%;
+		top:-40px;
+		width: 100px;
+		grid-column: 1;
+	}
+
+	#navi-left {
+		left: 70px;
+		width: 60%;
+	}
+
+	#navi-links
+	{
+		grid-column: 1/5;
+		font-size: 12pt;
+	}
+
+	#navi-air {
+		grid-column: 8/12;
+		font-size: 12pt;
+	}
+
+	#player-wrapper
+	{
+		grid-column-start: 2;
+		grid-column-end: 11;
+		grid-row-start: 1;
+		grid-row-end: 30;
+	}
+
+	#player-artist
+	{
+		font-size: 18pt;
+		grid-row: 2/6;
+		text-align: center;
+	}
+
+	#player-artist span {
+
+		box-shadow: inset 0 -2px 0 rgba(238, 241,  220, 0.5);
+		-webkit-box-shadow: inset 0 -2px 0 rgba(238, 241,  220, 0.5);
+
+	}
+
+	#player-title
+	{
+		font-size: 18pt;
+		grid-row: 6/10;
+		text-align: center;
+	}
+
+	#player-switch
+	{
+		width: 80px;
+		height: 80px;
+		grid-row: 11/16;
+	}
+
+	#player-city
+	{
+		font-size: 18pt;
+		grid-row: 17/21;
+	}
+
+	#panel, #air-panel
+	{
+		grid-column: 1 / 12;		
+	}
+
+	#links
+	{
+		font-size: 12pt;
+	}
+
+	#links img {
+		width: 23px;
+	}
+
+	#links-madeby img {
+		width: 100px;
+	}
+
+	#links-title
+	{
+		font-size: 18pt;
+	}
+
+	#navi-logo {
+		position: fixed;
+		bottom: 0;
+		width: 110px;
+		height: 50px;
+		z-index: 1000;
+		left: 50%;
+	    transform: translateX(-50%);
+	    opacity: 0.8;
+	}
+
+
+	#navi-logo img {
+		display: block;
+		padding-top: 3px;
+		padding-left: 8px;
+		width: 100%;
+		height: auto;
+
+	    cursor: pointer;
+	}
+
+	#navi
+	{
+		height: 50px;
+
+		background: rgba(0,0,0,0.2);
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.5)), color-stop(20%, rgba(0,0,0,0.2)), color-stop(100%, rgba(0,0,0,0.2)));
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 100%);
+		background: -o-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 100%);
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.2) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+	}
+
+	#sv-fest-2{
+		visibility: hidden ;
 	}
 }
 
