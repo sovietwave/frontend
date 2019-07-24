@@ -265,7 +265,7 @@ main.night
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	margin-top: 20px;
+	margin-top: 40px;
 	text-align: center;
 	opacity: 0.85;
 }
@@ -325,7 +325,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 10px; 
+		margin-top: 50px; 
 		position: static;
 		width: 100%;
 		text-align: center;
@@ -426,7 +426,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 20px; /* fest tmp */
+		margin-top: 50px; /* fest tmp */
 	}
 
 	.player-track
