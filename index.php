@@ -3,7 +3,7 @@ require_once ('engine/content.php');
 require_once ('engine/trackstate.php');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 27);
+define ('CLIENT_VERSION', 28);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
