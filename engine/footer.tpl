@@ -105,7 +105,7 @@
       </div>
       
       <div id="player-volume">
-        <img src="/assets/sprites/icons/volume.png" align="absmiddle" />
+        <img id="volume-speaker" src="/assets/sprites/icons/volume.png" align="absmiddle" onclick="toggleMute()" />
         <input class="range-input" type="range" min="0" max="100" step="5" id="volume" />
       </div>
     

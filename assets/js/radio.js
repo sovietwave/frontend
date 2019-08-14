@@ -4,7 +4,8 @@ var
 	showingTrackStruct,
 	trackHistoryItemHeight = 48, // average
 	airTitleHeight = 135,
-	trackHistoryAmount = 0;
+	trackHistoryAmount = 0,
+	lastVolumeValue = 0;
 
 function rnd(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -188,10 +189,29 @@ function setVolValue(value) {
 
 	// Workaround for this shit called rangeslider
 	setTimeout(function() {
-		$('#volume').val(value).change()
+		$('#volume').val(value).change();
 	}, 50);
+
+	var speaker = $('#volume-speaker');
+	if (value > 0) {
+		speaker.attr('src', '/assets/sprites/icons/volume.png');
+	} else {
+		speaker.attr('src', '/assets/sprites/icons/mute.png');
+	}
 }
 
+function toggleMute() {
+	if (radioGetVolume() === 0) {
+		if (lastVolumeValue === 0) {
+			lastVolumeValue = 50;
+		}
+
+		radioSetVolume(lastVolumeValue, false);
+	} else {
+		lastVolumeValue = radioGetVolume();
+		radioSetVolume(0, false);
+	}
+}
 
 function requestTrackInfo() {
 	setTimeout(requestTrackInfo, 5000);
@@ -225,7 +245,7 @@ function getTrackHistory() {
 		url: '//core.waveradio.org/public/history',
 		data: {
 			station: 'soviet',
-			"amount": amount,
+			"amount": 100,
 			extend: 1 // to enable artist links
 		},
 		dataType: 'json',
