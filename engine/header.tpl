@@ -44,7 +44,7 @@ radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, u
 		<title>Радио &laquo;Советская волна&raquo;</title>
 	</head>
 	<body>
-		<header>
+		<!-- <header>
 			<div class="sv-fest"><a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" target="_blank">Приглашаем на фестиваль &laquo;ВОЛНА-2&raquo;</a></div>
-		</header>
+		</header> -->
 		<main<?php if ($content['site_mode'] == 'night') echo (' class="night"'); ?>>
