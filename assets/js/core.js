@@ -8,13 +8,15 @@ var backs =
 		"backs" : [
 			"/assets/sprites/day0.jpg",
 			"/assets/sprites/day1.jpg",
-			"/assets/sprites/day2.jpg"
+			"/assets/sprites/day2.jpg",
+			"/assets/sprites/day3.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-day0.png",
 			"/assets/sprites/btn-day1.png",
-			"/assets/sprites/btn-day2.png"
+			"/assets/sprites/btn-day2.png",
+			"/assets/sprites/btn-day3.png"
 		]
 	},
 
@@ -22,13 +24,15 @@ var backs =
 		"backs" : [
 			"/assets/sprites/evening0.jpg",
 			"/assets/sprites/evening1.jpg",
-			"/assets/sprites/evening2.jpg"
+			"/assets/sprites/evening2.jpg",
+			"/assets/sprites/evening3.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-evening0.png",
 			"/assets/sprites/btn-evening1.png",
-			"/assets/sprites/btn-evening2.png"
+			"/assets/sprites/btn-evening2.png",
+			"/assets/sprites/btn-evening3.png"
 		]
 	},
 
@@ -36,13 +40,15 @@ var backs =
 		"backs" : [
 			"/assets/sprites/night0.jpg",
 			"/assets/sprites/night1.jpg",
-			"/assets/sprites/night2.jpg"
+			"/assets/sprites/night2.jpg",
+			"/assets/sprites/night3.jpg"
 		],
 
 		"buttons" : [
 			"/assets/sprites/btn-night0.png",
 			"/assets/sprites/btn-night1.png",
-			"/assets/sprites/btn-night2.png"
+			"/assets/sprites/btn-night2.png",
+			"/assets/sprites/btn-night3.png"
 		]
 	}
 };
@@ -65,7 +71,11 @@ function init()
 	});
 
 	// Randomize fist pic
-	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
+	// currentIndex = rnd(0, backs[SITE_MODE].backs.length);
+
+	// Promote new backs by setting the last one by default
+	// -2 because switchBackground() increments the index automatically
+	currentIndex = backs[SITE_MODE].backs.length - 1;
 
 	setTheme(SITE_MODE);
 
