@@ -8,9 +8,8 @@ define ('CLIENT_VERSION', 26);
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
 
-
-
 $route = explode('/', $_GET['route']);
+
 
 if (empty(trim($route[0])))
 {
@@ -40,6 +39,7 @@ if ($route[0] === 'tracktype') {
 	}
 }
 
+// FIX IT !!!!!!!!
 $content_template = get_template ($route[0]);
 $page_title = get_title($route[0]);
 
@@ -108,7 +108,7 @@ $bg_color  = ($site_mode == 'day') ? '5fb0e8' : '202020';
 if (isset($_GET['ajax']))
 {
 	include_once ('engine/content/'.$content_template);
-	include_once ('engine/title_set.tpl');
+	// include_once ('engine/title_set.tpl');
 	die();
 }
 else
@@ -118,9 +118,12 @@ else
 	$content['background_color'] = $bg_color;
 	$content['title'] = $page_title.' &ndash; Советская волна';
 	$content['logo'] = '#sovietwave';
-	
-	include_once ('engine/header.tpl');
-	include_once ('engine/content/'.$content_template);
-	include_once ('engine/footer.tpl');
+
+	include_once ('engine/templates/index.tpl');
+
+	// include_once ('engine/content/'.$content_template);
+	// include_once ('engine/templates/footer.tpl');
+	// include_once ('engine/templates/navy.tpl');
+
 	die();
 }

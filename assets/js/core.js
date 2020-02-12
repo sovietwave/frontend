@@ -291,17 +291,26 @@ function switchCurrentBackground() {
 
 // yeah there could be more elegant solution
 // PRs are welcome ;3
+var linksToggled = false
 function toggleLinks() {
-	if ($("#panel").is(':visible')) {
-		$("#panel").hide();
-		$('#air-active-overlay').hide();
-		$('#sv-fest-2').show();
+	if (linksToggled){
+		$("#panel").css({"height": "0"});
+		linksToggled = true
 	} else {
-		$("#air-panel").hide();
-		$("#panel").show();
-		$('#air-active-overlay').show();
-		$('#sv-fest-2').hide();
+		$("#panel").css({"height": "300px"});
+		linksToggled = false
 	}
+
+	// if ($("#panel").is(':visible')) {
+	// 	$("#panel").hide();
+	// 	$('#air-active-overlay').hide();
+	// 	$('#sv-fest-2').show();
+	// } else {
+	// 	$("#air-panel").hide();
+	// 	$("#panel").show();
+	// 	$('#air-active-overlay').show();
+	// 	$('#sv-fest-2').hide();
+	// }
 
 	this.togglePlayer();
 }
