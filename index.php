@@ -1,6 +1,14 @@
 <?php
 require_once ('engine/content.php');
 require_once ('engine/trackstate.php');
+require_once ('engine/libs/Smarty.class.php');
+
+$smarty = new Smarty();
+
+$smarty->setTemplateDir('engine/templates');
+$smarty->setCompileDir('engine/templates_c');
+$smarty->setCacheDir('engine/cache');
+$smarty->setConfigDir('engine/configs');
 
 // Change me when css/js is changed
 define ('CLIENT_VERSION', 26);
@@ -9,7 +17,6 @@ define ('CLIENT_VERSION', 26);
 define ('EVENT_OVERRIDE', false);
 
 $route = explode('/', $_GET['route']);
-
 
 if (empty(trim($route[0])))
 {
@@ -113,17 +120,20 @@ if (isset($_GET['ajax']))
 }
 else
 {
-	$content['site_mode'] = $site_mode;
-	$content['background_mode'] = $site_mode;
-	$content['background_color'] = $bg_color;
-	$content['title'] = $page_title.' &ndash; Советская волна';
-	$content['logo'] = '#sovietwave';
+	// $content['site_mode'] = $site_mode;
+	// $content['background_mode'] = $site_mode;
+	// $content['background_color'] = $bg_color;
+	// $content['title'] = $page_title.' &ndash; Советская волна';
+	// $content['logo'] = '#sovietwave';
 
-	include_once ('engine/templates/index.tpl');
+	$smarty->assign('site_mode', $site_mode);
+	$smarty->assign('content_template', $content_template);
+	$smarty->assign('background_mode', $site_mode);
+	$smarty->assign('background_color', $bg_color);
+	$smarty->assign('title', $page_title.' &ndash; Советская волна');
+	$smarty->assign('logo', '#sovietwave');
 
-	// include_once ('engine/content/'.$content_template);
-	// include_once ('engine/templates/footer.tpl');
-	// include_once ('engine/templates/navy.tpl');
+	$smarty->display('engine/templates/index.tpl');
 
 	die();
 }

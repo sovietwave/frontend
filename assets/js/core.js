@@ -107,25 +107,6 @@ var modes = {
 function init() {
 	localStorageAvailable = isLSAvailable();
 
-	$('#volume').rangeslider({
-		polyfill: false,
-
-		// Callback function
-		onInit: function() {
-			radioInit();
-		},
-
-		// Callback function
-		onSlide: function(position, value) {
-			if (radioPlayer) radioPlayer.volume = (value / 100);
-		},
-
-		// Callback function
-		onSlideEnd: function(position, value) {
-			radioSetVolume(value, true);
-		}
-	});
-
 	// Randomize fist pic
 	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
 
@@ -349,8 +330,6 @@ function hideLeftPanels() {
 
 function toggleNavi() {
 	var navi = $('#navi');
-
-
 
 	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
 		$("#panel").hide();

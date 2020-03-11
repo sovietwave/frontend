@@ -31,7 +31,6 @@ var radioPlayer = null,
 
 function radioInit() {
 	try {
-
 		var a = document.createElement('audio');
 		if (a.canPlayType('audio/aac') != 'no' &&
 
@@ -50,14 +49,10 @@ function radioInit() {
 		a.remove();
 		delete a;
 
-		// setupVolumeControl(); 	
-
 		// Restore volume settings
-		radioSetVolume(radioGetVolume(), false);
-
+		// radioSetVolume(radioGetVolume(), false);
 		// Initialize track info.
 		requestTrackInfo();
-
 		requestListenersCount();
 
 		playerReady = true;
@@ -76,7 +71,8 @@ function radioPlay(channel) {
 		radioPlayer = document.createElement('audio');
 		radioPlayer.src = '//station.waveradio.org/' + channel + '?' + randword(); // fixes buffering
 		radioPlayer.title = showingTrack;
-		radioPlayer.volume = radioGetVolume() / 100;
+		// radioPlayer.volume = radioGetVolume() / 100;
+		radioPlayer.volume = 1;
 
 		radioPlayer.onerror = function() {
 			if (nowPlaying) {
@@ -128,37 +124,37 @@ function radioStop() {
 	}
 }
 
+// function radioGetVolume() {
+// 	// var savedVol = getVal('volume');
+// 	var savedVol = 1;
 
-function radioGetVolume() {
-	var savedVol = getVal('volume');
+// 	if (savedVol == null)
+// 		return 100;
+// 	else
+// 		return parseInt(savedVol);
+// }
 
-	if (savedVol == null)
-		return 100;
-	else
-		return parseInt(savedVol);
-}
+// function radioSetVolume(value, userAct) {
+// 	userAct = userAct || false;
+// 	if (value > 100)
+// 		value = 100;
+// 	else if (value < 0)
+// 		value = 0;
 
-function radioSetVolume(value, userAct) {
-	userAct = userAct || false;
-	if (value > 100)
-		value = 100;
-	else if (value < 0)
-		value = 0;
+// 	if (radioPlayer != null) {
+// 		radioPlayer.volume = (value / 100);
+// 	}
 
-	if (radioPlayer != null) {
-		radioPlayer.volume = (value / 100);
-	}
+// 	if (userAct) {
+// 		radioSaveVolume(value);
+// 	}
 
-	if (userAct) {
-		radioSaveVolume(value);
-	}
+// 	setVolValue(value);
+// }
 
-	setVolValue(value);
-}
-
-function radioSaveVolume(value) {
-	setVal('volume', value);
-}
+// function radioSaveVolume(value) {
+// 	setVal('volume', value);
+// }
 
 function radioToggle(channel) {
 	channel = channel || currentChannel;
@@ -183,35 +179,6 @@ function radioToggle(channel) {
 	}
 }
 
-function setVolValue(value) {
-	if (value > 100)
-		return;
-
-	// Workaround for this shit called rangeslider
-	setTimeout(function() {
-		$('#volume').val(value).change();
-	}, 50);
-
-	var speaker = $('#volume-speaker');
-	if (value > 0) {
-		speaker.attr('src', '/assets/sprites/icons/volume.png');
-	} else {
-		speaker.attr('src', '/assets/sprites/icons/mute.png');
-	}
-}
-
-function toggleMute() {
-	if (radioGetVolume() === 0) {
-		if (lastVolumeValue === 0) {
-			lastVolumeValue = 50;
-		}
-
-		radioSetVolume(lastVolumeValue, false);
-	} else {
-		lastVolumeValue = radioGetVolume();
-		radioSetVolume(0, false);
-	}
-}
 
 function requestTrackInfo() {
 	setTimeout(requestTrackInfo, 5000);
@@ -256,22 +223,6 @@ function getTrackHistory() {
 		console.warn("History error:", jq, jx);
 	});
 }
-
-/*
-
-<div class="air-time">
-0:01
-</div>
-<div class="air-song">
-<span class="air-band">
-  -
-</span>&nbsp;&mdash;&nbsp;
-<span id="air-song-title">
-  -
-</span>
-</div>
-
-*/
 
 function calculateHistoryViewport() {
 	var
@@ -503,3 +454,6 @@ function calculateListenersCount(data) {
 			$('#listeners').text(listenersCount);
 	});
 }
+
+
+radioInit()

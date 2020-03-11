@@ -16,6 +16,7 @@
 		<meta name="application-name" content="Советская волна">
 
 		<link rel="stylesheet" href="assets/styles/fonts.css?v<?php echo CLIENT_VERSION; ?>">
+		<link rel="stylesheet" href="assets/styles/rangeinput.css?v<?php echo CLIENT_VERSION; ?>">
 		<link rel="stylesheet" href="assets/styles/soviet.css?v<?php echo CLIENT_VERSION; ?>">
 		<link rel="stylesheet" href="assets/styles/navi.css?v<?php echo CLIENT_VERSION; ?>">
 
@@ -32,7 +33,7 @@
 		<style type="text/css">
 			body, html
 			{
-				background: #<?php echo ($content['background_color']); ?> url(/assets/sprites/<?php echo ($content['background_mode']); ?>0.jpg) no-repeat center;
+				background: #{$background_color} url(/assets/sprites/{$background_mode}0.jpg) no-repeat center;
 				background-size: cover;
 				background-attachment: fixed;
 			}
@@ -43,7 +44,7 @@
 
     <body>
         <script type="text/javascript">
-            var SITE_MODE = '<?php echo ($content['site_mode']); ?>';
+            var SITE_MODE = '{$site_mode}';
         </script>
         
         <a href="https://vk.com/volna2_fest" target="_blank">
@@ -58,11 +59,8 @@
         </div>
         </a>
 
-		<?php
-			include_once ('engine/templates/content/player.tpl');
-			include_once ('engine/templates/footer.tpl');
-			include_once ('engine/templates/navy.tpl');
-		?>
-		</include>
+		{include file='engine/templates/content/player.tpl'}
+		{include file='engine/templates/navi.tpl'}
+		{include file='engine/templates/footer.tpl'}
     </body>
 </html>

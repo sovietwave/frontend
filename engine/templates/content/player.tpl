@@ -1,6 +1,6 @@
 <div id="player-wrapper">
 	<div id="player">
-		<div id="player-artist" class="player-track<?php if ($content['site_mode'] == 'night') echo (' night'); ?>">
+		<div id="player-artist" class="player-track{if $site_mode eq 'night'}night{/if}">
 			<a target="_blank" title="Посетить страницу исполнителя" id="player-artist-link"></a>
 		</div>
 
