@@ -325,7 +325,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 90px; 
+		margin-top: 30px; 
 		position: static;
 		width: 100%;
 		text-align: center;
@@ -432,7 +432,7 @@ main.night
 {
 	#player
 	{
-		margin-top: 90px; /* fest tmp */
+		margin-top: 10px; /* fest tmp */
 	}
 
 	.player-track
