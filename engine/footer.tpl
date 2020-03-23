@@ -11,9 +11,9 @@
 
 						<a href="https://vk.com/soviet_wave" id="navi-button-vk" title="Советская волна в ВК" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 
-						<a href="https://t.me/sovietwave" id="navi-button-t" title="Советская волна в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+						<a href="https://tglink.ru/sovietwave" id="navi-button-t" title="Советская волна в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 
-						<a href="https://t.me/sovietwave_chat" id="navi-button-chat" title="Чат в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
+						<a href="https://tglink.ru/sovietwave_chat" id="navi-button-chat" title="Чат в Telegram" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
 
 						<!--
 						<a href="https://sovietwave.su/listen.m3u" id="navi-button-m3u" title="Слушать в проигрывателе" class="navi-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" target="_blank"></a>
