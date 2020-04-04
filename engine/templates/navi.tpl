@@ -22,8 +22,9 @@
                 <img src="/assets/sprites/icons/back.png" align="absmiddle" /></a>        
             </div>
 
-            <div id="listeners">
+            <div id=listeners-container>
                 <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">-1</span>
+                <div id="listeners"></div>
             </div>
         </div>
     </div>

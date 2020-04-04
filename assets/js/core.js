@@ -270,28 +270,19 @@ function switchCurrentBackground() {
 	switchBackground(SITE_MODE);
 }
 
-// yeah there could be more elegant solution
-// PRs are welcome ;3
-var linksToggled = false
 function toggleLinks() {
-	if (linksToggled){
-		$("#panel").css({"height": "0"});
-		linksToggled = true
+	if ($("#panel").is(':visible')) {
+		$("#panel").hide();
+		$('#sv-fest-2').show();
 	} else {
-		$("#panel").css({"height": "300px"});
-		linksToggled = false
+		$("#panel").hide();
+		$("#panel").show();
+		$('#sv-fest-2').hide();
 	}
 
-	// if ($("#panel").is(':visible')) {
-	// 	$("#panel").hide();
-	// 	$('#air-active-overlay').hide();
-	// 	$('#sv-fest-2').show();
-	// } else {
-	// 	$("#air-panel").hide();
-	// 	$("#panel").show();
-	// 	$('#air-active-overlay').show();
-	// 	$('#sv-fest-2').hide();
-	// }
+	if ($("#air-panel").is(':visible')) {
+		$("#air-panel").hide();
+	}
 
 	this.togglePlayer();
 }
@@ -299,13 +290,15 @@ function toggleLinks() {
 function toggleAirPanel() {
 	if ($("#air-panel").is(':visible')) {
 		$("#air-panel").hide();
-		$('#air-active-overlay').hide();
 		$('#sv-fest-2').show();
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
-		$('#air-active-overlay').show();
 		$('#sv-fest-2').hide();
+	}
+
+	if ($("#panel").is(':visible')) {
+		$("#panel").hide();
 	}
 
 	this.togglePlayer();

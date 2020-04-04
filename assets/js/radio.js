@@ -1,5 +1,4 @@
-var
-	lastTrack,
+var lastTrack,
 	showingTrack,
 	showingTrackStruct,
 	trackHistoryItemHeight = 48, // average
@@ -27,7 +26,6 @@ var radioPlayer = null,
 	playerRestartTimer = null,
 	tempShowing = false,
 	trackTimer = null;
-
 
 function radioInit() {
 	try {
@@ -124,38 +122,6 @@ function radioStop() {
 	}
 }
 
-// function radioGetVolume() {
-// 	// var savedVol = getVal('volume');
-// 	var savedVol = 1;
-
-// 	if (savedVol == null)
-// 		return 100;
-// 	else
-// 		return parseInt(savedVol);
-// }
-
-// function radioSetVolume(value, userAct) {
-// 	userAct = userAct || false;
-// 	if (value > 100)
-// 		value = 100;
-// 	else if (value < 0)
-// 		value = 0;
-
-// 	if (radioPlayer != null) {
-// 		radioPlayer.volume = (value / 100);
-// 	}
-
-// 	if (userAct) {
-// 		radioSaveVolume(value);
-// 	}
-
-// 	setVolValue(value);
-// }
-
-// function radioSaveVolume(value) {
-// 	setVal('volume', value);
-// }
-
 function radioToggle(channel) {
 	channel = channel || currentChannel;
 	if (!playerReady) {
@@ -182,7 +148,6 @@ function radioToggle(channel) {
 
 function requestTrackInfo() {
 	setTimeout(requestTrackInfo, 5000);
-
 	getCurrentTrack(processBriefResult, true);
 }
 
@@ -203,7 +168,6 @@ function getCurrentTrack(onSuccess, isBrief) {
 }
 
 function getTrackHistory() {
-
 	var amount = Math.floor(calculateHistoryViewport() / trackHistoryItemHeight);
 
 	console.log(calculateHistoryViewport(), trackHistoryItemHeight, amount);
@@ -301,7 +265,6 @@ function splitTrackInfo(track) {
 }
 
 function setArtistLink(link) {
-
 	var artistObj = $('#player-artist-link');
 
 	if (link) {
@@ -326,7 +289,6 @@ function setArtistLink(link) {
 }
 
 function setTrackInfo(track) {
-
 	if (!track)
 		return;
 
@@ -440,7 +402,6 @@ function requestListenersCount() {
 
 
 function calculateListenersCount(data) {
-
 	var listenersCount = 0,
 		currentPos = 1;
 

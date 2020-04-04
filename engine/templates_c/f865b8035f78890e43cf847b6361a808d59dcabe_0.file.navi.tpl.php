@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-04 17:32:25
+/* Smarty version 3.1.34-dev-7, created on 2020-04-04 16:16:07
   from '/home/pavel/Dev/sovietwave/engine/templates/navi.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5fbbf9bdd377_30482818',
+  'unifunc' => 'content_5e88889789e3e6_27262421',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f865b8035f78890e43cf847b6361a808d59dcabe' => 
     array (
       0 => '/home/pavel/Dev/sovietwave/engine/templates/navi.tpl',
-      1 => 1583332272,
+      1 => 1586006166,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e5fbbf9bdd377_30482818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e88889789e3e6_27262421 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- NAVI -->
 <div id="navi">
     <div class="navi-block" id="side">
@@ -47,8 +47,9 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
                 <img src="/assets/sprites/icons/back.png" align="absmiddle" /></a>        
             </div>
 
-            <div id="listeners">
+            <div id=listeners-container>
                 <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">-1</span>
+                <div id="listeners"></div>
             </div>
         </div>
     </div>

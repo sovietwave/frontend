@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-20 21:08:41
+/* Smarty version 3.1.34-dev-7, created on 2020-03-29 14:54:13
   from '/home/pavel/Dev/sovietwave/engine/templates/footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e4ecb29130cd8_86847601',
+  'unifunc' => 'content_5e808c65c72b52_19417722',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '50538100cf4ba94d2d353c0d79a2d43946f1815e' => 
     array (
       0 => '/home/pavel/Dev/sovietwave/engine/templates/footer.tpl',
-      1 => 1581491355,
+      1 => 1585482787,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e4ecb29130cd8_86847601 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e808c65c72b52_19417722 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- LINKS -->
 <div id="panel">
     <div id="links">
@@ -100,7 +100,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
         -->
 
         		<div id="panel-bottom-gradient"></div>
-
       		</div>
     	</div>
 

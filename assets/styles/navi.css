@@ -5,9 +5,10 @@
     position: fixed;
     display: flex;
 	height: 70px;
-	bottom: 0px;
-	left: 0px;
+	bottom: 0;
+	left: 0;
 	width: 100%;
+	padding: 0;
 
     z-index: 20;
 
@@ -19,13 +20,13 @@
     justify-items: center;
 
 	background: rgba(0,0,0,0.61);
-	background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
+	/*background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.8)), color-stop(20%, rgba(0,0,0,0.5)), color-stop(100%, rgba(0,0,0,0.5)));
 	background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
 	background: -o-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
 	background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.5) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); */
 
 	transition: All 0.4s ease;
 	-webkit-transition: All 0.4s ease;
@@ -38,32 +39,36 @@
 	-webkit-user-select: none;
 }
 
-#side
-{
+.navi-block {
+	height: 100%;
+	text-align: center;
+	line-height: 70px;
+}
+
+#side {
 	display: flex;
 	flex: 1 0 35%;
 }
 
-#central
-{
+#central {
 	flex: 1 0 10%;
 }
 
 /* LINKS */
-#navi-links
-{
+#navi-links {
 	position: relative;
 	width: 50%;
-	text-align: center;
+	height: 100%;
 	cursor: pointer;
 	opacity: 0.8;
 	text-transform: uppercase;
+	text-align: inherit;
 }
 
-#navi-links:hover
-{
+#navi-links: hover {
 	opacity: 1;
 }
+
 
 /* AIR */
 #navi-air
@@ -114,9 +119,9 @@
 #volume-speaker
 {
 	position: relative;
-	width: 10%;
-	bottom: 30%;
+	bottom: 35%;
 }
+
 
 /* VOLUME RANGE */
 #volume-range
@@ -125,6 +130,7 @@
 	text-align: center;
 	width: 80%;
 	height: 100%;
+	margin: 0;
 }
 
 #not-volume-container
@@ -153,7 +159,7 @@
 }
 
 /* LISTENERS*/
-#listeners
+#listeners-container
 {
 	display: inline-block;
 	position: relative;

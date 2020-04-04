@@ -29,6 +29,7 @@
 
 		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
+		<script src="/assets/js/volume.js" type="text/javascript"></script>
 
 		<style type="text/css">
 			body, html
@@ -60,7 +61,7 @@
         </a>
 
 		{include file='engine/templates/content/player.tpl'}
+		{include file='engine/templates/menus.tpl'}
 		{include file='engine/templates/navi.tpl'}
-		{include file='engine/templates/footer.tpl'}
     </body>
 </html>

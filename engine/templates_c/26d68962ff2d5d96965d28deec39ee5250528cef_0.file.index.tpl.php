@@ -1,29 +1,29 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-03-04 18:45:15
+/* Smarty version 3.1.34-dev-7, created on 2020-03-29 15:38:13
   from '/home/pavel/Dev/sovietwave/engine/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e5fcd0b06b853_95012836',
+  'unifunc' => 'content_5e8096b5ef0078_61117789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26d68962ff2d5d96965d28deec39ee5250528cef' => 
     array (
       0 => '/home/pavel/Dev/sovietwave/engine/templates/index.tpl',
-      1 => 1583336714,
+      1 => 1585485492,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:engine/templates/content/player.tpl' => 1,
+    'file:engine/templates/menus.tpl' => 1,
     'file:engine/templates/navi.tpl' => 1,
-    'file:engine/templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_5e5fcd0b06b853_95012836 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e8096b5ef0078_61117789 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 
@@ -77,6 +77,9 @@ echo CLIENT_VERSION; <?php echo '?>';?>
 echo CLIENT_VERSION; <?php echo '?>';?>
 " type="text/javascript"><?php echo '</script'; ?>
 >
+		<?php echo '<script'; ?>
+ src="/assets/js/volume.js" type="text/javascript"><?php echo '</script'; ?>
+>
 
 		<style type="text/css">
 			body, html
@@ -114,9 +117,9 @@ echo CLIENT_VERSION; <?php echo '?>';?>
 
 		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/content/player.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/navi.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/menus.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/navi.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     </body>
 </html><?php }
