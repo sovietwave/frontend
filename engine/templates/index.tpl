@@ -48,20 +48,13 @@
             var SITE_MODE = '{$site_mode}';
         </script>
         
-        <a href="https://vk.com/volna2_fest" target="_blank">
-        <div id="sv-fest-2">
-            <table align="center" height="100%">
-                <tr valign="middle">
-                <td align="right" width="300">Музыкальный<br>фестиваль</td>
-                <td><img src="assets/sprites/volna2.png" hspace="7" height="52"></td>
-                <td align="left" width="300">10 Августа<br>Москва</td>
-                </tr>      
-            </table>
-        </div>
-        </a>
-
+        <!-- BRIGHT -->
+		<div id="bright-overlay{if $site_mode eq 'night'}night{/if}" onclick="hideLeftPanels()"></div> 
+		
 		{include file='engine/templates/content/player.tpl'}
 		{include file='engine/templates/menus.tpl'}
 		{include file='engine/templates/navi.tpl'}
+
+		
     </body>
 </html>

@@ -62,45 +62,51 @@ var backs = {
 
 var modes = {
 	"day": {
-		"title": "Солнечный день",
+		"title": "Дневной эфир",
 		"subtitle": "#chillwave #dreamwave #sovietwave",
-		"start": "07:00",
-		"finish": "19:00"
+		"start": "7:00",
+		"finish": "19:00",
+		"times": "7:00 — 19:00"
 	},
 
 	"evening": {
-		"title": "Грустные танцы",
+		"title": "Вечерний эфир",
 		"subtitle": "#synthpop #postpunk #sovietwave",
 		"start": "19:00",
-		"finish": "00:00"
+		"finish": "0:00",
+		"times": "19:00 — 0:00"
 	},
 
 	"night": {
-		"title": "Космос наш",
+		"title": "Ночной эфир",
 		"subtitle": "#ambient #experimental #sovietwave",
-		"start": "00:00",
-		"finish": "07:00"
+		"start": "0:00",
+		"finish": "7:00",
+		"times": "0:00 — 7:00"
 	},
 
 	"event1_space": {
 		"title": "День Космонавтики",
 		"subtitle": "#sovietwave",
 		"start": "12 апреля",
-		"finish": "14 апреля"
+		"finish": "14 апреля",
+		"times": "12 апреля"
 	},
 
 	"event2_ssw": {
 		"title": "Советская советская волна",
 		"subtitle": "#psychedelic #retro",
 		"start": "20 ноября",
-		"finish": "21 ноября"
+		"finish": "21 ноября",
+		"times": "20—21 ноября"
 	},
 
 	"event3_chillwave": {
 		"title": "#chillwave",
 		"subtitle": "#glofi #hypnagogic #dreamwave",
 		"start": "1 декабря",
-		"finish": "2 декабря"
+		"finish": "2 декабря",
+		"times": "1—2 декабря"
 	}
 };
 
@@ -153,6 +159,7 @@ function setTheme(mode) {
 		$('#air-tags').text(modeContent['subtitle']);
 		$('#air-start-time').text(modeContent['start']);
 		$('#air-end-time').text(modeContent['finish']);
+		$('#air-times').text(modeContent['times']);
 	}
 
 	switch (mode) {
@@ -274,10 +281,12 @@ function toggleLinks() {
 	if ($("#panel").is(':visible')) {
 		$("#panel").hide();
 		$('#sv-fest-2').show();
+		$('#bright-overlay').hide();
 	} else {
 		$("#panel").hide();
 		$("#panel").show();
 		$('#sv-fest-2').hide();
+		$('#bright-overlay').show();
 	}
 
 	if ($("#air-panel").is(':visible')) {
@@ -291,10 +300,12 @@ function toggleAirPanel() {
 	if ($("#air-panel").is(':visible')) {
 		$("#air-panel").hide();
 		$('#sv-fest-2').show();
+		$('#bright-overlay').hide();
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
 		$('#sv-fest-2').hide();
+		$('#bright-overlay').show();
 	}
 
 	if ($("#panel").is(':visible')) {
@@ -317,8 +328,7 @@ function togglePlayer() {
 function hideLeftPanels() {
 	$("#air-panel").hide();
 	$("#panel").hide();
-	$('#air-active-overlay').hide();
-	$('#sv-fest-2').show();
+	$('#bright-overlay').hide();
 }
 
 function toggleNavi() {
@@ -327,17 +337,16 @@ function toggleNavi() {
 	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
 		$("#panel").hide();
 		$("#air-panel").hide();
-		$('#air-active-overlay').hide();
-
+		$('#bright-overlay').hide();
+		$('#panel-bottom-gradient').hide();
 	} else {
 
 		if (navi.is(':visible')) {
-			$("#sv-fest-2").hide();
 			navi.hide();
+			$('#panel-bottom-gradient').hide();
 		} else {
 			navi.show();
-			$("#sv-fest-2").show();
-
+			$('#panel-bottom-gradient').show();
 		}
 	}
 

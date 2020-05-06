@@ -4,12 +4,14 @@
 			<a target="_blank" title="Посетить страницу исполнителя" id="player-artist-link"></a>
 		</div>
 
-		<div id="player-title" class="player-track<?php if ($content['site_mode'] == 'night') echo (' night'); ?>">
+		<div id="player-title" class="player-track{if $site_mode eq 'night'}night{/if}"">
 			- устанавливаю -
 		</div>
 
 		<div id="player-switch" class="player-switch-stalled" onclick="radioToggle()"></div>
 
-		<div id="player-city" class="player-track<?php if ($content['site_mode'] == 'night') echo (' night'); ?>"></div>
+		<div id="player-city" class="player-track{if $site_mode eq 'night'}night{/if}""></div>
+
+
 	</div>
 </div>

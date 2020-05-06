@@ -9,13 +9,17 @@ body, html
 	overflow: hidden;
 	color: #ffffff;
 	font-size: 16pt;
-	letter-spacing: 2pt;
 }
 
 a
 {
 	color: #eef1dc;
 	outline: none;
+	opacity: 0.8;
+}
+
+a:hover{
+	opacity: 1;
 }
 
 a.night
@@ -33,13 +37,9 @@ a.night
 #player
 {
 	margin-top: 70px;
-	height: 250px; 
 
-	height: 20%;
     position: relative;
     text-align: center;
-
-	opacity: 0.8;
 
 	align-items: center;
 	justify-items: center;
@@ -60,6 +60,7 @@ a.night
 #player-artist
 {
     font-size: 36pt;
+    margin-bottom: 6pt;
 }
 
 #player-artist a {
@@ -79,6 +80,7 @@ a.night
 #player-title
 {
     font-size: 36pt;
+    opacity: 0.8;
 }
 
 #player-switch
@@ -86,15 +88,23 @@ a.night
 	font-size: 22pt;
     cursor: pointer;
 	width: 150px;
-	height: 150px;
+	height: 100px;
 	display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    opacity: 0.8;
+    margin-bottom: 6pt;
+}
+
+#player-switch:hover
+{
+	opacity: 1;
 }
 
 #player-city
 {
 	font-size: 22pt;
+	opacity: 0.8;
 }
 
 .player-switch-stalled
@@ -119,14 +129,12 @@ a.night
 
 	display: none;
 	position: absolute;
-	bottom: 70px;
+	bottom: 0px;
 	top: 0;
 	left: 0;
 	text-align: left;
-	width: 33%;
+	width: 35%;
 	border: none;
-
-	overflow-y: scroll;
 }
 
 .link {
@@ -160,9 +168,23 @@ a.night
 
 #links
 {	
-	justify-items: left;
+
 	font-size: 16pt;
-	letter-spacing: 2pt;
+
+	width: 100%;
+	height:100%;
+	top:0;
+
+	justify-content: center;
+	line-height: 32pt;
+}
+
+#links-container
+{	
+	width: 300px;
+	height: 100%;
+	margin: 82pt auto;
+
 }
 
 #links-madeby img {
@@ -175,11 +197,10 @@ a.night
 
 #links-title
 {
-	letter-spacing: 2pt;
     text-shadow: 0 0 4px rgba(255, 222, 128, 1);
-	font-size: 24pt;
-	margin: 15px;
-	margin-bottom: 30px;
+	font-size: 22pt;
+	margin-top: 42pt;
+
 	text-align: center;
 }
 
@@ -189,15 +210,17 @@ a.night
 	height: auto;
 }
 
-#links-button-m3u {
-	margin-top: 50px;
+#links-m3u-container {
+	line-height: 21pt;
+	position: absolute;
+	bottom: 100pt;
 }
 
 #links-text-m3u
 {
-	display: flex;
-	align-items: center;
+	margin-left: 67px;
 	opacity: 0.5;
+	width: 400px;
 }
 
 #links-madeby
@@ -215,71 +238,97 @@ a.night
 	position: static;
 	height: 100%;
 	justify-items: left;
-	font-size: 12pt;
-	opacity: 0.85;
+	font-size: 16pt;
 
-	letter-spacing: 3px;
+	line-height: 24pt;
+	
 }
 
 #air-title-section
 {
-    font-size: 22pt;
-	letter-spacing: 2pt;
     text-shadow: 0 0 4px rgba(255, 222, 128, 1);
 	width: 100%;
-	margin: 15px 0;
+	margin: 0;
 	position: relative;
+	font-size: 16pt;
+	line-height: 24pt;
+	margin-top: 24pt;
+	height: 80pt;
+
 }
 
 #air-title {
-	opacity: 0.85;
-
-	display: fixed;
-    justify-content: start;
-    align-self: center;
-    justify-self: start;
-
-	font-size: 12pt;
-}
-
-#air-start-time {
-	opacity: 0.5;
-
-	display: flex;
-    justify-content: center;
-    align-self: center;
-
-    font-size: 12pt;
+	text-align: center;
+	opacity: 0.8;
+	font-size: 24pt;
+	margin-bottom: 4pt;
 }
 
 #air-tags {
 	text-align: center;
+	opacity: 0.5;
+}
 
-    font-size: 12pt;
+#air-times {
+	text-align: center;
+	opacity: 0.5;
+}
+
+#air-start-time {
+	opacity: 0.8;
+    font-size: 16pt;
 }
 
 #air-end-time {
-	opacity: 0.5;
+	opacity: 0.8;
+    font-size: 16pt;
+}
 
-	display: flex;
-    justify-content: center;
-    align-self: center;
+.air-band{
+	
+}
 
-    font-size: 12pt;
+.air-song-title{
+	opacity: 0.8;
+}
+
+#air-playlist-container {
+	position: absolute;
+	top: 112pt;
+	bottom: 70px;
+	width: 100%;
+
+	opacity: 0.7;
+	background-color: rgba(0,0,0,0.85);
 }
 
 #air-playlist {
     text-shadow: 0 0 4px rgba(255, 222, 128, 1);
-	width: 100%;
-	height: 80%;
-    opacity: 0.85;
-	border-spacing: 24px;
+
+	width:100%;
+	height: 100%;
+	border-spacing: 16pt;
+	overflow-y: scroll;
+
 }
 
-#air-playlist::-webkit-scrollbar { /* WebKit */
-	width: 0;
-	height: 0;
+#air-playlist::-webkit-scrollbar {
+	width: 14px;
 }
+ 
+#air-playlist::-webkit-scrollbar-track {
+	display: none;
+}
+ 
+#air-playlist::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: rgba(255,222,128,0.2); 
+}
+
+#air-playlist::-webkit-scrollbar-thumb:hover {
+	background: rgba(255,222,128,0.4); 
+}
+
 
 .air-playlist-item {
 	display: table-row
@@ -294,4 +343,102 @@ a.night
 
 .air-song {
 	display: table-cell;
+}
+
+#bright-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #FFDE80;
+	opacity: 0.3;
+	z-index: 5;
+	display: none;
+	cursor: pointer;
+}
+
+#bright-overlay.night {
+	opacity: 0.15;
+}
+
+#panel-bottom-gradient
+{
+	width: 100%;
+	height: 12px;
+	position: absolute;
+	bottom: 70px;
+    z-index: 15;
+    opacity: 0.8;
+
+	background: -moz-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0)), color-stop(80%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0.61)));
+	background: -webkit-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
+	background: -o-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
+	background: -ms-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
+	background: linear-gradient(to bottom, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
+}
+
+#panel-bottom-gradient.night
+{
+    opacity: 0.2;
+}
+
+#panel-top-gradient
+{
+	width: 100%;
+	height: 12px;
+	position: absolute;
+	top: 110pt;
+    z-index: 15;
+    opacity: 0.2;
+    
+	background: -moz-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0.61)), color-stop(20%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0)));
+	background: -webkit-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -ms-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
+}
+
+#panel-left-gradient
+{
+	width: 12px;
+	height: 100%;
+	position: absolute;
+	left: 100%;
+    z-index: 15;
+    opacity: 0.8;
+    
+	background: -moz-linear-gradient(left, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -webkit-gradient(left, right, color-stop(0%, rgba(255,222,128,0.61)), color-stop(20%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0)));
+	background: -webkit-linear-gradient(left, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -o-linear-gradient(left, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: -ms-linear-gradient(left, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	background: linear-gradient(to right, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
+}
+
+#panel-left-gradient.night
+{
+    opacity: 0.2;
+}
+
+
+
+/* S ВЁРСТКА - Прортретная для телефонов */
+@media handheld, only screen and (max-width: 800px){
+	#player-artist, #player-title
+	{
+		font-size: 22pt;
+	}
+
+	#player-city
+	{
+		font-size: 22pt;
+	}
+
+	#panel, #air-panel{
+		width: 100%;
+	}
 }

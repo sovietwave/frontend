@@ -221,14 +221,14 @@ function processTrackHistory(data) {
 				// artist
 				if (track['artist_links'] && track['artist_links'].length > 0) {
 					var artistLink = track['artist_links'][0]['link_text'];
-					historyHtml += '<a class="air-band" href="' + artistLink + '">' + track['artist'] + '</a>';
+					historyHtml += '<a class="air-band" href="' + artistLink + '" target="_blank">' + track['artist'] + '</a>';
 				} else {
 					historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
 				}
 
 
 				// separator
-				historyHtml += '&nbsp;&mdash;&nbsp;';
+				historyHtml += '<br>';
 
 				// title
 				historyHtml += '<span class="air-song-title">' + track['track_title'] + '</span>';
