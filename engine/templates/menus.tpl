@@ -1,7 +1,11 @@
 <!-- LINKS -->
 <div id="panel">
+		
+
 	<div id="panel-top-gradient"></div>
 	<div id="panel-left-gradient"></div>
+	
+
     <div id="links">
     	<div id="links-title">#sovietwave</div>
 
@@ -11,6 +15,7 @@
 		src="assets/sprites/icons/volna2.png" class="links-icon" />Фестиваль</a>
 		-->
 
+	
 		<div id="links-container">
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
@@ -30,7 +35,7 @@
 
 			<a href="https://www.patreon.com/sovietwave" id="links-button-patreon"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
-			src="assets/sprites/icons/facebook.png" class="links-icon" />Поддержать</a>
+			src="assets/sprites/icons/patreon.png" class="links-icon" />Поддержать</a>
 
 
 
@@ -48,6 +53,7 @@
 			
 
 		</div>
+
 	</div>
 </div>
 
@@ -59,19 +65,23 @@
 	<div id="air-list">
 		<div id="air-title-section">
 			<div id="air-title"></div>
-			<div id="air-tags"></div>
+			
 			<!--
 			<div id="air-start-time"></div>
 			<div id="air-end-time"></div>
 			-->
 			<div id="air-times"></div>
+			<div id="air-tags"></div>
 		</div>
 
-		<div id="panel-top-gradient"></div>
+		<div id="panel-air-title-gradient"></div>
+		<div id="panel-air-top-gradient"></div>
+		<div id="panel-air-bottom-gradient"></div>
+		
 
 		<div id="air-playlist-container">
 			<div id="air-playlist">
-				Ждём ответа из Центра...
+				<!-- Ждём ответа из Центра... -->
 			</div>
 		</div>
 		

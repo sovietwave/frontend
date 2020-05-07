@@ -6,10 +6,11 @@ var backs = {
 	"day": {
 		"backs": [
 			"/assets/sprites/day0.jpg",
-			//"/assets/sprites/day1.jpg",
-			//"/assets/sprites/day2.jpg",
+			"/assets/sprites/day1.jpg",
+			"/assets/sprites/day2.jpg",
 			"/assets/sprites/day3.jpg",
-			"/assets/sprites/day4.jpg"
+			"/assets/sprites/day4.jpg",
+			"/assets/sprites/day5.jpg"
 		],
 
 		"buttons": [
@@ -22,26 +23,30 @@ var backs = {
 	"evening": {
 		"backs": [
 			"/assets/sprites/evening0.jpg",
-			//"/assets/sprites/evening1.jpg",
-			//"/assets/sprites/evening2.jpg",
+			"/assets/sprites/evening1.jpg",
+			"/assets/sprites/evening2.jpg",
 			"/assets/sprites/evening3.jpg",
-			"/assets/sprites/evening4.jpg"
+			"/assets/sprites/evening4.jpg",
+			"/assets/sprites/evening5.jpg"
 		],
 
 		"buttons": [
 			"/assets/sprites/btn-evening0.png",
 			"/assets/sprites/btn-evening1.png",
-			"/assets/sprites/btn-evening2.png"
+			"/assets/sprites/btn-evening2.png",
+			"/assets/sprites/btn-evening3.png",
+			"/assets/sprites/btn-evening4.png"
 		]
 	},
 
 	"night": {
 		"backs": [
 			"/assets/sprites/night0.jpg",
-			//"/assets/sprites/night1.jpg",
-			//"/assets/sprites/night2.jpg",
+			"/assets/sprites/night1.jpg",
+			"/assets/sprites/night2.jpg",
 			"/assets/sprites/night3.jpg",
-			"/assets/sprites/night4.jpg"
+			"/assets/sprites/night4.jpg",
+			"/assets/sprites/night5.jpg"
 		],
 
 		"buttons": [
@@ -339,14 +344,20 @@ function toggleNavi() {
 		$("#air-panel").hide();
 		$('#bright-overlay').hide();
 		$('#panel-bottom-gradient').hide();
+		$('#navi-logo').hide();
+		$('#navi-logo-clear').show();
 	} else {
 
 		if (navi.is(':visible')) {
 			navi.hide();
 			$('#panel-bottom-gradient').hide();
+			$('#navi-logo').hide();
+			$('#navi-logo-clear').show();
 		} else {
 			navi.show();
 			$('#panel-bottom-gradient').show();
+			$('#navi-logo').show();
+			$('#navi-logo-clear').hide();
 		}
 	}
 

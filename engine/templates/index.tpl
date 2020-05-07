@@ -49,7 +49,7 @@
         </script>
         
         <!-- BRIGHT -->
-		<div id="bright-overlay{if $site_mode eq 'night'}night{/if}" onclick="hideLeftPanels()"></div> 
+		<div id="bright-overlay" onclick="hideLeftPanels()"></div> 
 		
 		{include file='engine/templates/content/player.tpl'}
 		{include file='engine/templates/menus.tpl'}

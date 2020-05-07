@@ -17,6 +17,7 @@
 	
     align-items: center;
     justify-items: center;
+    justify-content: space-between;
 
 	background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.4) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.8)), color-stop(20%, rgba(0,0,0,0.4)), color-stop(100%, rgba(0,0,0,0.4)));
@@ -26,15 +27,21 @@
 	background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 20%, rgba(0,0,0,0.4) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 ); 
 
-	transition: All 0.4s ease;
-	-webkit-transition: All 0.4s ease;
-	-moz-transition: All 0.4s ease;
-	-o-transition: All 0.4s ease;
+	opacity: 0.55;
+	transition: All 0.35s ease;
+	-webkit-transition: All 0.35s ease;
+	-moz-transition: All 0.35s ease;
+	-o-transition: All 0.35s ease;
 
 	-ms-user-select: none;
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+}
+
+#navi:hover
+{
+	opacity: 1;
 }
 
 .navi-block {
@@ -45,22 +52,25 @@
 
 #side {
 	display: flex;
-	flex: 1 0 35%;
+	width: 450px;
+
 }
 
 #central {
-	flex: 1 0 30%;
+
+	width: auto;
 }
 
 #navi-separator {
+	display: none;
 	width: 3px;
 	height: 100%;
-	opacity: 0.2;
-	background-color: #FFDE80;
+	opacity: 0.5;
+	background-color: #000000; /* FFDE80  255, 222, 128 */
 
-	-webkit-box-shadow: 0px 0px 8px 3px rgba(255, 222, 128, 1);
-	-moz-box-shadow: 0px 0px 8px 3px rgba(255, 222, 128, 1);
-	box-shadow: 0px 0px 8px 3px rgba(255, 222, 128, 1);
+	-webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 1);
 }
 
 #navi-separator.night {
@@ -76,10 +86,16 @@
 	opacity: 0.8;
 	text-transform: uppercase;
 	text-align: inherit;
+	
+	transition: All 0.35s ease;
+	-webkit-transition: All 0.35s ease;
+	-moz-transition: All 0.35s ease;
+	-o-transition: All 0.35s ease;
 }
 
-#navi-links: hover {
+#navi-links:hover {
 	opacity: 1;
+	background-color: rgba(255, 222, 128, 0.1);
 }
 
 
@@ -92,6 +108,16 @@
 	cursor: pointer;
     opacity: 0.8;
 	text-transform: uppercase;
+
+	transition: All 0.35s ease;
+	-webkit-transition: All 0.35s ease;
+	-moz-transition: All 0.35s ease;
+	-o-transition: All 0.35s ease;
+}
+
+#navi-air:hover, #navi-air-mobile:hover {
+	opacity: 1;
+	background-color: rgba(255, 222, 128, 0.1);
 }
 
 #navi-air-mobile
@@ -114,12 +140,33 @@
     z-index: 100;
 
     opacity: 0.8;
-    bottom: 3px;
+
     left: 50%;
     transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+#navi-logo-clear {
+
+	display: none;
+	position: absolute;
+	padding: 0;
+
+    z-index: 100;
+
+    opacity: 0.5;
+    bottom: -6px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+
 }
 
 #navi-logo:hover {
+	opacity: 1;
+}
+
+#navi-logo-clear:hover {
 	opacity: 1;
 }
 
@@ -132,14 +179,25 @@
 /* VOLUME */
 #volume-container
 {
-	width: 50%;
+	width: 260px;
 	opacity: 0.8;
-	margin: 0 30px 0 0px;
+	margin-right: 20px;
+
+	transition: All 0.35s ease;
+	-webkit-transition: All 0.35s ease;
+	-moz-transition: All 0.35s ease;
+	-o-transition: All 0.35s ease;
+}
+
+#navi-links:hover {
+	opacity: 1;
+	background-color: rgba(255, 222, 128, 0.1);
 }
 
 #volume-container:hover
 {
 	opacity: 1;
+	background-color: rgba(255, 222, 128, 0.1);	
 }
 
 /* SPEAKER */
@@ -148,7 +206,7 @@
 	position: relative;
 	text-align: center;
 	cursor: pointer;
-	width: 80px;
+	width: 70px;
 }
 
 
@@ -175,11 +233,22 @@
 	display: inline-block;
 	position: relative;
 	opacity: 0.8;
+	cursor: pointer;
+
+	transition: All 0.35s ease;
+	-webkit-transition: All 0.35s ease;
+	-moz-transition: All 0.35s ease;
+	-o-transition: All 0.35s ease;
 }
 
-#switch-back:hover
-{
+#switch-back:hover {
 	opacity: 1;
+	background-color: rgba(255, 222, 128, 0.1);
+}
+
+#switch-back:active {
+	opacity: 0.4;
+	background-color: rgba(0, 0, 0, 1);
 }
 
 #switch-back-button
@@ -195,7 +264,7 @@
 	text-align: center;
 	font-size: 22pt;
 	opacity: 0.8;
-	width: 110px;
+	width: 120px;
 }
 
 #listeners-container-mobile

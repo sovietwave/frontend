@@ -1,7 +1,7 @@
 <!-- NAVI -->
 <div id="navi">
     <div class="navi-block" id="side">
-        <div id="navi-separator"></div>
+        
         <div id="navi-links" onclick="toggleLinks()">Ссылки</div>
         <div id="navi-separator"></div>
         <div id="navi-air" onclick="toggleAirPanel()">Эфир</div>
@@ -10,7 +10,7 @@
 
     
     <div class="navi-block" id="central">
-        <!--<div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>-->
+        <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
     </div>
     
     <div class="navi-block" id="side">
@@ -34,16 +34,18 @@
 
         <div id="navi-separator"></div>
 
-        <div id="switch-back">
-            <a href="#" id="switch-back-button"
+        <a href="#" id="switch-back-button"
                 class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" onclick="switchCurrentBackground(); return false;">
-            <img src="/assets/sprites/icons/back.png" align="absmiddle" /></a>        
-        </div>
+            <div id="switch-back">
+                
+                <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
+            </div>
+        </a> 
 
-        <div id="navi-separator"></div>
+
     </div>
 </div>
 
 <!-- LOGO -->
-<div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
+<div id="navi-logo-clear"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
 
