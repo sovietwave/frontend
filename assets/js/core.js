@@ -287,11 +287,17 @@ function toggleLinks() {
 		$("#panel").hide();
 		$('#sv-fest-2').show();
 		$('#bright-overlay').hide();
+
+		$('#panel-active-links').hide();
+		$('#panel-active-air').hide();
 	} else {
 		$("#panel").hide();
 		$("#panel").show();
 		$('#sv-fest-2').hide();
 		$('#bright-overlay').show();
+
+		$('#panel-active-links').show();
+		$('#panel-active-air').hide();
 	}
 
 	if ($("#air-panel").is(':visible')) {
@@ -306,11 +312,17 @@ function toggleAirPanel() {
 		$("#air-panel").hide();
 		$('#sv-fest-2').show();
 		$('#bright-overlay').hide();
+
+		$('#panel-active-links').hide();
+		$('#panel-active-air').hide();
 	} else {
 		$("#panel").hide();
 		$("#air-panel").show();
 		$('#sv-fest-2').hide();
 		$('#bright-overlay').show();
+
+		$('#panel-active-links').hide();
+		$('#panel-active-air').show();
 	}
 
 	if ($("#panel").is(':visible')) {
@@ -334,18 +346,23 @@ function hideLeftPanels() {
 	$("#air-panel").hide();
 	$("#panel").hide();
 	$('#bright-overlay').hide();
+
+	$('#panel-active-links').hide();
+	$('#panel-active-air').hide();
 }
 
 function toggleNavi() {
 	var navi = $('#navi');
 
 	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
-		$("#panel").hide();
-		$("#air-panel").hide();
-		$('#bright-overlay').hide();
+		
+		hideLeftPanels();
+
 		$('#panel-bottom-gradient').hide();
 		$('#navi-logo').hide();
 		$('#navi-logo-clear').show();
+
+
 	} else {
 
 		if (navi.is(':visible')) {

@@ -2,13 +2,20 @@
 <div id="panel">
 		
 
-	<div id="panel-top-gradient"></div>
+
 	<div id="panel-left-gradient"></div>
 	
 
     <div id="links">
+
     	<div id="links-title">#sovietwave</div>
 
+
+		
+    	<div id="links-center-back"></div>
+    	<div id="panel-air-title-gradient"></div>
+    	<div id="panel-air-top-gradient"></div>
+    	
     	<!--
 		<a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" id="links-button-fest"
 		class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
@@ -20,6 +27,10 @@
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
 			src="assets/sprites/icons/vk.png" class="links-icon" />Сообщество</a>
+
+			<a href="https://www.youtube.com/channel/UCZkZ1JF77v1xv8Vlg1N6QOA" id="links-button-youtube"
+			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
+			src="assets/sprites/icons/youtube.png" class="links-icon" />YouTube</a>
 
 			<a href="https://tglink.ru/sovietwave" id="links-button-telegram"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
@@ -61,6 +72,7 @@
 <div id="air-panel">
 
 	<div id="panel-left-gradient"></div>
+	
 	
 	<div id="air-list">
 		<div id="air-title-section">

@@ -55,6 +55,7 @@
 		{include file='engine/templates/menus.tpl'}
 		{include file='engine/templates/navi.tpl'}
 
+		<div id="panel-active-air"></div>
 		
     </body>
 </html>

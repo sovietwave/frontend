@@ -13,9 +13,10 @@ body, html
 
 a
 {
-	color: #eef1dc;
+	color: #ffffff;
 	outline: none;
 	opacity: 0.8;
+
 }
 
 a:hover{
@@ -43,6 +44,9 @@ a.night
 
 	align-items: center;
 	justify-items: center;
+
+	text-shadow: 0px 1px 7px rgba(255, 255, 255, 0.55);
+	-webkit-text-shadow: 0px 1px 7px rgba(255, 255, 255, 0.55);
 }
 
 .player-track
@@ -81,6 +85,7 @@ a.night
 {
     font-size: 36pt;
     opacity: 0.8;
+
 }
 
 #player-switch
@@ -135,6 +140,38 @@ a.night
 	text-align: left;
 	width: 450px;
 	border: none;
+}
+
+#panel-active-links
+{
+	background-color: rgba(255, 245, 230, 0.15);
+	position: absolute;
+	z-index: -10;
+	height: 70px;
+	width: 225px;
+	left: 0;
+	bottom: 0;
+	display: none;
+
+-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
+-moz-box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
+box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
+}
+
+#panel-active-air
+{
+	background-color: rgba(255, 245, 230, 0.15);
+	position: absolute;
+	z-index: -10;
+	height: 70px;
+	width: 225px;
+	left: 225px;
+	bottom: 0;
+	display: none;
+
+-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
+-moz-box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
+box-shadow: 0px 0px 10px 0px rgba(255, 240, 238, 0.3);
 }
 
 .link {
@@ -197,15 +234,26 @@ a.night
 #links-container
 {	
 	z-index: 30;
-	width: 300px;
+	width: 320px;
 
 	height: 100%;
 	margin: 82pt auto;
-
 	-ms-user-select: none;
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
+}
+
+#links-center-back {
+	position: absolute;
+	top: 150px;
+	bottom: 73px;
+	z-index: -1;
+
+	width: 100%;
+
+	opacity: 1;
+	background-color: rgba(0,0,0,0.7);
 }
 
 #links-madeby img {
@@ -334,6 +382,7 @@ a.night
 	height: 100%;
 	border-spacing: 16pt;
 	overflow-y: scroll;
+
 }
 
 #air-playlist::-webkit-scrollbar {
@@ -346,15 +395,14 @@ a.night
  
 #air-playlist::-webkit-scrollbar-thumb {
   border-radius: 18px;
-  background: #222;
-
+  background: rgb(50, 50, 50);
 }
 
 #air-playlist::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: rgb(150, 150, 150);
 }
 #air-playlist::-webkit-scrollbar-thumb:active {
-  background: #ccc;
+  background: rgb(50, 50, 50);
 }
 
 
@@ -400,6 +448,8 @@ a.night
 	bottom: 70px;
     z-index: 15;
     opacity: 0.2;
+
+    pointer-events: none;
 
 	background: -moz-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0)), color-stop(80%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0.61)));
@@ -475,6 +525,9 @@ a.night
 	position: absolute;
 	bottom: 70px;
     z-index: 150;
+
+    pointer-events: none;
+    
 
 	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.32) 80%, rgba(0,0,0,0.61) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(80%, rgba(0,0,0,0.32)), color-stop(100%, rgba(0,0,0,0.61)));
