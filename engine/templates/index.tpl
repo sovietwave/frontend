@@ -27,9 +27,10 @@
 		<script src="//static.nay.su/js/jquery.js" type="text/javascript"></script>
 		<script src="//static.nay.su/js/util.js" type="text/javascript"></script>
 
+		<script src="/assets/js/volume.js" type="text/javascript"></script>
 		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
-		<script src="/assets/js/volume.js" type="text/javascript"></script>
+		
 
 		<style type="text/css">
 			body, html

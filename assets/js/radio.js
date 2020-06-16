@@ -19,7 +19,8 @@ function randword() {
 	return s;
 }
 
-var radioPlayer = null,
+
+let radioPlayer = null,
 	playerReady = false,
 	currentChannel = '',
 	nowPlaying = false,
@@ -27,10 +28,11 @@ var radioPlayer = null,
 	tempShowing = false,
 	trackTimer = null;
 
+
 function radioInit() {
 	try {
-		var a = document.createElement('audio');
-		if (a.canPlayType('audio/aac') != 'no' &&
+		radioPlayer = document.createElement('audio');
+		if (radioPlayer.canPlayType('audio/aac') != 'no' &&
 
 			// Opera has broken AAC decoder
 			(navigator.userAgent.indexOf("Opera") == -1 &&
@@ -43,10 +45,6 @@ function radioInit() {
 		else
 			currentChannel = 'soviet.mp3';
 
-
-		a.remove();
-		delete a;
-
 		// Restore volume settings
 		// radioSetVolume(radioGetVolume(), false);
 		// Initialize track info.
@@ -54,23 +52,20 @@ function radioInit() {
 		requestListenersCount();
 
 		playerReady = true;
+
 	} catch (e) {
-		error("Error: " + e.message);
+		alert("Error: " + e.message);
 		playerReady = false;
 	}
 }
 
 function radioPlay(channel) {
-
 	channel = channel || currentChannel;
 
 	if (playerReady) {
 		// Create a player object
-		radioPlayer = document.createElement('audio');
 		radioPlayer.src = '//station.waveradio.org/' + channel + '?' + randword(); // fixes buffering
 		radioPlayer.title = showingTrack;
-		// radioPlayer.volume = radioGetVolume() / 100;
-		radioPlayer.volume = 1;
 
 		radioPlayer.onerror = function() {
 			if (nowPlaying) {
@@ -111,11 +106,6 @@ function radioStop() {
 	if (playerReady && radioPlayer) {
 		radioPlayer.pause();
 		radioPlayer.src = '';
-		radioPlayer.remove();
-		delete radioPlayer;
-
-		// Make an object to be NULL to get radioToggle() correct work
-		radioPlayer = null;
 
 		$('#player-switch').attr('class', 'player-switch-stalled');
 		setVal('player_on', 0);
@@ -128,7 +118,8 @@ function radioToggle(channel) {
 		error('Cannot start player, did not initialize yet');
 		return false;
 	}
-	if (radioPlayer == null) {
+
+	if (nowPlaying == false) {
 		try {
 			nowPlaying = true;
 			radioPlay(channel);
@@ -417,4 +408,7 @@ function calculateListenersCount(data) {
 }
 
 
-radioInit()
+$(document).ready(function() {
+	radioInit();
+	new Volume();
+});

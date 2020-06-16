@@ -1,41 +1,46 @@
-$(document).ready(function() {
-    volume_slider = $("#volume-range");
+class Volume {
+	constructor() {
+		var DEFAULT_VOLUME_VALUE = 0.75;
+		var self = this
 
-    volume_slider.on("input", function() {
-        if (playerReady) {
-            radioPlayer.volume = volume_slider.val() / 100;
-        }
-    });
-});
+		this.speakerLogo = $("#volume-speaker-logo");
+		this.speakerLogo.click(function() {
+			self.toggleSound();
+		});
 
-function radioGetVolume() {
-	// var savedVol = getVal('volume');
-	var savedVol = 1;
+		this.slider = $("#volume-range");
+		this.slider.on("input", function() {
+			if (playerReady) {
+				radioPlayer.volume = this.value / 100;
+			}
 
-	if (savedVol == null)
-		return 100;
-	else
-		return parseInt(savedVol);
-}
+			if (radioPlayer.volume != 0) {
+				self.speakerLogo.attr("src", "/assets/sprites/icons/volume.png");
+			} else {
+				self.speakerLogo.attr("src", "/assets/sprites/icons/mute.png");
+			}
+		});
+		this.slider.val(DEFAULT_VOLUME_VALUE * 100);
 
-function radioSetVolume(value, userAct) {
-	userAct = userAct || false;
-	if (value > 100)
-		value = 100;
-	else if (value < 0)
-		value = 0;
+		radioPlayer.volume = DEFAULT_VOLUME_VALUE;
 
-	if (radioPlayer != null) {
-		radioPlayer.volume = (value / 100);
+		this.lastVolumeValue = DEFAULT_VOLUME_VALUE;
 	}
 
-	if (userAct) {
-		radioSaveVolume(value);
+	toggleSound(){
+		if (radioPlayer.volume != 0) {
+			// mute
+
+			this.lastVolumeValue = this.slider.value;
+			radioPlayer.volume = 0;
+			this.slider.val(0.);
+			this.speakerLogo.attr("src", "/assets/sprites/icons/mute.png");
+		} else {
+			// unmute
+
+			radioPlayer.volume = this.lastVolumeValue;
+			this.slider.val(radioPlayer.volume * 100);
+			this.speakerLogo.attr("src", "/assets/sprites/icons/volume.png");
+		}
 	}
-
-	setVolValue(value);
-}
-
-function radioSaveVolume(value) {
-	setVal('volume', value);
 }
