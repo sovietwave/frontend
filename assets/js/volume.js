@@ -5,7 +5,7 @@ class Volume {
 
 		this.speakerLogo = $("#volume-speaker-logo");
 		this.speakerLogo.click(function() {
-			self.toggleSound();
+			self.toggleVolume();
 		});
 
 		this.slider = $("#volume-range");
@@ -27,11 +27,11 @@ class Volume {
 		this.lastVolumeValue = DEFAULT_VOLUME_VALUE;
 	}
 
-	toggleSound(){
+	toggleVolume(){
 		if (radioPlayer.volume != 0) {
 			// mute
 
-			this.lastVolumeValue = this.slider.value;
+			this.lastVolumeValue = this.slider.val() / 100;
 			radioPlayer.volume = 0;
 			this.slider.val(0.);
 			this.speakerLogo.attr("src", "/assets/sprites/icons/mute.png");

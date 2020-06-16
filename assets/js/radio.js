@@ -161,8 +161,6 @@ function getCurrentTrack(onSuccess, isBrief) {
 function getTrackHistory() {
 	var amount = Math.floor(calculateHistoryViewport() / trackHistoryItemHeight);
 
-	console.log(calculateHistoryViewport(), trackHistoryItemHeight, amount);
-
 	$.ajax({
 		url: '//core.waveradio.org/public/history',
 		data: {
