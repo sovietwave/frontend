@@ -1,16 +1,9 @@
 <!-- LINKS -->
 <div id="panel">
-		
-
-
 	<div id="panel-left-gradient"></div>
 	
-
     <div id="links">
-
     	<div id="links-title">#sovietwave</div>
-
-
 		
     	<div id="links-center-back"></div>
     	<div id="panel-air-title-gradient"></div>
@@ -22,7 +15,6 @@
 		src="assets/sprites/icons/volna2.png" class="links-icon" />Фестиваль</a>
 		-->
 
-	
 		<div id="links-container">
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
@@ -48,8 +40,6 @@
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
 			src="assets/sprites/icons/patreon.png" class="links-icon" />Поддержать</a>
 
-
-
 			<!--
 			<a href="https://fb.me/sovietwave" id="links-button-facebook"
 			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
@@ -68,11 +58,10 @@
 	</div>
 </div>
 
+
 <!-- AIR -->
 <div id="air-panel">
-
 	<div id="panel-left-gradient"></div>
-	
 	
 	<div id="air-list">
 		<div id="air-title-section">
@@ -90,7 +79,6 @@
 		<div id="panel-air-top-gradient"></div>
 		<div id="panel-air-bottom-gradient"></div>
 		
-
 		<div id="air-playlist-container">
 			<div id="air-playlist">
 				<!-- Ждём ответа из Центра... -->
@@ -100,9 +88,6 @@
 	</div>
 
 </div>
-
-<div id="panel-bottom-gradient"></div>
-
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45463833 = new Ya.Metrika2({ id:45463833, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/45463833" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->

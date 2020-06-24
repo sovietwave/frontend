@@ -352,29 +352,52 @@ function hideLeftPanels() {
 }
 
 function toggleNavi() {
-	var navi = $('#navi');
+	var navi = $('#navi'),
+		gradient = $('#panel-bottom-gradient'),
+		logoClear = $('#navi-logo-clear');
+
 
 	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
 		
 		hideLeftPanels();
 
-		$('#panel-bottom-gradient').hide();
-		$('#navi-logo').hide();
-		$('#navi-logo-clear').show();
-
-
+		gradient.hide();
+		logoClear.show();
 	} else {
-
 		if (navi.is(':visible')) {
+			navi.animate({
+				opacity: '0',
+				bottom: "-50"
+			  }, "fast");
 			navi.hide();
-			$('#panel-bottom-gradient').hide();
-			$('#navi-logo').hide();
-			$('#navi-logo-clear').show();
+
+			gradient.animate({
+				opacity: '0',
+				bottom: '-50'
+			  }, "fast");;
+
+			logoClear.animate({
+				opacity: '0.8',
+				bottom: '7'
+			  }, "fast");
+			logoClear.show();
 		} else {
+			navi.animate({
+				opacity: '0.8',
+				bottom: "0"
+			  }, "fast");
 			navi.show();
-			$('#panel-bottom-gradient').show();
-			$('#navi-logo').show();
-			$('#navi-logo-clear').hide();
+
+			gradient.animate({
+				opacity: '0.2',
+				bottom: "70"
+			  }, "fast");
+
+			logoClear.animate({
+				opacity: '0',
+				bottom: "-177 "
+			  }, "fast");
+			logoClear.hide();
 		}
 	}
 

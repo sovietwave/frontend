@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-16 20:33:41
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 20:55:08
   from '/home/pavel/dev/frontend/engine/templates/navi.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee902753799d2_24826519',
+  'unifunc' => 'content_5ef3937cc3d2d8_65287266',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49694d56558873c6679cb159cbd253449a1387f9' => 
     array (
       0 => '/home/pavel/dev/frontend/engine/templates/navi.tpl',
-      1 => 1592328817,
+      1 => 1593021154,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee902753799d2_24826519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef3937cc3d2d8_65287266 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- NAVI -->
 <div id="navi">
     <div id="navi-back" onclick="hideLeftPanels()"></div>
@@ -69,9 +69,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
                 
                 <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
         </a> 
-
-
-
 
     </div>
 </div>

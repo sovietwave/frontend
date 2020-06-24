@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-16 19:57:19
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 20:55:08
   from '/home/pavel/dev/frontend/engine/templates/menus.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee8f9ef735e18_70314519',
+  'unifunc' => 'content_5ef3937cbce153_23035312',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35184438d8a7ef2f782b8da740d1d9cdbf78bed6' => 
     array (
       0 => '/home/pavel/dev/frontend/engine/templates/menus.tpl',
-      1 => 1591442573,
+      1 => 1593021305,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee8f9ef735e18_70314519 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef3937cbce153_23035312 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- LINKS -->
 <div id="panel">
-		
-
-
 	<div id="panel-left-gradient"></div>
 	
-
     <div id="links">
-
     	<div id="links-title">#sovietwave</div>
-
-
 		
     	<div id="links-center-back"></div>
     	<div id="panel-air-title-gradient"></div>
@@ -47,7 +40,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
 		src="assets/sprites/icons/volna2.png" class="links-icon" />Фестиваль</a>
 		-->
 
-	
 		<div id="links-container">
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
 			class="links-button<?php echo '<?php ';?>
@@ -85,8 +77,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
  link" target="_blank"><img
 			src="assets/sprites/icons/patreon.png" class="links-icon" />Поддержать</a>
 
-
-
 			<!--
 			<a href="https://fb.me/sovietwave" id="links-button-facebook"
 			class="links-button<?php echo '<?php ';?>
@@ -109,11 +99,10 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
 	</div>
 </div>
 
+
 <!-- AIR -->
 <div id="air-panel">
-
 	<div id="panel-left-gradient"></div>
-	
 	
 	<div id="air-list">
 		<div id="air-title-section">
@@ -131,7 +120,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
 		<div id="panel-air-top-gradient"></div>
 		<div id="panel-air-bottom-gradient"></div>
 		
-
 		<div id="air-playlist-container">
 			<div id="air-playlist">
 				<!-- Ждём ответа из Центра... -->
@@ -141,9 +129,6 @@ if ($content['site_mode'] == 'night') echo (' night'); <?php echo '?>';?>
 	</div>
 
 </div>
-
-<div id="panel-bottom-gradient"></div>
-
 
 <!-- Yandex.Metrika counter -->
 <?php echo '<script'; ?>

@@ -45,9 +45,6 @@
                 <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
         </a> 
 
-
-
-
     </div>
 </div>
 
