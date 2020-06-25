@@ -353,51 +353,33 @@ function hideLeftPanels() {
 
 function toggleNavi() {
 	var navi = $('#navi'),
-		gradient = $('#panel-bottom-gradient'),
-		logoClear = $('#navi-logo-clear');
+		logo = $('#navi-logo');
 
 
 	if ($("#panel").is(':visible') || $("#air-panel").is(':visible')) {
 		
 		hideLeftPanels();
 
-		gradient.hide();
-		logoClear.show();
+		logo.show();
 	} else {
 		if (navi.is(':visible')) {
 			navi.animate({
 				opacity: '0',
-				bottom: "-50"
 			  }, "fast");
 			navi.hide();
 
-			gradient.animate({
-				opacity: '0',
-				bottom: '-50'
-			  }, "fast");;
-
-			logoClear.animate({
-				opacity: '0.8',
-				bottom: '7'
+			logo.find('img').animate({
+				height: '100',
 			  }, "fast");
-			logoClear.show();
 		} else {
 			navi.animate({
-				opacity: '0.8',
-				bottom: "0"
+				opacity: '1',
 			  }, "fast");
-			navi.show();
+			navi.show();	
 
-			gradient.animate({
-				opacity: '0.2',
-				bottom: "70"
+			logo.find('img').animate({
+				height: '60',
 			  }, "fast");
-
-			logoClear.animate({
-				opacity: '0',
-				bottom: "-177 "
-			  }, "fast");
-			logoClear.hide();
 		}
 	}
 

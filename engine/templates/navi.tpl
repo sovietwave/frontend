@@ -14,9 +14,7 @@
     </div>
    
     
-    <div class="navi-block" id="central">
-        <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
-    </div>
+    <div class="navi-block" id="central"></div>
     
     <div class="navi-block" id="side">
         <div id="navi-separator"></div>
@@ -48,6 +46,5 @@
     </div>
 </div>
 
-<!-- LOGO -->
-<div id="navi-logo-clear"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
 
+<div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
