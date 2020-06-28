@@ -1,13 +1,13 @@
 <!-- LINKS -->
-<div id="panel">
-	<div id="panel-left-gradient"></div>
+<div id="links-panel">
+	<div id="links-panel-left-gradient"></div>
 	
     <div id="links">
     	<div id="links-title">#sovietwave</div>
 		
     	<div id="links-center-back"></div>
-    	<div id="panel-air-title-gradient"></div>
-    	<div id="panel-air-top-gradient"></div>
+    	<div id="links-panel-air-title-gradient"></div>
+    	<div id="links-panel-air-top-gradient"></div>
     	
     	<!--
 		<a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" id="links-button-fest"

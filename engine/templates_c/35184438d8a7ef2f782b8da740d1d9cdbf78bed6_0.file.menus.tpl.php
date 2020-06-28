@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 20:55:08
+/* Smarty version 3.1.34-dev-7, created on 2020-06-26 18:47:36
   from '/home/pavel/dev/frontend/engine/templates/menus.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3937cbce153_23035312',
+  'unifunc' => 'content_5ef618985c40c6_10783668',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35184438d8a7ef2f782b8da740d1d9cdbf78bed6' => 
     array (
       0 => '/home/pavel/dev/frontend/engine/templates/menus.tpl',
-      1 => 1593021305,
+      1 => 1593186405,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3937cbce153_23035312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef618985c40c6_10783668 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- LINKS -->
-<div id="panel">
-	<div id="panel-left-gradient"></div>
+<div id="links-panel">
+	<div id="links-panel-left-gradient"></div>
 	
     <div id="links">
     	<div id="links-title">#sovietwave</div>
 		
     	<div id="links-center-back"></div>
-    	<div id="panel-air-title-gradient"></div>
-    	<div id="panel-air-top-gradient"></div>
+    	<div id="links-panel-air-title-gradient"></div>
+    	<div id="links-panel-air-top-gradient"></div>
     	
     	<!--
 		<a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" id="links-button-fest"

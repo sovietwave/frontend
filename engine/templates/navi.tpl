@@ -4,9 +4,9 @@
 
     <div class="navi-block" id="side">
         
-        <div id="navi-links" onclick="toggleLinks()">Ссылки</div>
+        <div id="navi-links" onclick="toggleMenu('#links-panel')">Ссылки</div>
         <div id="navi-separator"></div>
-        <div id="navi-air" onclick="toggleAirPanel()">Эфир</div>
+        <div id="navi-air" onclick="toggleMenu('#air-panel')">Эфир</div>
         <div id="navi-separator"></div>
 
         <div id="panel-active-air"></div>
