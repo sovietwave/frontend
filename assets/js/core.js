@@ -16,7 +16,8 @@ var backs = {
 		"buttons": [
 			"/assets/sprites/btn-day0.png",
 			"/assets/sprites/btn-day1.png",
-			"/assets/sprites/btn-day2.png"
+			"/assets/sprites/btn-day2.png",
+			"/assets/sprites/day6.png",
 		]
 	},
 
@@ -27,7 +28,9 @@ var backs = {
 			"/assets/sprites/evening2.jpg",
 			"/assets/sprites/evening3.jpg",
 			"/assets/sprites/evening4.jpg",
-			"/assets/sprites/evening5.jpg"
+			"/assets/sprites/evening5.jpg",
+			"/assets/sprites/evening6.png",
+			"/assets/sprites/evening7.png",
 		],
 
 		"buttons": [
@@ -36,6 +39,7 @@ var backs = {
 			"/assets/sprites/btn-evening2.png",
 			"/assets/sprites/btn-evening3.png",
 			"/assets/sprites/btn-evening4.png"
+			
 		]
 	},
 
@@ -46,7 +50,8 @@ var backs = {
 			"/assets/sprites/night2.jpg",
 			"/assets/sprites/night3.jpg",
 			"/assets/sprites/night4.jpg",
-			"/assets/sprites/night5.jpg"
+			"/assets/sprites/night5.jpg",
+			"/assets/sprites/night7.png",
 		],
 
 		"buttons": [

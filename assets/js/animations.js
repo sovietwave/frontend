@@ -42,8 +42,7 @@ function hidePanels() {
 function toggleMenu(panelId) {
 	var panels = [$("#links-panel"),  $("#air-panel")],
 		panel = $(panelId),
-		brightOverlay = $('#bright-overlay'),
-		player = $("#player-wrapper");
+		brightOverlay = $('#bright-overlay');
 
 	if (panel.is(':visible')) {
 		panel.animate({
@@ -54,11 +53,9 @@ function toggleMenu(panelId) {
 
 		brightOverlay.animate({
 			opacity: '0',
-		  }, ANIMATION_SPEED);
-		
-		player.animate({
-			opacity: '1',
-		}, ANIMATION_SPEED);
+		  }, ANIMATION_SPEED, function() {
+			$(this).hide();
+		  });
 	} else {
 		// hide all panels
 		for (panelIndex=0; panelIndex < panels.length; panelIndex++) {
@@ -80,10 +77,6 @@ function toggleMenu(panelId) {
 		brightOverlay.show();
 		brightOverlay.animate({
 			opacity: '0.2',
-		}, ANIMATION_SPEED);
-
-		player.animate({
-			opacity: '0',
 		}, ANIMATION_SPEED);
 	}
 }
