@@ -1,5 +1,5 @@
 <!-- LINKS -->
-<div id="links-panel">
+<div class="panel" id="links-panel">
 	<div id="links-panel-left-gradient"></div>
 	
     <div id="links">
@@ -60,7 +60,7 @@
 
 
 <!-- AIR -->
-<div id="air-panel">
+<div class="panel" id="air-panel">
 	<div id="panel-left-gradient"></div>
 	
 	<div id="air-list">

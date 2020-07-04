@@ -52,6 +52,7 @@ var backs = {
 			"/assets/sprites/night4.jpg",
 			"/assets/sprites/night5.jpg",
 			"/assets/sprites/night7.png",
+			"/assets/sprites/day6.png",
 		],
 
 		"buttons": [

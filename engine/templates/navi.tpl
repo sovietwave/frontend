@@ -3,17 +3,12 @@
     <div id="navi-back" onclick="hideLeftPanels()"></div>
 
     <div class="navi-block" id="side">
-        
-        <div id="navi-links" onclick="toggleMenu('#links-panel')">Ссылки</div>
+        <div class="clickable panel-toggler" id="navi-links" onclick="togglePanel(this.id, '#links-panel')">Ссылки</div>
         <div id="navi-separator"></div>
-        <div id="navi-air" onclick="toggleMenu('#air-panel')">Эфир</div>
+        <div class="clickable panel-toggler" id="navi-air" onclick="togglePanel(this.id, '#air-panel')">Эфир</div>
         <div id="navi-separator"></div>
-
-        <div id="panel-active-air"></div>
-        <div id="panel-active-links"></div>
     </div>
    
-    
     <div class="navi-block" id="central"></div>
     
     <div class="navi-block" id="side">
@@ -27,24 +22,23 @@
 
         <div id="navi-separator"></div>
 
-        <div id="volume-speaker">
+        <div class="clickable" id="volume-speaker">
             <img id="volume-speaker-logo" src="/assets/sprites/icons/volume.png" align="absmiddle" />
         </div>
 
-        <div id="volume-container">            
+        <div class="clickable" id="volume-container">            
             <input id="volume-range" type="range" min="0" max="100" step="1" id="volume" />
         </div>
 
         <div id="navi-separator"></div>
 
-        <a href="#" id="switch-back"
-                class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" onclick="switchCurrentBackground(); return false;">
+        <a href="#" class="clickable" id="switch-back"
+            class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" onclick="switchCurrentBackground(); return false;">
                 
-                <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
+            <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
         </a> 
 
     </div>
 </div>
-
 
 <div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>

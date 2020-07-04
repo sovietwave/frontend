@@ -54,36 +54,6 @@
 	opacity: 0.9;
 }
 
-/* #panel-bottom-gradient
-{
-	width: 100%;
-	height: 20px;
-	position: absolute;
-	bottom: 70px;
-    z-index: 15;
-    opacity: 0.2;
-
-    pointer-events: none;
-
-	background: -moz-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0)), color-stop(80%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0.61)));
-	background: -webkit-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
-	background: -o-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
-	background: -ms-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
-	background: linear-gradient(to bottom, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
-
-	transition: All 0.5s ease;
-	-webkit-transition: All 0.5s ease;
-	-moz-transition: All 0.5s ease;
-	-o-transition: All 0.5s ease;
-}
-
-#panel-bottom-gradient.night
-{
-    opacity: 0.2;
-} */
-
 .navi-block {
 	height: 100%;
 	text-align: center;
@@ -125,24 +95,16 @@
 
 	text-transform: uppercase;
 	text-align: inherit;
-	
-	/* navi button start */
 	opacity: 0.8;
 	cursor: pointer;
 	transition: 1s ease;
 }
 
-#navi-links:hover {
+.clickable:hover {
 	opacity: 1;
 	background-color: rgba(255, 222, 128, 0.1);
 }
 
-#navi-links:active {
-	opacity: 0.4;
-	background-color: rgba(0, 0, 0, 1);
-}
-
-/* navi button end */
 
 /* AIR */
 #navi-air, #navi-air-mobile
@@ -151,8 +113,6 @@
 	width: 50%;
 	text-align: center;
 	cursor: pointer;
-
-	/* navi button start */
 	opacity: 0.8;
 	cursor: pointer;
 	transition: All 0.35s ease;
@@ -160,18 +120,6 @@
 	-moz-transition: All 0.35s ease;
 	-o-transition: All 0.35s ease;
 }
-
-#navi-air:hover, #navi-air-mobile:hover {
-	opacity: 1;
-	background-color: rgba(255, 222, 128, 0.1);
-}
-
-#navi-air:active, #navi-air-mobile:active {
-	opacity: 0.4;
-	background-color: rgba(0, 0, 0, 1);
-}
-
-/* navi button end */
 
 #navi-air-mobile
 {
@@ -183,8 +131,6 @@
 {
 	opacity: 1;
 }
-
-/* navi button end */
 
 #navi-logo {
 	position: absolute;
@@ -226,17 +172,10 @@
 	-o-transition: All 0.35s ease;
 }
 
-#volume-container:hover {
-	opacity: 1;
-	background-color: rgba(255, 222, 128, 0.1);
-}
-
 #volume-container:active {
 	opacity: 0.4;
 	background-color: rgba(0, 0, 0, 1);
 }
-
-
 
 /* navi button end */
 
@@ -254,11 +193,6 @@
 	-webkit-transition: All 0.35s ease;
 	-moz-transition: All 0.35s ease;
 	-o-transition: All 0.35s ease;
-}
-
-#volume-speaker:hover {
-	opacity: 1;
-	background-color: rgba(255, 222, 128, 0.1);
 }
 
 #volume-speaker:active {
@@ -300,11 +234,6 @@
 	-webkit-transition: All 0.35s ease;
 	-moz-transition: All 0.35s ease;
 	-o-transition: All 0.35s ease;
-}
-
-#switch-back:hover {
-	opacity: 1;
-	background-color: rgba(255, 222, 128, 0.1);
 }
 
 #switch-back:active {

@@ -1,27 +1,36 @@
-var ANIMATION_SPEED = 300;
+const ANIMATION_SPEED = 300;
+var activePanel = null;
+
+
+function hideSmooth(element, property, speed=ANIMATION_SPEED) {
+	element.animate(
+		property,
+		speed,
+		function() {
+			$(this).hide();
+		}
+	);
+}
+
+function showSmooth(element, property, speed=ANIMATION_SPEED) {
+	element.animate(property, speed).show();
+}
 
 function toggleNavi() {
 	var navi = $('#navi'),
 		logo = $('#navi-logo');
 
 	if ($("#links-panel").is(':visible') || $("#air-panel").is(':visible')) {
-		hidePanels();
 		logo.show();
 	} else {
 		if (navi.is(':visible')) {
-			navi.animate({
-				opacity: '0',
-			  }, ANIMATION_SPEED);
 			navi.hide();
 
 			logo.find('img').animate({
 				height: '100',
 			  }, ANIMATION_SPEED);
 		} else {
-			navi.animate({
-				opacity: '1',
-			  }, ANIMATION_SPEED);
-			navi.show();	
+			showSmooth(navi, {opacity: "1"});
 
 			logo.find('img').animate({
 				height: '60',
@@ -30,53 +39,40 @@ function toggleNavi() {
 	}
 }
 
-function hidePanels() {
-	$("#air-panel").hide();
-	$("#links-panel").hide();
-	$('#bright-overlay').hide();
+function togglePanel(togglerId, panelId) {
+	const panels = [$("#links-panel"),  $("#air-panel")];
+	var panel = $(panelId),
+		brightOverlay = $('#bright-overlay'),
+		panelTogglers = $(".panel-toggler"),
+		toggler = $("#" + togglerId);
 
-	$('#panel-active-links').hide();
-	$('#panel-active-air').hide();
-}
-
-function toggleMenu(panelId) {
-	var panels = [$("#links-panel"),  $("#air-panel")],
-		panel = $(panelId),
-		brightOverlay = $('#bright-overlay');
+	activePanel = panel;
 
 	if (panel.is(':visible')) {
-		panel.animate({
-			left: '-450',
-		}, ANIMATION_SPEED, function() {
-			$(this).hide();
-		});
-
-		brightOverlay.animate({
-			opacity: '0',
-		  }, ANIMATION_SPEED, function() {
-			$(this).hide();
-		  });
+		hideSmooth(panel, {left: "-450"});
+		hideSmooth(brightOverlay, {opacity: "0"});
+		panelTogglers.css("background-color", "rgb(0, 0, 0, 0)");
+		toggler.css("background-color", "rgb(0, 0, 0, 0)");
 	} else {
 		// hide all panels
 		for (panelIndex=0; panelIndex < panels.length; panelIndex++) {
 			panel_to_close = panels[panelIndex];
 			
 			if (panel_to_close[0].id != panel[0].id) {
-				panel_to_close.animate({
-					left: '-450',
-				}, ANIMATION_SPEED, function() {
-					$(this).hide();
-				});
+				hideSmooth(panel_to_close, {left: "-450"});
 			}
 		}
 
-		panel.animate({
-			left: '0',
-		}, ANIMATION_SPEED).show();
-		
-		brightOverlay.show();
-		brightOverlay.animate({
-			opacity: '0.2',
-		}, ANIMATION_SPEED);
+		panelTogglers.css("background-color", "rgb(0, 0, 0, 0)");
+		toggler.css("background-color", "rgb(225, 222, 128, 0.5)");
+
+		showSmooth(panel, {left: "0"});
+		showSmooth(brightOverlay, {opacity: "0.2"});
 	}
+}
+
+function hidePanels() {
+	hideSmooth(activePanel, {left: "-450"});
+	hideSmooth($('#bright-overlay'), {opacity: "0"});
+	$(".panel-toggler").css("background-color", "rgb(0, 0, 0, 0)");
 }
