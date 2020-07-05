@@ -1,46 +1,47 @@
-class Volume {
-	constructor() {
-		var DEFAULT_VOLUME_VALUE = 0.75;
+class VolumeHandler {
+	constructor(defaultVolumeValue, volumeTogglerId, volumeSliderId, radioPlayer) {
+		this.DEFAULT_VOLUME_VALUE = defaultVolumeValue;
+		this.volumeToggler = $(volumeTogglerId);
+		this.volumeSlider = $(volumeSliderId);
+		this.radioPlayer = radioPlayer;
+		
 		var self = this
-
-		this.speakerLogo = $("#volume-speaker-logo");
-		this.speakerLogo.click(function() {
+		this.volumeToggler.click(function() {
 			self.toggleVolume();
 		});
 
-		this.slider = $("#volume-range");
-		this.slider.on("input", function() {
+		this.volumeSlider.on("input", function() {
 			if (playerReady) {
-				radioPlayer.volume = this.value / 100;
+				this.radioPlayer.volume = this.value / 100;
 			}
 
-			if (radioPlayer.volume != 0) {
-				self.speakerLogo.attr("src", "/assets/sprites/icons/volume.png");
+			if (this.radioPlayer.volume != 0) {
+				self.volumeToggler.attr("src", "/assets/sprites/icons/volume.png");
 			} else {
-				self.speakerLogo.attr("src", "/assets/sprites/icons/mute.png");
+				self.volumeToggler.attr("src", "/assets/sprites/icons/mute.png");
 			}
 		});
-		this.slider.val(DEFAULT_VOLUME_VALUE * 100);
+		this.volumeSlider.val(this.DEFAULT_VOLUME_VALUE * 100);
 
-		radioPlayer.volume = DEFAULT_VOLUME_VALUE;
+		this.radioPlayer.volume = this.DEFAULT_VOLUME_VALUE;
 
-		this.lastVolumeValue = DEFAULT_VOLUME_VALUE;
+		this.lastVolumeValue = this.DEFAULT_VOLUME_VALUE;
 	}
 
 	toggleVolume(){
-		if (radioPlayer.volume != 0) {
+		if (this.radioPlayer.volume != 0) {
 			// mute
 
-			this.lastVolumeValue = this.slider.val() / 100;
-			radioPlayer.volume = 0;
-			this.slider.val(0.);
-			this.speakerLogo.attr("src", "/assets/sprites/icons/mute.png");
+			this.lastVolumeValue = this.volumeSlider.val() / 100;
+			this.radioPlayer.volume = 0;
+			this.volumeSlider.val(0.);
+			this.volumeToggler.attr("src", "/assets/sprites/icons/mute.png");
 		} else {
 			// unmute
 
-			radioPlayer.volume = this.lastVolumeValue;
-			this.slider.val(radioPlayer.volume * 100);
-			this.speakerLogo.attr("src", "/assets/sprites/icons/volume.png");
+			this.radioPlayer.volume = this.lastVolumeValue;
+			this.volumeSlider.val(this.radioPlayer.volume * 100);
+			this.volumeToggler.attr("src", "/assets/sprites/icons/volume.png");
 		}
 	}
 }

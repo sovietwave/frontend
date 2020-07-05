@@ -15,10 +15,12 @@
 		<meta name="apple-mobile-web-app-title" content="Советская волна">
 		<meta name="application-name" content="Советская волна">
 
-		<link rel="stylesheet" href="assets/styles/fonts.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/rangeinput.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/soviet.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/navi.css?v<?php echo CLIENT_VERSION; ?>">
+		<link rel="stylesheet" href="assets/styles/fonts.css">
+		<link rel="stylesheet" href="assets/styles/rangeinput.css">
+		<link rel="stylesheet" href="assets/styles/scrollbar.css">
+		<link rel="stylesheet" href="assets/styles/soviet.css">
+		<link rel="stylesheet" href="assets/styles/navi.css">
+		<link rel="stylesheet" href="assets/styles/panels.css">
 
 		<link rel="apple-touch-icon" href="/assets/sprites/icon-apple.png">
 		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="/assets/sprites/icon-apple.png">
@@ -29,22 +31,15 @@
 
 		<script src="/assets/js/volume.js" type="text/javascript"></script>
 		<script src="/assets/js/animations.js" type="text/javascript"></script>
-		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
-		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
+		<script src="/assets/js/air_mode.js" type="text/javascript"></script>
+		<script src="/assets/js/radio.js" type="text/javascript"></script>
 
 		<title>Радио &laquo;Советская волна&raquo;</title>
     </head>
 
     <body>
-        <script type="text/javascript">
-            var SITE_MODE = '{$site_mode}';
-        </script>
-        
-        <!-- BRIGHT -->
-		<div id="bright-overlay" onclick="hidePanels()"></div> 
-		
 		{include file='engine/templates/content/player.tpl'}
-		{include file='engine/templates/menus.tpl'}
+		{include file='engine/templates/panels.tpl'}
 		{include file='engine/templates/navi.tpl'}
     </body>
 </html>

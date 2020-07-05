@@ -1,29 +1,29 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-04 12:57:18
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 17:04:38
   from '/home/pavel/dev/frontend/engine/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f00527ee34372_15806054',
+  'unifunc' => 'content_5f01ddf638ca92_30016689',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '67c2e9de9b6018a0455ead733e6fd1b3d82dbd84' => 
     array (
       0 => '/home/pavel/dev/frontend/engine/templates/index.tpl',
-      1 => 1593856619,
+      1 => 1593957875,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:engine/templates/content/player.tpl' => 1,
-    'file:engine/templates/menus.tpl' => 1,
+    'file:engine/templates/panels.tpl' => 1,
     'file:engine/templates/navi.tpl' => 1,
   ),
 ),false)) {
-function content_5f00527ee34372_15806054 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f01ddf638ca92_30016689 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 
@@ -43,18 +43,12 @@ echo($_SERVER['HTTP_HOST']); <?php echo '?>';?>
 		<meta name="apple-mobile-web-app-title" content="Советская волна">
 		<meta name="application-name" content="Советская волна">
 
-		<link rel="stylesheet" href="assets/styles/fonts.css?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-">
-		<link rel="stylesheet" href="assets/styles/rangeinput.css?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-">
-		<link rel="stylesheet" href="assets/styles/soviet.css?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-">
-		<link rel="stylesheet" href="assets/styles/navi.css?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-">
+		<link rel="stylesheet" href="assets/styles/fonts.css">
+		<link rel="stylesheet" href="assets/styles/rangeinput.css">
+		<link rel="stylesheet" href="assets/styles/scrollbar.css">
+		<link rel="stylesheet" href="assets/styles/soviet.css">
+		<link rel="stylesheet" href="assets/styles/navi.css">
+		<link rel="stylesheet" href="assets/styles/panels.css">
 
 		<link rel="apple-touch-icon" href="/assets/sprites/icon-apple.png">
 		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="/assets/sprites/icon-apple.png">
@@ -74,33 +68,19 @@ echo CLIENT_VERSION; <?php echo '?>';?>
  src="/assets/js/animations.js" type="text/javascript"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
- src="/assets/js/radio.js?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-" type="text/javascript"><?php echo '</script'; ?>
+ src="/assets/js/air_mode.js" type="text/javascript"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
- src="/assets/js/core.js?v<?php echo '<?php ';?>
-echo CLIENT_VERSION; <?php echo '?>';?>
-" type="text/javascript"><?php echo '</script'; ?>
+ src="/assets/js/radio.js" type="text/javascript"><?php echo '</script'; ?>
 >
 
 		<title>Радио &laquo;Советская волна&raquo;</title>
     </head>
 
     <body>
-        <?php echo '<script'; ?>
- type="text/javascript">
-            var SITE_MODE = '<?php echo $_smarty_tpl->tpl_vars['site_mode']->value;?>
-';
-        <?php echo '</script'; ?>
->
-        
-        <!-- BRIGHT -->
-		<div id="bright-overlay" onclick="hidePanels()"></div> 
-		
 		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/content/player.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/menus.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/panels.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 		<?php $_smarty_tpl->_subTemplateRender('file:engine/templates/navi.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

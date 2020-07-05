@@ -10,6 +10,7 @@ function rnd(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
 function randword() {
 	var s = '';
 	var ltr = 'qwertyuiopasdfghjklzxcvbnm';
@@ -59,6 +60,7 @@ function radioInit() {
 	}
 }
 
+
 function radioPlay(channel) {
 	channel = channel || currentChannel;
 
@@ -102,6 +104,7 @@ function radioPlay(channel) {
 		error('ERR: Still loading');
 }
 
+
 function radioStop() {
 	if (playerReady && radioPlayer) {
 		radioPlayer.pause();
@@ -111,6 +114,7 @@ function radioStop() {
 		setVal('player_on', 0);
 	}
 }
+
 
 function radioToggle(channel) {
 	channel = channel || currentChannel;
@@ -142,6 +146,7 @@ function requestTrackInfo() {
 	getCurrentTrack(processBriefResult, true);
 }
 
+
 function getCurrentTrack(onSuccess, isBrief) {
 	$.ajax({
 		url: '//core.waveradio.org/public/current',
@@ -157,6 +162,7 @@ function getCurrentTrack(onSuccess, isBrief) {
 		setTrackInfo('- нет связи -');
 	});
 }
+
 
 function getTrackHistory() {
 	var amount = Math.floor(calculateHistoryViewport() / trackHistoryItemHeight);
@@ -177,6 +183,7 @@ function getTrackHistory() {
 	});
 }
 
+
 function calculateHistoryViewport() {
 	var
 		naviHeight = $('#navi').height(),
@@ -184,6 +191,7 @@ function calculateHistoryViewport() {
 
 	return docHeight - (naviHeight + airTitleHeight);
 }
+
 
 function processTrackHistory(data) {
 	if (!data || data['status'] === undefined) {
@@ -200,9 +208,7 @@ function processTrackHistory(data) {
 
 				// Time
 				historyHtml += '<div class="air-playlist-item"><div class="air-time">' + ((trackDate.getHours() < 10) ? '0' : '') + trackDate.getHours() + ':' +
-					((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() +
-					'</div>';
-
+					((trackDate.getMinutes() < 10) ? '0' : '') + trackDate.getMinutes() + '</div>';
 
 				// Song
 				historyHtml += '<div class="air-song">';
@@ -215,10 +221,6 @@ function processTrackHistory(data) {
 					historyHtml += '<span class="air-band">' + track['artist'] + '</span>';
 				}
 
-
-				// separator
-				historyHtml += '<br>';
-
 				// title
 				historyHtml += '<span class="air-song-title">' + track['track_title'] + '</span>';
 				historyHtml += '</div></div>';
@@ -230,8 +232,9 @@ function processTrackHistory(data) {
 			break;
 	}
 
-	$('#air-playlist').html(historyHtml);
+	$('#air-content').html(historyHtml);
 }
+
 
 function processBriefResult(csRes) {
 
@@ -246,12 +249,14 @@ function processBriefResult(csRes) {
 	}
 }
 
+
 function splitTrackInfo(track) {
 	return {
 		artist: track.substr(0, track.indexOf(' - ')),
 		title: track.substr(track.indexOf(' - ') + 3)
 	};
 }
+
 
 function setArtistLink(link) {
 	var artistObj = $('#player-artist-link');
@@ -276,6 +281,7 @@ function setArtistLink(link) {
 		});
 	}
 }
+
 
 function setTrackInfo(track) {
 	if (!track)
@@ -366,6 +372,7 @@ function setTrackInfo(track) {
 	}
 }
 
+
 function setTempTitle(title) {
 	tempShowing = true;
 
@@ -378,7 +385,6 @@ function setTempTitle(title) {
 }
 
 
-// Sovietwave-specific code but may be used anywhere
 function requestListenersCount() {
 	setTimeout(requestListenersCount, 20000);
 
@@ -401,12 +407,35 @@ function calculateListenersCount(data) {
 			listenersCount += mount.listeners;
 
 		if (currentPos === data.icestats.source.length)
-			$('#listeners').text(listenersCount);
+			$('#listeners-count').text(listenersCount);
 	});
 }
 
 
 $(document).ready(function() {
 	radioInit();
-	new Volume();
+
+	new AirModeHandler(
+		modeElementId="#air-title-mode",
+		timesElementId="air-times",
+		tagsElementId="air-tags"
+	);
+
+	new VolumeHandler(
+		defaultVolumeValue=0.8,
+		volumeTogglerId="#volume-speaker-logo",
+		volumeSliderId="#volume-range",
+		radioPlayer=radioPlayer
+	);
+
+	new AnimationHandler(
+		togglerIdPanelIdMapping = {
+			"#links-toggler": "#links-panel",
+			"#air-toggler": "#air-panel"
+		},
+		togglerClassId=".panel-toggler",
+		brightOverlayId="#bright-overlay",
+		naviTogglerId="#navi-logo",
+		animationSpeed=300
+	);
 });

@@ -1,44 +1,28 @@
 <!-- NAVI -->
 <div id="navi">
-    <div id="navi-back" onclick="hideLeftPanels()"></div>
-
-    <div class="navi-block" id="side">
-        <div class="clickable panel-toggler" id="navi-links" onclick="togglePanel(this.id, '#links-panel')">Ссылки</div>
-        <div id="navi-separator"></div>
-        <div class="clickable panel-toggler" id="navi-air" onclick="togglePanel(this.id, '#air-panel')">Эфир</div>
-        <div id="navi-separator"></div>
+    <div class="navi-block-side" id="navi-block-left">
+        <div id="links-toggler" class="clickable panel-toggler">Ссылки</div>
+        <div id="air-toggler" class="clickable panel-toggler">Эфир</div>
     </div>
-   
-    <div class="navi-block" id="central"></div>
     
-    <div class="navi-block" id="side">
-        <div id="navi-separator"></div>
-        <div id="navi-air-mobile" onclick="toggleAirPanel()">Эфир</div>
-
+    <div class="navi-block-side" id="navi-block-right">
         <div id="listeners-container">
-            <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">?</span>
-            <div id="listeners"></div>
+            <img src="/assets/sprites/icons/listeners.png"/>
+            <div id="listeners-count">?</div>
         </div>
 
-        <div id="navi-separator"></div>
-
         <div class="clickable" id="volume-speaker">
-            <img id="volume-speaker-logo" src="/assets/sprites/icons/volume.png" align="absmiddle" />
+            <img id="volume-speaker-logo" src="/assets/sprites/icons/volume.png"/>
         </div>
 
         <div class="clickable" id="volume-container">            
-            <input id="volume-range" type="range" min="0" max="100" step="1" id="volume" />
+            <input id="volume-range" type="range" min="0" max="100" step="1" id="volume"/>
         </div>
 
-        <div id="navi-separator"></div>
-
-        <a href="#" class="clickable" id="switch-back"
-            class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?>" onclick="switchCurrentBackground(); return false;">
-                
-            <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
+        <a href="#" class="clickable" id="switch-back" onclick="switchCurrentBackground();"> 
+            <img src="/assets/sprites/icons/back.png"/>       
         </a> 
-
     </div>
 </div>
 
-<div id="navi-logo"><img src="/assets/sprites/logo.png" onclick="toggleNavi()"/></div>
+<img class="clickable" id="navi-logo" src="/assets/sprites/logo.png"/>
