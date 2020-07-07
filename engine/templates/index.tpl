@@ -29,10 +29,11 @@
 		<script src="//static.nay.su/js/jquery.js" type="text/javascript"></script>
 		<script src="//static.nay.su/js/util.js" type="text/javascript"></script>
 
+		<script src="/assets/js/utils.js" type="text/javascript"></script>
 		<script src="/assets/js/volume.js" type="text/javascript"></script>
 		<script src="/assets/js/animations.js" type="text/javascript"></script>
 		<script src="/assets/js/air_mode.js" type="text/javascript"></script>
-		<script src="/assets/js/radio.js" type="text/javascript"></script>
+		<script src="/assets/js/soviet.js" type="text/javascript"></script>
 
 		<title>Радио &laquo;Советская волна&raquo;</title>
     </head>

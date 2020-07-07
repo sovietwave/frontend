@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 17:04:38
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 22:58:03
   from '/home/pavel/dev/frontend/engine/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f01ddf638ca92_30016689',
+  'unifunc' => 'content_5f0230cb2a59f2_91931093',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '67c2e9de9b6018a0455ead733e6fd1b3d82dbd84' => 
     array (
       0 => '/home/pavel/dev/frontend/engine/templates/index.tpl',
-      1 => 1593957875,
+      1 => 1593978987,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:engine/templates/navi.tpl' => 1,
   ),
 ),false)) {
-function content_5f01ddf638ca92_30016689 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0230cb2a59f2_91931093 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 
@@ -62,6 +62,9 @@ echo($_SERVER['HTTP_HOST']); <?php echo '?>';?>
 >
 
 		<?php echo '<script'; ?>
+ src="/assets/js/utils.js" type="text/javascript"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
  src="/assets/js/volume.js" type="text/javascript"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
@@ -71,7 +74,7 @@ echo($_SERVER['HTTP_HOST']); <?php echo '?>';?>
  src="/assets/js/air_mode.js" type="text/javascript"><?php echo '</script'; ?>
 >
 		<?php echo '<script'; ?>
- src="/assets/js/radio.js" type="text/javascript"><?php echo '</script'; ?>
+ src="/assets/js/soviet.js" type="text/javascript"><?php echo '</script'; ?>
 >
 
 		<title>Радио &laquo;Советская волна&raquo;</title>

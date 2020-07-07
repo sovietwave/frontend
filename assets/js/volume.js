@@ -5,9 +5,9 @@ class VolumeHandler {
 		this.volumeSlider = $(volumeSliderId);
 		this.radioPlayer = radioPlayer;
 		
-		var self = this
+		var this_ = this
 		this.volumeToggler.click(function() {
-			self.toggleVolume();
+			this_.toggleVolume();
 		});
 
 		this.volumeSlider.on("input", function() {
@@ -16,9 +16,9 @@ class VolumeHandler {
 			}
 
 			if (this.radioPlayer.volume != 0) {
-				self.volumeToggler.attr("src", "/assets/sprites/icons/volume.png");
+				this_.volumeToggler.attr("src", "/assets/sprites/icons/volume.png");
 			} else {
-				self.volumeToggler.attr("src", "/assets/sprites/icons/mute.png");
+				this_.volumeToggler.attr("src", "/assets/sprites/icons/mute.png");
 			}
 		});
 		this.volumeSlider.val(this.DEFAULT_VOLUME_VALUE * 100);

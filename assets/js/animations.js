@@ -17,16 +17,16 @@ class AnimationHandler {
 	}
 
 	setClickCallbacks() {
-		self = this;
+		var this_ = this;
 
 		for (const [togglerId, panelId] of Object.entries(togglerIdPanelIdMapping)) {
 			$(togglerId).click(function() {
-				self.togglePanel(togglerId, panelId);
+				this_.togglePanel(togglerId, panelId);
 			});
 		}
 		
 		this.naviToggler.click(function() {
-			self.toggleNavi();
+			this_.toggleNavi();
 		});
 
 		this.brightOverlay.click(function() {
@@ -34,7 +34,7 @@ class AnimationHandler {
 		});
 	}
 
-	hideSmooth (element, property, speed=this.ANIMATION_SPEED) {
+	hideSmooth(element, property, speed=this.ANIMATION_SPEED) {
 		element.animate(
 			property,
 			speed,
@@ -44,16 +44,16 @@ class AnimationHandler {
 		);
 	}
 
-	showSmooth (element, property, speed=this.ANIMATION_SPEED) {
+	showSmooth(element, property, speed=this.ANIMATION_SPEED) {
 		element.animate(property, speed).show();
 	}
 
-	highlightToggler (toggler) {
+	highlightToggler(toggler) {
 		toggler.css("background-color", "rgb(225, 222, 128, 0.3)");
 		toggler.css("color", "rgb(225, 255, 255, 1)");
 	}
 
-	unhighlightToggler (toggler) {
+	unhighlightToggler(toggler) {
 		toggler.css("background-color", "rgb(0, 0, 0, 0)");
 		toggler.css("color", "rgb(225, 255, 255)");
 	}

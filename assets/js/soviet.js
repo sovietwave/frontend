@@ -6,10 +6,6 @@ var lastTrack,
 	trackHistoryAmount = 0,
 	lastVolumeValue = 0;
 
-function rnd(min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 
 function randword() {
 	var s = '';
@@ -417,8 +413,9 @@ $(document).ready(function() {
 
 	new AirModeHandler(
 		modeElementId="#air-title-mode",
-		timesElementId="air-times",
-		tagsElementId="air-tags"
+		timesElementId="#air-times",
+		tagsElementId="#air-tags",
+		backSwithcerId="#switch-back"
 	);
 
 	new VolumeHandler(

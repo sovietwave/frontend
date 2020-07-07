@@ -19,7 +19,7 @@
             <input id="volume-range" type="range" min="0" max="100" step="1" id="volume"/>
         </div>
 
-        <a href="#" class="clickable" id="switch-back" onclick="switchCurrentBackground();"> 
+        <a href="#" class="clickable" id="switch-back"> 
             <img src="/assets/sprites/icons/back.png"/>       
         </a> 
     </div>

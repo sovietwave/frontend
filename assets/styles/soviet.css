@@ -1,16 +1,16 @@
 body, html
 {
-	margin: 0;
-	padding: 0;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-	font-family: 'Stereonic-M', 'Hagin', Verdana, Tahoma, Arial, Sans-Serif;
+	margin: 0;
+	padding: 0;
 	overflow: hidden;
 	color: #ffffff;
+	font-family: 'Stereonic-M', 'Hagin', Verdana, Tahoma, Arial, Sans-Serif;
 	font-size: 16pt;
 	background-size: cover;
 	background-attachment: fixed;
+	background-color: rgba(122, 122, 122, 0.616);
 }
 
 a {
