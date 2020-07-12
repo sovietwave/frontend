@@ -72,17 +72,18 @@ class AirModeHandler {
 
         this.backQueue = []; // a queue to show at list 3 different backs in a row
 
-        this.mode = this.updateMode();
+        this.updateMode();
 
         var this_ = this;
 
-        setInterval(function(){
-            this_.updateMode();
-        ;}, 1*60*1000);
+        setInterval(function() {
+            this_.updateMode();;
+        }, 1 * 60 * 1000);
 
-        ;
+        this.setBackground(false);
+
         this.backSwithcer.click(function() {
-            this_.setBackground(this.mode, true);
+            this_.setBackground(true);
         });
     }
 
@@ -99,7 +100,7 @@ class AirModeHandler {
                 this.disableGlowTheme();
             }
 
-            this.setAirInfo(this.mode["startTime"] + " — " +  this.mode["endTime"] + " МСК");
+            this.setAirInfo(this.mode["startTime"] + " — " + this.mode["endTime"] + " МСК");
         }
 
         if (this.mode["backs"].length == 1) {
@@ -109,12 +110,10 @@ class AirModeHandler {
         } else {
             this.UNIQE_BACK_COUNT = 3;
         }
-
-        this.setBackground(false);
     }
 
     getMode() {
-        var currentTime = new Date().toLocaleString("ru-RU", {"timeStyle": "short", "hour": "2-digit"}),
+        var currentTime = new Date().toLocaleString("ru-RU", { "timeStyle": "short", "hour": "2-digit" }),
             mode = null;
 
         for (const [modeName, options] of Object.entries(MODES)) {
@@ -123,7 +122,7 @@ class AirModeHandler {
                 break;
             }
         }
-        
+
         return mode;
     }
 
@@ -143,25 +142,25 @@ class AirModeHandler {
             while (this.backQueue.includes(randomSource)) {
                 randomSource = this.mode["backs"][random(0, this.mode["backs"].length - 1)];
             }
-    
+
             if (this.backQueue.length >= this.UNIQE_BACK_COUNT) {
                 this.backQueue.shift();
             }
         }
 
-        $("body").css("background-image", "url({randomSource})".format({"randomSource": randomSource}));
+        $("body").css("background-image", "url({randomSource})".format({ "randomSource": randomSource }));
 
         this.backQueue.push(randomSource);
     }
 
     enableGlowTheme() {
-        for (const [elementId, glowId] of Object.entries(GLOW_MAP)){
+        for (const [elementId, glowId] of Object.entries(GLOW_MAP)) {
             $(elementId).addClass(glowId.slice(1, glowId.length));
         }
     }
 
     disableGlowTheme() {
-        for (const [elementId, glowId] of Object.entries(GLOW_MAP)){
+        for (const [elementId, glowId] of Object.entries(GLOW_MAP)) {
             $(elementId).removeClass(glowId);
         }
     }
