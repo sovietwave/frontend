@@ -11,7 +11,7 @@ function randword() {
     var s = '';
     var ltr = 'qwertyuiopasdfghjklzxcvbnm';
     while (s.length < 20) {
-        s += ltr[rnd(0, 20)];
+        s += ltr[random(0, 20)];
     }
     return s;
 }
@@ -23,10 +23,13 @@ let radioPlayer = null,
     nowPlaying = false,
     playerRestartTimer = null,
     tempShowing = false,
-    trackTimer = null;
+    trackTimer = null,
+    localStorageAvailable = false;
 
 
 function radioInit() {
+    localStorageAvailable = isLSAvailable();
+    
     try {
         radioPlayer = document.createElement('audio');
         if (radioPlayer.canPlayType('audio/aac') != 'no' &&
@@ -124,6 +127,7 @@ function radioToggle(channel) {
             nowPlaying = true;
             radioPlay(channel);
         } catch (e) {
+            console.log(e.message);
             error('Error: ' + e.message);
         }
     } else {
@@ -131,6 +135,7 @@ function radioToggle(channel) {
             nowPlaying = false;
             radioStop();
         } catch (e) {
+            console.log(e.message);
             error('Error: ' + e.message);
         }
     }

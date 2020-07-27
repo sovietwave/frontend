@@ -111,3 +111,29 @@ a:hover{
 	background-size: 50px 50px !important;
 	background: url('../sprites/paused.png') no-repeat center;
 }
+
+@media handheld, only screen and (max-width: 975px) {
+	#player {
+		margin-top: 30px; 
+		position: static;
+		width: 100%;
+		text-align: center;
+	}
+
+	#player-switch
+	{
+		width: 80px;
+		height: 80px;
+	}
+
+	.player-track
+	{
+		font-size: 30pt;
+		padding-bottom: 10px;
+	}
+
+	#player-artist
+	{
+		font-size: 20pt;
+	}
+}	

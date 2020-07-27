@@ -1,5 +1,13 @@
 class AnimationHandler {
     constructor(togglerIdPanelIdMapping, togglerClassId, brightOverlayId, naviId, naviTogglerId, animationSpeed) {
+        if ($(document).width() <= 975) {
+            this.mobile = true;
+        } else {
+            this.mobile = false;
+        }
+
+        console.log(this.mobile);
+
         this.togglerClass = $(togglerClassId);
         this.togglers = $.map(togglerIdPanelIdMapping, function(value, key) { return $(key) });
 
@@ -7,9 +15,11 @@ class AnimationHandler {
         this.activePanel = null;
 
         this.naviToggler = $(naviTogglerId);
-        this.navi = $(naviId),
+        this.navi = $(naviId);
 
-            this.brightOverlay = $(brightOverlayId);
+        this.naviTogglerNormalSize = $(naviTogglerId).height();
+
+        this.brightOverlay = $(brightOverlayId);
 
         this.ANIMATION_SPEED = animationSpeed;
 
@@ -49,13 +59,19 @@ class AnimationHandler {
     }
 
     highlightToggler(toggler) {
-        toggler.css("background-color", "rgb(225, 222, 128, 0.3)");
-        toggler.css("color", "rgb(225, 255, 255, 1)");
+        toggler.css("cssText", "opacity: 1 !important;");
+
+        if (!this.mobile) {
+            toggler.css("background-color", "rgb(225, 222, 128, 0.3)");  
+        }
     }
 
     unhighlightToggler(toggler) {
-        toggler.css("background-color", "rgb(0, 0, 0, 0)");
-        toggler.css("color", "rgb(225, 255, 255)");
+        toggler.css("cssText", "opacity: 0.75 !important;");
+
+        if (!this.mobile) {
+            toggler.css("background-color", "rgb(0, 0, 0, 0)");
+        }
     }
 
     toggleNavi() {
@@ -80,7 +96,7 @@ class AnimationHandler {
                 this.showSmooth(this.navi, { opacity: "1" }, this.ANIMATION_SPEED + 200);
 
                 this.naviToggler.animate({
-                    height: '60',
+                    height: this.naviTogglerNormalSize,
                 }, 100);
             }
         }
@@ -99,7 +115,7 @@ class AnimationHandler {
             this.unhighlightToggler(this.togglerClass);
             this.unhighlightToggler(toggler);
         } else {
-            // hide all panels
+            // hide other panels
             for (var panelIndex = 0; panelIndex < this.panels.length; panelIndex++) {
                 var panel_to_close = this.panels[panelIndex];
 

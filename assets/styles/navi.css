@@ -53,6 +53,10 @@
     width: 225px;
 }
 
+.panel-toggler img {
+    display: none;
+}
+
 .clickable {
     transition: All 0.35s ease;
     -webkit-transition: All 0.35s ease;
@@ -98,4 +102,48 @@
 #switch-back {
     width: 70px;
     margin-right: 40px;
+}
+
+
+@media handheld, only screen and (max-width: 975px) {
+    #switch-back, #volume-speaker, #volume-container, #listeners-container, #navi-block-right {
+        display: none;
+    }
+
+    #navi-block-left {
+        width: 100%;
+    }
+
+    #navi-logo {
+        position: absolute;
+        padding: 0;
+        margin: 15px 0;
+        z-index: 100;
+        opacity: 0.7;
+        bottom: 0px;
+        left: 50%;
+        height: 40px;
+        transform: translate(-50%, 0);
+    }
+    
+    .panel-toggler {
+        font-size: 0;
+        width: 50%;
+    }
+
+    .panel-toggler img {
+        display: inline;
+        min-height: 35px;
+        min-width: 35px;
+        padding: 20px 0;
+        margin: 0 !important;
+    }
+
+    #links-toggler > img {
+        padding-right: 70px;
+    }
+
+    #air-toggler > img {
+        padding-left: 70px;
+    }
 }
