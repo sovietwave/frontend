@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 22:58:03
-  from '/home/pavel/dev/frontend/engine/templates/index.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-27 20:03:39
+  from '/home/pavel/dev/sovietwave/engine/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0230cb2a59f2_91931093',
+  'unifunc' => 'content_5f1f08eb370e46_43082443',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '67c2e9de9b6018a0455ead733e6fd1b3d82dbd84' => 
+    'fd17683b8b2b341766f93454be379bff5185e8f1' => 
     array (
-      0 => '/home/pavel/dev/frontend/engine/templates/index.tpl',
-      1 => 1593978987,
+      0 => '/home/pavel/dev/sovietwave/engine/templates/index.tpl',
+      1 => 1595869398,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:engine/templates/navi.tpl' => 1,
   ),
 ),false)) {
-function content_5f0230cb2a59f2_91931093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f1f08eb370e46_43082443 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 

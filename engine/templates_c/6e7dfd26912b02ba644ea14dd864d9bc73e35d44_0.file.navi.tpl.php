@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 23:28:09
-  from '/home/pavel/dev/frontend/engine/templates/navi.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-12 10:49:04
+  from 'C:\Dev\frontend\engine\templates\navi.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f0237d9d2e7d0_10219536',
+  'unifunc' => 'content_5f0aeaa0f2df94_65600408',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '49694d56558873c6679cb159cbd253449a1387f9' => 
+    '6e7dfd26912b02ba644ea14dd864d9bc73e35d44' => 
     array (
-      0 => '/home/pavel/dev/frontend/engine/templates/navi.tpl',
-      1 => 1593980887,
+      0 => 'C:\\Dev\\frontend\\engine\\templates\\navi.tpl',
+      1 => 1594550240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f0237d9d2e7d0_10219536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f0aeaa0f2df94_65600408 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- NAVI -->
 <div id="navi">
     <div class="navi-block-side" id="navi-block-left">

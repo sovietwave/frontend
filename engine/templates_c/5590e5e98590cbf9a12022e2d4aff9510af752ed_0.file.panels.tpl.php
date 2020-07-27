@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-07-05 12:12:30
-  from '/home/pavel/dev/frontend/engine/templates/menus.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-07-05 13:13:37
+  from '/home/pavel/dev/frontend/engine/templates/panels.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f01997ef20955_86083929',
+  'unifunc' => 'content_5f01a7d16b2449_11467777',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '35184438d8a7ef2f782b8da740d1d9cdbf78bed6' => 
+    '5590e5e98590cbf9a12022e2d4aff9510af752ed' => 
     array (
-      0 => '/home/pavel/dev/frontend/engine/templates/menus.tpl',
-      1 => 1593940350,
+      0 => '/home/pavel/dev/frontend/engine/templates/panels.tpl',
+      1 => 1593943998,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f01997ef20955_86083929 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f01a7d16b2449_11467777 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- BRIGHT OVERLAY -->
 <div id="bright-overlay" onclick="hidePanels()"></div>
 
-<!-- LINKS -->
+<!-- LINKS PANEL-->
 <div class="panel" id="links-panel">	
 	<div class="panel-title" id="links-title">#sovietwave</div>
 	<div class="panel-content" id="links-content">
@@ -66,7 +66,7 @@ function content_5f01997ef20955_86083929 (Smarty_Internal_Template $_smarty_tpl)
 </div>
 
 
-<!-- AIR -->
+<!-- AIR PANEL -->
 <div class="panel" id="air-panel">
 	<div class="panel-title" id="air-title">
 		<div id="air-title-mode">Mode</div>

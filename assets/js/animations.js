@@ -1,78 +1,140 @@
-const ANIMATION_SPEED = 300;
-var activePanel = null;
+class AnimationHandler {
+    constructor(togglerIdPanelIdMapping, togglerClassId, brightOverlayId, naviId, naviTogglerId, animationSpeed) {
+        if ($(document).width() <= 975) {
+            this.mobile = true;
+        } else {
+            this.mobile = false;
+        }
 
+        console.log(this.mobile);
 
-function hideSmooth(element, property, speed=ANIMATION_SPEED) {
-	element.animate(
-		property,
-		speed,
-		function() {
-			$(this).hide();
-		}
-	);
-}
+        this.togglerClass = $(togglerClassId);
+        this.togglers = $.map(togglerIdPanelIdMapping, function(value, key) { return $(key) });
 
-function showSmooth(element, property, speed=ANIMATION_SPEED) {
-	element.animate(property, speed).show();
-}
+        this.panels = $.map(togglerIdPanelIdMapping, function(value, key) { return $(value) });
+        this.activePanel = null;
 
-function toggleNavi() {
-	var navi = $('#navi'),
-		logo = $('#navi-logo');
+        this.naviToggler = $(naviTogglerId);
+        this.navi = $(naviId);
 
-	if ($("#links-panel").is(':visible') || $("#air-panel").is(':visible')) {
-		logo.show();
-	} else {
-		if (navi.is(':visible')) {
-			navi.hide();
+        this.naviTogglerNormalSize = $(naviTogglerId).height();
 
-			logo.find('img').animate({
-				height: '100',
-			  }, ANIMATION_SPEED);
-		} else {
-			showSmooth(navi, {opacity: "1"});
+        this.brightOverlay = $(brightOverlayId);
 
-			logo.find('img').animate({
-				height: '60',
-			  }, ANIMATION_SPEED);
-		}
-	}
-}
+        this.ANIMATION_SPEED = animationSpeed;
 
-function togglePanel(togglerId, panelId) {
-	const panels = [$("#links-panel"),  $("#air-panel")];
-	var panel = $(panelId),
-		brightOverlay = $('#bright-overlay'),
-		panelTogglers = $(".panel-toggler"),
-		toggler = $("#" + togglerId);
+        this.setClickCallbacks();
+    }
 
-	activePanel = panel;
+    setClickCallbacks() {
+        var this_ = this;
 
-	if (panel.is(':visible')) {
-		hideSmooth(panel, {left: "-450"});
-		hideSmooth(brightOverlay, {opacity: "0"});
-		panelTogglers.css("background-color", "rgb(0, 0, 0, 0)");
-		toggler.css("background-color", "rgb(0, 0, 0, 0)");
-	} else {
-		// hide all panels
-		for (panelIndex=0; panelIndex < panels.length; panelIndex++) {
-			panel_to_close = panels[panelIndex];
-			
-			if (panel_to_close[0].id != panel[0].id) {
-				hideSmooth(panel_to_close, {left: "-450"});
-			}
-		}
+        for (const [togglerId, panelId] of Object.entries(togglerIdPanelIdMapping)) {
+            $(togglerId).click(function() {
+                this_.togglePanel(togglerId, panelId);
+            });
+        }
 
-		panelTogglers.css("background-color", "rgb(0, 0, 0, 0)");
-		toggler.css("background-color", "rgb(225, 222, 128, 0.5)");
+        this.naviToggler.click(function() {
+            this_.toggleNavi();
+        });
 
-		showSmooth(panel, {left: "0"});
-		showSmooth(brightOverlay, {opacity: "0.2"});
-	}
-}
+        this.brightOverlay.click(function() {
+            this.hidePanels();
+        });
+    }
 
-function hidePanels() {
-	hideSmooth(activePanel, {left: "-450"});
-	hideSmooth($('#bright-overlay'), {opacity: "0"});
-	$(".panel-toggler").css("background-color", "rgb(0, 0, 0, 0)");
+    hideSmooth(element, property, speed = this.ANIMATION_SPEED) {
+        element.animate(
+            property,
+            speed,
+            function() {
+                $(this).hide();
+            }
+        );
+    }
+
+    showSmooth(element, property, speed = this.ANIMATION_SPEED) {
+        element.animate(property, speed).show();
+    }
+
+    highlightToggler(toggler) {
+        toggler.css("cssText", "opacity: 1 !important;");
+
+        if (!this.mobile) {
+            toggler.css("background-color", "rgb(225, 222, 128, 0.3)");  
+        }
+    }
+
+    unhighlightToggler(toggler) {
+        toggler.css("cssText", "opacity: 0.75 !important;");
+
+        if (!this.mobile) {
+            toggler.css("background-color", "rgb(0, 0, 0, 0)");
+        }
+    }
+
+    toggleNavi() {
+        var anyPanelIsVisible = false;
+        for (var panelIndex = 0; panelIndex < this.panels.length; panelIndex++) {
+            if (this.panels[panelIndex].is(":visible")) {
+                anyPanelIsVisible = true;
+                break;
+            }
+        }
+
+        if (anyPanelIsVisible) {
+            this.naviToggler.show();
+        } else {
+            if (this.navi.is(':visible')) {
+                this.hideSmooth(this.navi, { opacity: "0" }, this.ANIMATION_SPEED);
+
+                this.naviToggler.animate({
+                    height: '100',
+                }, 100);
+            } else {
+                this.showSmooth(this.navi, { opacity: "1" }, this.ANIMATION_SPEED + 200);
+
+                this.naviToggler.animate({
+                    height: this.naviTogglerNormalSize,
+                }, 100);
+            }
+        }
+    }
+
+    togglePanel(togglerId, panelId) {
+        var panel = $(panelId),
+            toggler = $(togglerId);
+
+        this.activePanel = panel;
+
+        if (panel.is(':visible')) {
+            this.hideSmooth(panel, { left: "-450" });
+            this.hideSmooth(this.brightOverlay, { opacity: "0" });
+
+            this.unhighlightToggler(this.togglerClass);
+            this.unhighlightToggler(toggler);
+        } else {
+            // hide other panels
+            for (var panelIndex = 0; panelIndex < this.panels.length; panelIndex++) {
+                var panel_to_close = this.panels[panelIndex];
+
+                if (panel_to_close[0].id != panel[0].id) {
+                    this.hideSmooth(panel_to_close, { left: "-450" });
+                }
+            }
+
+            this.showSmooth(panel, { left: "0" });
+            this.showSmooth(this.brightOverlay, { opacity: "0.2" });
+
+            this.unhighlightToggler(this.togglerClass);
+            this.highlightToggler(toggler);
+        }
+    }
+
+    hidePanels() {
+        hideSmooth(this.activePanel, { left: "-450" });
+        hideSmooth(this.brightOverlay, { opacity: "0" });
+        unhighlightToggler(this.togglerClass);
+    }
 }
