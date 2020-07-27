@@ -124,16 +124,15 @@ a:hover{
 	{
 		width: 80px;
 		height: 80px;
+		margin: 25px auto;
 	}
 
-	.player-track
+	#player-artist, #player-title
 	{
 		font-size: 30pt;
-		padding-bottom: 10px;
 	}
 
-	#player-artist
-	{
+	#player-city {
 		font-size: 20pt;
 	}
 }	

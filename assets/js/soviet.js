@@ -439,6 +439,7 @@ $(document).ready(function() {
         brightOverlayId = "#bright-overlay",
         naviId = "#navi",
         naviTogglerId = "#navi-logo",
+        playerId = "#player",
         animationSpeed = 300
     );
 });

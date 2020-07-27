@@ -1,5 +1,5 @@
 class AnimationHandler {
-    constructor(togglerIdPanelIdMapping, togglerClassId, brightOverlayId, naviId, naviTogglerId, animationSpeed) {
+    constructor(togglerIdPanelIdMapping, togglerClassId, brightOverlayId, naviId, naviTogglerId, playerId, animationSpeed) {
         if ($(document).width() <= 975) {
             this.mobile = true;
         } else {
@@ -16,6 +16,8 @@ class AnimationHandler {
 
         this.naviToggler = $(naviTogglerId);
         this.navi = $(naviId);
+
+        this.player = $(playerId);
 
         this.naviTogglerNormalSize = $(naviTogglerId).height();
 
@@ -114,6 +116,8 @@ class AnimationHandler {
 
             this.unhighlightToggler(this.togglerClass);
             this.unhighlightToggler(toggler);
+
+            this.showSmooth(this.player, { opacity: "1" });
         } else {
             // hide other panels
             for (var panelIndex = 0; panelIndex < this.panels.length; panelIndex++) {
@@ -129,6 +133,8 @@ class AnimationHandler {
 
             this.unhighlightToggler(this.togglerClass);
             this.highlightToggler(toggler);
+
+            this.hideSmooth(this.player, { opacity: "0" });
         }
     }
 
