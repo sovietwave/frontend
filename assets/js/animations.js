@@ -85,6 +85,12 @@ class AnimationHandler {
             }
         }
 
+        if (this.mobile) {
+            var maxTogglerHeight = '70';
+        } else {
+            var maxTogglerHeight = '100';
+        }
+
         if (anyPanelIsVisible) {
             this.naviToggler.show();
         } else {
@@ -92,7 +98,7 @@ class AnimationHandler {
                 this.hideSmooth(this.navi, { opacity: "0" }, this.ANIMATION_SPEED);
 
                 this.naviToggler.animate({
-                    height: '100',
+                    height: maxTogglerHeight,
                 }, 100);
             } else {
                 this.showSmooth(this.navi, { opacity: "1" }, this.ANIMATION_SPEED + 200);

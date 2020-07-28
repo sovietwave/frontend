@@ -128,7 +128,7 @@
     
     .panel-toggler {
         font-size: 0;
-        width: 50%;
+        width: 50% !important;
     }
 
     .panel-toggler img {
@@ -139,11 +139,11 @@
         margin: 0 !important;
     }
 
-    #links-toggler > img {
+    #links-toggler img {
         padding-right: 70px;
     }
 
-    #air-toggler > img {
+    #air-toggler img {
         padding-left: 70px;
     }
 }
