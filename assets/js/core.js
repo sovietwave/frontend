@@ -6,49 +6,43 @@ var backs =
 {
 	"day" : {
 		"backs" : [
-			"/assets/sprites/day0.jpg",
-			"/assets/sprites/day1.jpg",
-			"/assets/sprites/day2.jpg",
-			"/assets/sprites/day3.jpg"
+			"/assets/sprites/day4.jpg",
+			"/assets/sprites/day5.jpg",
+			"/assets/sprites/day6.jpg",
 		],
 
 		"buttons" : [
-			"/assets/sprites/btn-day0.png",
-			"/assets/sprites/btn-day1.png",
-			"/assets/sprites/btn-day2.png",
-			"/assets/sprites/btn-day3.png"
+			"/assets/sprites/btn-day4.png",
+			"/assets/sprites/btn-day5.png",
+			"/assets/sprites/btn-day6.png",
 		]
 	},
 
 	"evening" : {
 		"backs" : [
-			"/assets/sprites/evening0.jpg",
-			"/assets/sprites/evening1.jpg",
-			"/assets/sprites/evening2.jpg",
-			"/assets/sprites/evening3.jpg"
+			"/assets/sprites/evening6.jpg",
+			"/assets/sprites/evening7.png",
+			"/assets/sprites/evening8.jpg",
 		],
 
 		"buttons" : [
-			"/assets/sprites/btn-evening0.png",
-			"/assets/sprites/btn-evening1.png",
-			"/assets/sprites/btn-evening2.png",
-			"/assets/sprites/btn-evening3.png"
+			"/assets/sprites/btn-evening6.png",
+			"/assets/sprites/btn-evening7.png",
+			"/assets/sprites/btn-evening8.png",
 		]
 	},
 
 	"night" : {
 		"backs" : [
-			"/assets/sprites/night0.jpg",
-			"/assets/sprites/night1.jpg",
-			"/assets/sprites/night2.jpg",
-			"/assets/sprites/night3.jpg"
+			"/assets/sprites/night4.jpg",
+			"/assets/sprites/night5.jpg",
+			"/assets/sprites/night6.png",
 		],
 
 		"buttons" : [
-			"/assets/sprites/btn-night0.png",
-			"/assets/sprites/btn-night1.png",
-			"/assets/sprites/btn-night2.png",
-			"/assets/sprites/btn-night3.png"
+			"/assets/sprites/btn-night4.png",
+			"/assets/sprites/btn-night5.png",
+			"/assets/sprites/btn-night6.png",
 		]
 	}
 };
