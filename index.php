@@ -39,6 +39,10 @@ if ($route[0] === 'tracktype') {
 		case 'evening':
 			die('evening');
 			break;
+
+		case 'midnight':
+			die('midnight');
+			break;
 		
 		default:
 			die('evening');
@@ -73,6 +77,10 @@ else
 
 			case 'evening':
 				$site_mode = 'evening';
+				break;
+
+			case 'midnight':
+				$site_mode = 'midnight';
 				break;
 
 			default:
@@ -110,7 +118,8 @@ else
 	}
 }
 
-$bg_color  = ($site_mode == 'day') ? '5fb0e8' : '202020';
+//$bg_color  = ($site_mode == 'day') ? '5fb0e8' : '202020';
+$bg_color = '000000';
 
 if (isset($_GET['ajax']))
 {
