@@ -538,12 +538,12 @@ a.night
 		font-size: 22pt;
 	}
 
-	#panel{
+	#panel, #air-panel{
+		position: fixed;
 		width: 100%;
 	}
 
 	#air-panel{
-		width: 100%;
 		left: 150px;
 	}
 }
