@@ -145,7 +145,7 @@ a.night
 
 #panel, #air-panel
 {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.64);
     z-index: 10;
 
 	display: none;
@@ -238,7 +238,7 @@ a.night
 	width: 100%;
 
 	opacity: 1;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 }
 
 #links-madeby img {
@@ -353,13 +353,13 @@ a.night
 	width: 100%;
 
 	opacity: 1;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 }
 
 #air-playlist {
     text-shadow: 0 0 2px rgba(255, 222, 128, 0.3);
     position: absolute;
-	right: 3px;
+	right: 10px;
 	top : 0px;
 
 	width:100%;
@@ -370,8 +370,7 @@ a.night
 }
 
 #air-playlist::-webkit-scrollbar {
-	width: 18px;
-
+	width: 15px;
 }
  
 #air-playlist::-webkit-scrollbar-track {
@@ -379,14 +378,14 @@ a.night
  
 #air-playlist::-webkit-scrollbar-thumb {
   border-radius: 18px;
-  background: rgb(50, 50, 50);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 #air-playlist::-webkit-scrollbar-thumb:hover {
-  background: rgb(150, 150, 150);
+  background: rgba(255, 255, 255, 0.8);
 }
 #air-playlist::-webkit-scrollbar-thumb:active {
-  background: rgb(50, 50, 50);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -430,6 +429,7 @@ a.night
 	background-size: cover;
 	background-image: url('../sprites/frame2.png');
 	background-size: 100% 100%;
+
 	z-index: 10;
 	pointer-events: none;
 }
@@ -459,7 +459,7 @@ a.night
 	position: absolute;
 	top: 130px;
     z-index: 15;
-    opacity: 0.2;
+    opacity: 0.4;
 
 	background: -moz-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0)), color-stop(80%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0.61)));
@@ -539,11 +539,11 @@ a.night
 	}
 
 	#panel{
+		position: fixed;
 		width: 100%;
 	}
 
 	#air-panel{
-		width: 100%;
 		left: 150px;
 	}
 }

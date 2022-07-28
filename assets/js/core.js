@@ -1,7 +1,9 @@
 var localStorageAvailable = false,
 	siteModeOverridden = true,
 	currentIndex = 0;
-
+	frameIndex = 0;
+	framesCount = 3;
+	
 var backs = {
 	"day": {
 		"backs": [
@@ -53,7 +55,8 @@ var backs = {
 	"midnight": {
 		"backs": [
 			"/assets/sprites/midnight1.jpg",
-			"/assets/sprites/midnight2.jpg"
+			"/assets/sprites/midnight2.jpg",
+			"/assets/sprites/midnight3.jpg"
 		],
 
 		"buttons": [] // no buttons
@@ -160,6 +163,7 @@ function init() {
  	sfxClick = new Audio('../assets/sfx/click.ogg');
 	// Randomize fist pic
 	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
+	frameIndex = rnd(0, framesCount);
 
 	setTheme(SITE_MODE);
 
@@ -216,114 +220,6 @@ function setTheme(mode) {
 	}
 
 	switchBackground(mode);
-/*
-	switch (mode) {
-		case 'night':
-			$('#navi-logo').attr('class', 'night');
-			$('main').attr('class', 'night');
-			$('main a').attr('class', 'night');
-
-			$('.navi-button').removeClass('day');
-			$('.navi-button').removeClass('evening');
-			$('.navi-button').addClass('night');
-
-			$('.navi-button').removeClass('enlarged');
-			$('#navi-button-night').addClass('enlarged');
-
-			$('.dev-info').removeClass('day');
-			$('.dev-info').removeClass('evening');
-			$('.dev-info').addClass('night');
-
-			$('.rangeslider__fill').removeClass('day');
-			$('.rangeslider__fill').removeClass('evening');
-			$('.rangeslider__fill').addClass('night');
-
-			$('body').css({
-				'background-color': '#202020'
-			});
-			break;
-
-		case 'midnight':
-			$('#navi-logo').attr('class', 'night');
-			$('main').attr('class', 'night');
-			$('main a').attr('class', 'night');
-
-			$('.navi-button').removeClass('day');
-			$('.navi-button').removeClass('evening');
-			$('.navi-button').addClass('night');
-
-			$('.navi-button').removeClass('enlarged');
-			$('#navi-button-night').addClass('enlarged');
-
-			$('.dev-info').removeClass('day');
-			$('.dev-info').removeClass('evening');
-			$('.dev-info').addClass('night');
-
-			$('.rangeslider__fill').removeClass('day');
-			$('.rangeslider__fill').removeClass('evening');
-			$('.rangeslider__fill').addClass('night');
-
-			$('body').css({
-				'background-color': '#202020'
-			});
-			break;			
-
-		case 'evening':
-			$('#navi-logo').attr('class', 'evening');
-			$('main').attr('class', 'evening');
-			$('main a').attr('class', 'evening');
-
-			$('.navi-button').removeClass('day');
-			$('.navi-button').removeClass('night');
-			$('.navi-button').addClass('evening');
-
-			$('.navi-button').removeClass('enlarged');
-			$('#navi-button-evening').addClass('enlarged');
-
-			$('.dev-info').removeClass('day');
-			$('.dev-info').removeClass('night');
-			$('.dev-info').addClass('evening');
-
-			$('.rangeslider__fill').removeClass('day');
-			$('.rangeslider__fill').removeClass('night');
-			$('.rangeslider__fill').addClass('evening');
-
-			$('body').css({
-				'background-color': '#202020'
-			});
-			break;
-
-		case 'day':
-			$('#navi-logo').attr('class', 'day');
-			$('main').attr('class', 'day');
-			$('main a').attr('class', 'day');
-
-			$('.navi-button').removeClass('night');
-			$('.navi-button').removeClass('evening');
-			$('.navi-button').addClass('day');
-
-			$('.navi-button').removeClass('enlarged');
-			$('#navi-button-day').addClass('enlarged');
-
-			$('.dev-info').removeClass('night');
-			$('.dev-info').removeClass('evening');
-			$('.dev-info').addClass('day');
-
-			$('.rangeslider__fill').removeClass('night');
-			$('.rangeslider__fill').removeClass('evening');
-			$('.rangeslider__fill').addClass('day');
-
-			$('body').css({
-				'background-color': '#5fb0e8'
-			});
-			break;
-
-		default:
-			console.warn('Unknown color theme requested: ' + mode);
-			break;
-	}
-*/
-	
 }
 
 function switchBackground(mode) {
@@ -349,7 +245,8 @@ function switchBackground(mode) {
 
 
 	switchFrame();
-/*
+	
+	/*
 	$('body').css({
 		'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')'
 	});
@@ -360,8 +257,15 @@ function switchBackground(mode) {
 }
 
 function switchFrame() {
-	var i = Math.floor(Math.random() * 4);
-	frameOverlay.css({'background-image': 'url(/assets/sprites/frame' + i + '.png)'});
+	
+	frameIndex++;
+	if (frameIndex > framesCount)
+		frameIndex = 1;
+
+	if (document.documentElement.scrollWidth > document.documentElement.scrollHeight)
+		frameOverlay.css({'background-image': 'url(/assets/sprites/frame' + frameIndex + '.png)'});
+	else
+		frameOverlay.css({'background-image': 'url(/assets/sprites/frame' + frameIndex + 'm.png)'});
 }
 
 function switchCurrentBackground() {
@@ -437,18 +341,18 @@ function toggleAirPanel(){
 function toggleFrame(){
 	if (linksIsEnabled || airIsEnabled)
 		frameOverlay.animate({
-			left: '-20px',
-			right: '-20px',
-			top: '-20px',
-			bottom: '70px'
-		}, 1000);
+			left: '-25px',
+			right: '-25px',
+			top: '-25px',
+			bottom: '69px'
+		}, 600);
 	else
 		frameOverlay.animate({
 			left: '0px',
 			right: '0px',
 			top: '0px',
-			bottom: '70px'
-		}, 1000);
+			bottom: '69px'
+		}, 400);
 }
 
 function enableAir(){
@@ -529,6 +433,7 @@ function hideLeftPanels() {
 	disableLinks();
 
 	sfxPlaySlide();
+	toggleFrame();
 }
 
 function sfxPlayClick() {
@@ -601,7 +506,7 @@ function toggleNavi() {
 			left: '0px',
 			right: '0px',
 			top: '0px',
-			bottom: '70px'
+			bottom: '69px'
 		  }, durationShow);		
 
 		coverImage.animate({
