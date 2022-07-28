@@ -3,8 +3,15 @@
     <div id="navi-back" onclick="hideLeftPanels()"></div>
 
     <div class="navi-block" id="left">
-        <div id="navi-links" onclick="toggleLinks()">Ссылки</div>
-        <div id="navi-air" onclick="toggleAirPanel()">Эфир</div>       
+        <div id="navi-links" onclick="toggleLinks()">
+            <div id="standalone-only">Ссылки</div>
+            <img src="/assets/sprites/icons/links.png" id="mobile-button">
+        </div>
+
+        <div id="navi-air" onclick="toggleAirPanel()">
+            <div id="standalone-only">Эфир</div>
+            <img src="/assets/sprites/icons/air.png" id="mobile-button">
+        </div>       
 
         <div id="panel-active-links"></div>
         <div id="panel-active-air"></div>
@@ -32,6 +39,7 @@
         </a>
     </div>
 
+<!--
     <div class="navi-block" id="mobile-left">        
         <div id="navi-links" onclick="toggleLinks()"><img src="/assets/sprites/icons/links.png" id="mobile-button"></div>
     </div>
@@ -41,6 +49,7 @@
     <div class="navi-block" id="mobile-right">        
         <div id="navi-air" onclick="toggleAirPanel()"><img src="/assets/sprites/icons/air.png" id="mobile-button"></div>
     </div>
+-->
 </div>
 
 
