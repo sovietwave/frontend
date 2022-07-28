@@ -384,19 +384,11 @@ function disableAir(){
 	if (!linksIsEnabled)
 		disableBright();
 
-	if (document.documentElement.scrollWidth < 1100) {
-		air.animate({
-			left: '150',
-			opacity: '0'
-		}, 300, function(){air.hide();});
-	}
-	else
-	{
-		air.animate({
-			left: '-150',
-			opacity: '0'
-		}, 300, function(){air.hide();});
-	}
+	air.animate({
+		left: '-150',
+		opacity: '0'
+	}, 300, function(){air.hide();});
+	
 
 	activeAir.animate({
 		opacity: '0'
