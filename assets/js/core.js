@@ -145,9 +145,20 @@ var sfxSlide;
 var sfxClick;
 var coverImage;
 var volumeValue = 1;
+var frameMobileMode = false;
+
+function isMobileMode()
+{
+	return document.documentElement.scrollWidth < 1100;
+}
 
 function init() {
 	localStorageAvailable = isLSAvailable();
+
+	window.addEventListener('resize', (event) => {
+		if (frameMobileMode != isMobileMode())
+			switchFrame();
+	});
 
 	links = $('#panel');
 	air = $('#air-panel');
@@ -256,13 +267,14 @@ function switchBackground(mode) {
 	*/
 }
 
-function switchFrame() {
-	
+function switchFrame() {	
 	frameIndex++;
 	if (frameIndex > framesCount)
 		frameIndex = 1;
 
-	if (document.documentElement.scrollWidth > document.documentElement.scrollHeight)
+	frameMobileMode = isMobileMode();
+
+	if (!frameMobileMode)
 		frameOverlay.css({'background-image': 'url(/assets/sprites/frame' + frameIndex + '.png)'});
 	else
 		frameOverlay.css({'background-image': 'url(/assets/sprites/frame' + frameIndex + 'm.png)'});
@@ -271,6 +283,9 @@ function switchFrame() {
 function switchCurrentBackground() {
 	sfxPlaySlide();
 	switchBackground(SITE_MODE);
+
+	if (isMobileMode())
+		hideLeftPanels();
 }
 
 
@@ -295,6 +310,16 @@ function enableLinks(){
 	enableBright();
 	disableAir();
 
+
+	if (isMobileMode())
+	{
+		links.show();
+		links.css({left: '0', opacity: '1'});
+		activeLinks.show();
+		activeLinks.css({opacity: '1'});
+		return;
+	}
+
 	links.show();
 	links.animate({
 		left: '0',
@@ -314,6 +339,13 @@ function disableLinks(){
 
 	if (!airIsEnabled)
 		disableBright();
+
+	if (isMobileMode())
+	{
+		links.hide();
+		activeLinks.hide();
+		return;
+	}
 
 	links.animate({
 		left: '-150',
@@ -364,6 +396,15 @@ function enableAir(){
 	enableBright();
 	disableLinks();
 
+	if (isMobileMode())
+	{
+		air.show();
+		air.css({left: '0', opacity: '1'});
+		activeAir.show();
+		activeAir.css({opacity: '1'});
+		return;
+	}
+
 	air.show();
 	air.animate({
 		left: '0',
@@ -383,6 +424,13 @@ function disableAir(){
 
 	if (!linksIsEnabled)
 		disableBright();
+
+	if (isMobileMode())
+	{
+		air.hide();
+		activeAir.hide();
+		return;
+	}
 
 	air.animate({
 		left: '-150',
@@ -404,6 +452,9 @@ function toggleBright(){
 function enableBright(){
 	if (brightIsEnabled) return;
 	brightIsEnabled = true;
+
+	if (isMobileMode())
+		return;
 
 	bright.show();
 	bright.animate({
@@ -429,12 +480,16 @@ function hideLeftPanels() {
 }
 
 function sfxPlayClick() {
-	//sfxClick.playbackRate = 0.9 + Math.random(0.2);
+	if (isMobileMode()) return;
+
+	//sfxClick.playbackRate = 0.9 + Math.random(0.2);	
 	sfxClick.volume = volumeValue - 0.3;
 	sfxClick.play();
 }
 
 function sfxPlaySlide() {
+	if (isMobileMode()) return;
+
 	//sfxSlide.playbackRate = 0.7 + Math.random(0.3);
 	sfxSlide.volume = volumeValue - 0.1;
 	sfxSlide.play();

@@ -191,7 +191,6 @@ a.night
 
 #links
 {	
-
 	font-size: 16pt;
 
 	width: 100%;
@@ -538,13 +537,33 @@ a.night
 		font-size: 22pt;
 	}
 
-	#panel{
+	#panel, #air-panel{
 		position: fixed;
 		width: 100%;
 	}
 
-	#air-panel{
-		position: fixed;
-		width: 100%;
+	#links-title, #air-title
+	{
+		margin-top: 18px;
+	}
+
+	#links-container
+	{	
+		margin: 30px auto;
+	}
+
+	#air-title-section
+	{	
+		margin: 0px auto;
+	}
+
+
+	#links-center-back, #air-playlist-container {
+		top: 70px;
+		bottom: 70px;
+	}
+
+	#bright-overlay, #frame-overlay, #air-times, #air-tags {
+		display: none;
 	}
 }

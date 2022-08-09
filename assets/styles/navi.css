@@ -395,3 +395,22 @@
     	width: calc((50% - 100px)*0.5);
 	}
 }
+
+@media handheld, only screen and (max-width: 500px){
+	#navi-logo{
+		display: none;
+	}
+
+	#left, #right {
+    	width: 50%;
+	}
+
+	#panel-active-links{
+		width: 25%;
+	}
+
+	#panel-active-air{
+		width: 25%;
+		left: 25%;
+	}
+}
