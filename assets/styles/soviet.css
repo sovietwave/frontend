@@ -16,11 +16,13 @@ a
 	color: #ffffff;
 	outline: none;
 	opacity: 0.8;
-	transition: All 0.3s ease;
+	transition: All 0.2s ease;
 }
 
 a:hover{
 	opacity: 1;
+	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));	
 }
 
 a.night
@@ -70,12 +72,6 @@ a.night
 	-webkit-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 
-.player-track.night
-{ 
-	text-shadow: 0px 1px 7px rgba(255, 255, 255, 200);
-	-webkit-text-shadow: 0px 1px 7px rgba(255, 255, 255, 200);
-}
-
 #player-artist
 {
     font-size: 36pt;
@@ -113,13 +109,15 @@ a.night
     margin-right: auto;
     opacity: 0.8;
     margin-bottom: 6pt;
-    transition: All 0.3s ease;
+    transition: All 0.2s ease;
 }
 
 #player-switch:hover
 {
 	opacity: 1;
-	transform: scale(110%, 110%);
+	transform: scale(115%, 115%);
+	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));	
 }
 
 #player-city
@@ -433,25 +431,7 @@ a.night
 	pointer-events: none;
 }
 
-#panel-top-gradient
-{
-	width: 100%;
-	height: 40px;
-	position: absolute;
-	top: 150px;
-    z-index: 15;
-    opacity: 0.15;
-
-	background: -moz-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,1280.32) 20%, rgba(255,222,128,0) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0.61)), color-stop(20%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0)));
-	background: -webkit-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: -o-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: -ms-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: linear-gradient(to bottom, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
-}
-
-#panel-air-title-gradient
+#panel-title-gradient
 {
 	width: 100%;
 	height: 20px;
@@ -469,12 +449,13 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-air-top-gradient
+
+#panel-top-gradient
 {
 	width: 100%;
 	height: 20px;
 	position: absolute;
-	top: 148px;
+	top: 150px;
     z-index: 15;
 
 	background: -moz-linear-gradient(top, rgba(0,0,0,0.61) 0%, rgba(0,0,0,0.32) 20%, rgba(0,0,0,0) 100%);
@@ -486,8 +467,7 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-air-bottom-gradient
-{
+#panel-bottom-gradient {
 	width: 100%;
 	height: 200px;
 	position: absolute;
@@ -506,8 +486,7 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-left-gradient
-{
+#panel-left-gradient {
 	width: 10px;
 	height: 100%;
 	position: absolute;
@@ -518,8 +497,7 @@ a.night
 	background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
-#panel-left-gradient.night
-{
+#panel-left-gradient.night {
     opacity: 0.2;
 }
 
@@ -527,33 +505,28 @@ a.night
 
 /* S ВЁРСТКА - Прортретная для телефонов */
 @media handheld, only screen and (max-width: 1100px){
-	#player-artist, #player-title
-	{
+	#player-artist, #player-title {
 		font-size: 22pt;
 	}
 
-	#player-city
-	{
+	#player-city {
 		font-size: 22pt;
 	}
 
-	#panel, #air-panel{
+	#panel, #air-panel {
 		position: fixed;
 		width: 100%;
 	}
 
-	#links-title, #air-title
-	{
+	#links-title, #air-title {
 		margin-top: 18px;
 	}
 
-	#links-container
-	{	
+	#links-container {	
 		margin: 30px auto;
 	}
 
-	#air-title-section
-	{	
+	#air-title-section {	
 		margin: 0px auto;
 	}
 
@@ -565,5 +538,13 @@ a.night
 
 	#bright-overlay, #frame-overlay, #air-times, #air-tags {
 		display: none;
+	}
+
+	#panel-title-gradient {
+		top: 50px;
+	}
+
+	#panel-top-gradient {
+		top: 70px;
 	}
 }
