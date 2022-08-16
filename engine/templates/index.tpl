@@ -31,16 +31,6 @@
 		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		
-
-		<style type="text/css">
-			body, html
-			{
-				background: #{$background_color} url(/assets/sprites/{$background_mode}0.jpg) no-repeat center;
-				background-size: cover;
-				background-attachment: fixed;
-			}
-		</style>
-
 		<title>Радио &laquo;Советская волна&raquo;</title>
     </head>
 
@@ -49,8 +39,7 @@
             var SITE_MODE = '{$site_mode}';
         </script>
         
-        <!-- BRIGHT -->
-        <div id="cover-image"></div> 
+        <div id="cover-image"></div>
 		<div id="bright-overlay" onclick="hideLeftPanels()"></div> 
 		<div id="frame-overlay"></div> 
 
@@ -59,6 +48,6 @@
 		{include file='engine/templates/navi.tpl'}
 
 		<div id="panel-active-air"></div>
-		
+
     </body>
 </html>

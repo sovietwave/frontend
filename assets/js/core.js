@@ -7,67 +7,66 @@ var localStorageAvailable = false,
 var backs = {
 	"day": {
 		"backs": [
-			"/assets/sprites/day1.jpg",
-			"/assets/sprites/day2.jpg",
-			"/assets/sprites/day3.jpg"
+			"/assets/sprites/bg/day1.jpg",
+			"/assets/sprites/bg/day2.jpg",
+			"/assets/sprites/bg/day3.jpg"
 		],
 
-		"buttons": [
-			"/assets/sprites/btn-day0.png",
-			"/assets/sprites/btn-day1.png",
-			"/assets/sprites/btn-day2.png"
+		"backs_mobile": [
+			"/assets/sprites/bg/mobile/day1.jpg",
+			"/assets/sprites/bg/mobile/day2.jpg",
+			"/assets/sprites/bg/mobile/day3.jpg"
 		]
 	},
 
 	"evening": {
 		"backs": [
-			"/assets/sprites/evening1.jpg",
-			"/assets/sprites/evening2.jpg",
-			"/assets/sprites/evening3.jpg"
+			"/assets/sprites/bg/evening1.jpg",
+			"/assets/sprites/bg/evening2.jpg",
+			"/assets/sprites/bg/evening3.jpg"
 		],
 
-		"buttons": [
-			"/assets/sprites/btn-evening0.png",
-			"/assets/sprites/btn-evening1.png",
-			"/assets/sprites/btn-evening2.png",
-			"/assets/sprites/btn-evening3.png",
-			"/assets/sprites/btn-evening4.png",
-			"/assets/sprites/btn-evening5.png",
-			"/assets/sprites/btn-evening6.png",
-			"/assets/sprites/btn-evening7.png"
+		"backs_mobile": [
+			"/assets/sprites/bg/mobile/evening1.jpg",
+			"/assets/sprites/bg/mobile/evening2.jpg",
+			"/assets/sprites/bg/mobile/evening3.jpg"
 		]
 	},
 
 	"night": {
 		"backs": [
-			"/assets/sprites/night1.jpg",
-			"/assets/sprites/night2.jpg",
-			"/assets/sprites/night3.jpg"
+			"/assets/sprites/bg/night1.jpg",
+			"/assets/sprites/bg/night2.jpg",
+			"/assets/sprites/bg/night3.jpg"
 		],
 
-		"buttons": [
-			"/assets/sprites/btn-night0.png",
-			"/assets/sprites/btn-night1.png",
-			"/assets/sprites/btn-night2.png"
+		"backs_mobile": [
+			"/assets/sprites/bg/mobile/night1.jpg",
+			"/assets/sprites/bg/mobile/night2.jpg",
+			"/assets/sprites/bg/mobile/night3.jpg"
 		]
 	},
 
 	"midnight": {
 		"backs": [
-			"/assets/sprites/midnight1.jpg",
-			"/assets/sprites/midnight2.jpg",
-			"/assets/sprites/midnight3.jpg"
+			"/assets/sprites/bg/midnight1.jpg",
+			"/assets/sprites/bg/midnight2.jpg"
 		],
 
-		"buttons": [] // no buttons
+		"backs_mobile": [
+			"/assets/sprites/bg/mobile/midnight1.jpg",
+			"/assets/sprites/bg/mobile/midnight2.jpg"
+		]
 	},
 
 	"event": {
 		"backs": [
-			"/assets/sprites/event0.jpg"
+			"/assets/sprites/bg/event.jpg"
 		],
 
-		"buttons": [] // no buttons for event
+		"backs_mobile": [
+			"/assets/sprites/bg/mobile/event.jpg"
+		]
 	}
 };
 
@@ -146,6 +145,7 @@ var sfxClick;
 var coverImage;
 var volumeValue = 1;
 var frameMobileMode = false;
+var player;
 
 function isMobileMode()
 {
@@ -169,7 +169,8 @@ function init() {
 	activeAir = $('#panel-active-air');
 	frameOverlay = $('#frame-overlay');
 	coverImage = $('#cover-image');
-
+	player = $("#player-wrapper");
+	
  	sfxSlide = new Audio('../assets/sfx/slide.ogg');
  	sfxClick = new Audio('../assets/sfx/click.ogg');
 	// Randomize fist pic
@@ -251,20 +252,13 @@ function switchBackground(mode) {
 	nextIndex = currentIndex + 1;
 	if (nextIndex > backsCount - 1)
 		nextIndex = 0;
-
-	coverImage.css({'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')'});
-
+	
+	if (isMobileMode())
+		coverImage.css({'background-image': 'url(' + currentModeAssets.backs_mobile[currentIndex] + ')'});
+	else
+		coverImage.css({'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')'});
 
 	switchFrame();
-	
-	/*
-	$('body').css({
-		'background-image': 'url(' + currentModeAssets.backs[currentIndex] + ')'
-	});
-	$('#navi-button-' + SITE_MODE).css({
-		'background-image': 'url(' + currentModeAssets.buttons[nextIndex] + ')'
-	});
-	*/
 }
 
 function switchFrame() {	
@@ -573,13 +567,14 @@ function toggleNavi() {
 
 
 function togglePlayer() {
-	if (document.documentElement.scrollWidth < 1100) {
+	if (isMobileMode()) {
 		if (linksIsEnabled || airIsEnabled) {
-			$("#player-wrapper").hide();
+			player.hide();
 		} else {
-			$("#player-wrapper").show();
+			player.show();
 		}
-	}
+	} else
+		player.show();
 }
 
 
