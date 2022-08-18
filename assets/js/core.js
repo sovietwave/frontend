@@ -149,7 +149,10 @@ var player;
 
 function isMobileMode()
 {
-	return document.documentElement.scrollWidth < 1100;
+	if ((document.documentElement.scrollWidth < 1100) ||
+		(document.documentElement.scrollHeight < 450))
+			return true;
+	return false;
 }
 
 function init() {

@@ -300,7 +300,7 @@
 }
 
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px){
+@media handheld, only screen and (max-width: 1100px), (max-height: 450px){
 	
 	#volume-container, #volume-speaker, #standalone-only
 	{

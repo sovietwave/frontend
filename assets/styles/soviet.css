@@ -6,7 +6,6 @@ body, html
 	height: 100%;
 	overflow: hidden;
 	font-family: 'Stereonic-M', 'Hagin', Verdana, Tahoma, Arial, Sans-Serif;
-	overflow: hidden;
 	color: #ffffff;
 	font-size: 16pt;
 }
@@ -218,12 +217,18 @@ a.night
 	z-index: 30;
 	width: 320px;
 
+	margin: 82px auto;
 	height: 100%;
-	margin: 82pt auto;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
+}
+
+#links-separator {	
+	height: calc(100% - 750px);
+}
+
+#links-m3u-container {	
+	line-height: 21pt;
+	position: absolute;
+	bottom: 100px;
 }
 
 #links-center-back {
@@ -238,14 +243,6 @@ a.night
 	background-color: rgba(0,0,0,0.4);
 }
 
-#links-madeby img {
-	width: 120px;
-}
-
-#links-volna2-icon img {
-	width: 50px;
-}
-
 #links-title
 {
     text-shadow: 0 0 4px rgba(255, 222, 128, 1);
@@ -255,44 +252,12 @@ a.night
 	text-align: center;
 }
 
-#links-button-fest-icon 
-{
-	width:128px;
-	height: auto;
-}
-
-#links-m3u-container {
-	line-height: 21pt;
-	position: absolute;
-	bottom: 100pt;
-}
-
-#links-text-m3u
-{
-	margin-left: 67px;
-	opacity: 0.5;
-	width: 400px;
-}
-
-#links-madeby
-{
-	align-self: start;
-	justify-self: center;
-    opacity: 0.2;
-}
-
-#links-madeby:hover {
-	opacity: 0.5;
-}
-
 #air-list {
 	position: static;
 	height: 100%;
 	justify-items: left;
 	font-size: 16pt;
-
-	line-height: 24pt;
-	
+	line-height: 24pt;	
 }
 
 #air-title-section
@@ -354,7 +319,6 @@ a.night
 }
 
 #air-playlist {
-    text-shadow: 0 0 2px rgba(255, 222, 128, 0.3);
     position: absolute;
 	right: 10px;
 	top : 0px;
@@ -363,7 +327,6 @@ a.night
 	height: 100%;
 	border-spacing: 16pt;
 	overflow-y: scroll;
-
 }
 
 #air-playlist::-webkit-scrollbar {
@@ -504,7 +467,7 @@ a.night
 
 
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px){
+@media handheld, only screen and (max-width: 1100px), (max-height: 450px){
 	#player-artist, #player-title {
 		font-size: 22pt;
 	}
