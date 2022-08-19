@@ -165,7 +165,7 @@ a.night
 {
 	opacity: 0.8;
 	align-items: center;
-	
+	margin-left: 15%;
 }
 
 .links-button:hover
@@ -212,35 +212,28 @@ a.night
 	background-color: #000;
 }
 
-#links-container
-{	
-	z-index: 30;
-	width: 320px;
-
-	margin: 82px auto;
-	height: 100%;
-}
-
 #links-separator {	
 	height: calc(100% - 750px);
 }
 
-#links-m3u-container {	
-	line-height: 21pt;
-	position: absolute;
-	bottom: 100px;
+#links-m3u-container {
+	position: sticky;
+	top: 85%;
+	padding-bottom: 10px;
 }
 
 #links-center-back {
 	position: absolute;
 	top: 150px;
 	bottom: 70px;
-	z-index: -1;
+	padding-top: 10%;
 
 	width: 100%;
 
 	opacity: 1;
 	background-color: rgba(0,0,0,0.4);
+
+	overflow-y: scroll;
 }
 
 #links-title
@@ -329,22 +322,19 @@ a.night
 	overflow-y: scroll;
 }
 
-#air-playlist::-webkit-scrollbar {
+#air-playlist::-webkit-scrollbar, #links-center-back::-webkit-scrollbar {
 	width: 15px;
 }
  
-#air-playlist::-webkit-scrollbar-track {
-}
- 
-#air-playlist::-webkit-scrollbar-thumb {
+#air-playlist::-webkit-scrollbar-thumb, #links-center-back::-webkit-scrollbar-thumb {
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.5);
 }
 
-#air-playlist::-webkit-scrollbar-thumb:hover {
+#air-playlist::-webkit-scrollbar-thumb:hover, #links-center-back::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8);
 }
-#air-playlist::-webkit-scrollbar-thumb:active {
+#air-playlist::-webkit-scrollbar-thumb:active, #links-center-back::-webkit-scrollbar-thumb:active {
   background: rgba(255, 255, 255, 0.3);
 }
 
