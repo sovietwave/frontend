@@ -6,7 +6,6 @@ body, html
 	height: 100%;
 	overflow: hidden;
 	font-family: 'Stereonic-M', 'Hagin', Verdana, Tahoma, Arial, Sans-Serif;
-	overflow: hidden;
 	color: #ffffff;
 	font-size: 16pt;
 }
@@ -16,11 +15,13 @@ a
 	color: #ffffff;
 	outline: none;
 	opacity: 0.8;
-	transition: All 0.3s ease;
+	transition: All 0.2s ease;
 }
 
 a:hover{
 	opacity: 1;
+	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));	
 }
 
 a.night
@@ -70,12 +71,6 @@ a.night
 	-webkit-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
 }
 
-.player-track.night
-{ 
-	text-shadow: 0px 1px 7px rgba(255, 255, 255, 200);
-	-webkit-text-shadow: 0px 1px 7px rgba(255, 255, 255, 200);
-}
-
 #player-artist
 {
     font-size: 36pt;
@@ -113,13 +108,15 @@ a.night
     margin-right: auto;
     opacity: 0.8;
     margin-bottom: 6pt;
-    transition: All 0.3s ease;
+    transition: All 0.2s ease;
 }
 
 #player-switch:hover
 {
 	opacity: 1;
-	transform: scale(110%, 110%);
+	transform: scale(115%, 115%);
+	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));	
 }
 
 #player-city
@@ -145,7 +142,7 @@ a.night
 
 #panel, #air-panel
 {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.64);
     z-index: 10;
 
 	display: none;
@@ -191,7 +188,6 @@ a.night
 
 #links
 {	
-
 	font-size: 16pt;
 
 	width: 100%;
@@ -221,12 +217,18 @@ a.night
 	z-index: 30;
 	width: 320px;
 
+	margin: 82px auto;
 	height: 100%;
-	margin: 82pt auto;
-	-ms-user-select: none;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-	-webkit-user-select: none;
+}
+
+#links-separator {	
+	height: calc(100% - 750px);
+}
+
+#links-m3u-container {	
+	line-height: 21pt;
+	position: absolute;
+	bottom: 100px;
 }
 
 #links-center-back {
@@ -238,15 +240,7 @@ a.night
 	width: 100%;
 
 	opacity: 1;
-	background-color: rgba(0,0,0,0.3);
-}
-
-#links-madeby img {
-	width: 120px;
-}
-
-#links-volna2-icon img {
-	width: 50px;
+	background-color: rgba(0,0,0,0.4);
 }
 
 #links-title
@@ -258,44 +252,12 @@ a.night
 	text-align: center;
 }
 
-#links-button-fest-icon 
-{
-	width:128px;
-	height: auto;
-}
-
-#links-m3u-container {
-	line-height: 21pt;
-	position: absolute;
-	bottom: 100pt;
-}
-
-#links-text-m3u
-{
-	margin-left: 67px;
-	opacity: 0.5;
-	width: 400px;
-}
-
-#links-madeby
-{
-	align-self: start;
-	justify-self: center;
-    opacity: 0.2;
-}
-
-#links-madeby:hover {
-	opacity: 0.5;
-}
-
 #air-list {
 	position: static;
 	height: 100%;
 	justify-items: left;
 	font-size: 16pt;
-
-	line-height: 24pt;
-	
+	line-height: 24pt;	
 }
 
 #air-title-section
@@ -353,25 +315,22 @@ a.night
 	width: 100%;
 
 	opacity: 1;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.4);
 }
 
 #air-playlist {
-    text-shadow: 0 0 2px rgba(255, 222, 128, 0.3);
     position: absolute;
-	right: 3px;
+	right: 10px;
 	top : 0px;
 
 	width:100%;
 	height: 100%;
 	border-spacing: 16pt;
 	overflow-y: scroll;
-
 }
 
 #air-playlist::-webkit-scrollbar {
-	width: 18px;
-
+	width: 15px;
 }
  
 #air-playlist::-webkit-scrollbar-track {
@@ -379,14 +338,14 @@ a.night
  
 #air-playlist::-webkit-scrollbar-thumb {
   border-radius: 18px;
-  background: rgb(50, 50, 50);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 #air-playlist::-webkit-scrollbar-thumb:hover {
-  background: rgb(150, 150, 150);
+  background: rgba(255, 255, 255, 0.8);
 }
 #air-playlist::-webkit-scrollbar-thumb:active {
-  background: rgb(50, 50, 50);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -430,36 +389,19 @@ a.night
 	background-size: cover;
 	background-image: url('../sprites/frame2.png');
 	background-size: 100% 100%;
+
 	z-index: 10;
 	pointer-events: none;
 }
 
-#panel-top-gradient
-{
-	width: 100%;
-	height: 40px;
-	position: absolute;
-	top: 150px;
-    z-index: 15;
-    opacity: 0.15;
-
-	background: -moz-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,1280.32) 20%, rgba(255,222,128,0) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0.61)), color-stop(20%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0)));
-	background: -webkit-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: -o-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: -ms-linear-gradient(top, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	background: linear-gradient(to bottom, rgba(255,222,128,0.61) 0%, rgba(255,222,128,0.32) 20%, rgba(255,222,128,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
-}
-
-#panel-air-title-gradient
+#panel-title-gradient
 {
 	width: 100%;
 	height: 20px;
 	position: absolute;
 	top: 130px;
     z-index: 15;
-    opacity: 0.2;
+    opacity: 0.4;
 
 	background: -moz-linear-gradient(top, rgba(255,222,128,0) 0%, rgba(255,222,128,0.32) 80%, rgba(255,222,128,0.61) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,222,128,0)), color-stop(80%, rgba(255,222,128,0.32)), color-stop(100%, rgba(255,222,128,0.61)));
@@ -470,12 +412,13 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-air-top-gradient
+
+#panel-top-gradient
 {
 	width: 100%;
 	height: 20px;
 	position: absolute;
-	top: 148px;
+	top: 150px;
     z-index: 15;
 
 	background: -moz-linear-gradient(top, rgba(0,0,0,0.61) 0%, rgba(0,0,0,0.32) 20%, rgba(0,0,0,0) 100%);
@@ -487,8 +430,7 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-air-bottom-gradient
-{
+#panel-bottom-gradient {
 	width: 100%;
 	height: 200px;
 	position: absolute;
@@ -507,8 +449,7 @@ a.night
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFDE80', endColorstr='#FFDE80', GradientType=0 );
 }
 
-#panel-left-gradient
-{
+#panel-left-gradient {
 	width: 10px;
 	height: 100%;
 	position: absolute;
@@ -519,22 +460,19 @@ a.night
 	background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
-#panel-left-gradient.night
-{
+#panel-left-gradient.night {
     opacity: 0.2;
 }
 
 
 
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px){
-	#player-artist, #player-title
-	{
+@media handheld, only screen and (max-width: 1100px), (max-height: 450px){
+	#player-artist, #player-title {
 		font-size: 22pt;
 	}
 
-	#player-city
-	{
+	#player-city {
 		font-size: 22pt;
 	}
 
@@ -545,5 +483,6 @@ a.night
 
 	#air-panel{
 		left: 150px;
+
 	}
 }

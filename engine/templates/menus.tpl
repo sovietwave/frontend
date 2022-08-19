@@ -5,15 +5,14 @@
     <div id="links">
     	<div id="links-title">#sovietwave</div>
 		
+
+    	<div id="panel-title-gradient"></div>
+    	<div id="panel-top-gradient"></div>
+		<div id="panel-bottom-gradient"></div>
+
     	<div id="links-center-back"></div>
-    	<div id="panel-air-title-gradient"></div>
-    	<div id="panel-air-top-gradient"></div>
+
     	
-    	<!--
-		<a href="https://bumazhnaya-fabrika.timepad.ru/event/992416/" id="links-button-fest"
-		class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
-		src="assets/sprites/icons/volna2.png" class="links-icon" />Фестиваль</a>
-		-->
 
 		<div id="links-container">
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
@@ -74,18 +73,14 @@
 	<div id="air-list">
 		<div id="air-title-section">
 			<div id="air-title"></div>
-			
-			<!--
-			<div id="air-start-time"></div>
-			<div id="air-end-time"></div>
-			-->
 			<div id="air-times"></div>
 			<div id="air-tags"></div>
 		</div>
 
-		<div id="panel-air-title-gradient"></div>
-		<div id="panel-air-top-gradient"></div>
-		<div id="panel-air-bottom-gradient"></div>
+		
+		<div id="panel-title-gradient"></div>
+		<div id="panel-top-gradient"></div>
+		<div id="panel-bottom-gradient"></div>
 		
 		<div id="air-playlist-container">
 			<div id="air-playlist">
