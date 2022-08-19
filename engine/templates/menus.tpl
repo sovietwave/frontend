@@ -10,11 +10,7 @@
     	<div id="panel-top-gradient"></div>
 		<div id="panel-bottom-gradient"></div>
 
-    	<div id="links-center-back"></div>
-
-    	
-
-		<div id="links-container">
+    	<div id="links-center-back">
 			<a href="https://vk.com/soviet_wave" id="links-button-vk"
 			class="links-button link" target="_blank"><img
 			src="assets/sprites/icons/vk.png" class="links-icon" />Community</a>
@@ -52,9 +48,9 @@
 
 			<div id="links-m3u-container">
 			
-			<a href="/listen.m3u" id="links-button-m3u"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/m3u.png" class="links-icon" />Playlist.m3u</a>
+				<a href="/listen.m3u" id="links-button-m3u"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/m3u.png" class="links-icon" />Playlist.m3u</a>
 			
 			<!--<div id="links-text-m3u">Файл для проигрывателей</div>-->
 			</div>
