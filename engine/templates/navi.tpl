@@ -19,22 +19,22 @@
     
     <div class="navi-block" id="right">
        
-        <div id="listeners-container">
+        <div id="listeners-container" class="navi-block-content">
              
             <img src="/assets/sprites/icons/listeners.png" align="absmiddle" /> <span id="listeners">?</span>
             <div id="listeners"></div>
         
         </div>
 
-        <div id="volume-speaker">
+        <div id="volume-speaker" class="navi-block-content">
             <img id="volume-speaker-logo" src="/assets/sprites/icons/volume.png" align="absmiddle" />
         </div>
 
-        <div id="volume-container">            
+        <div id="volume-container" class="navi-block-content">            
             <input id="volume-range" type="range" min="0" max="100" step="1" id="volume" />
         </div>
 
-        <a href="#" id="switch-back" class="links-button" onclick="switchCurrentBackground(); return false;">            
+        <a href="#" id="switch-back" class="links-button navi-block-content"" onclick="switchCurrentBackground(); return false;">            
                 <img src="/assets/sprites/icons/back.png" align="absmiddle" />       
         </a>
     </div>

@@ -370,17 +370,19 @@ function toggleAirPanel(){
 function toggleFrame(){
 	if (linksIsEnabled || airIsEnabled)
 		frameOverlay.animate({
-			left: '-25px',
-			right: '-25px',
-			top: '-25px',
-			bottom: '69px'
+			left: '-30px',
+			right: '-30px',
+			top: '-30px',
+			bottom: '69px',
+			opacity: '0.8'
 		}, 600);
 	else
 		frameOverlay.animate({
 			left: '0px',
 			right: '0px',
 			top: '0px',
-			bottom: '69px'
+			bottom: '69px',
+			opacity: '1'
 		}, 400);
 }
 

@@ -178,6 +178,12 @@
     transform: translate(-50%, 0);
     transition: All 0.2s ease;
     cursor: pointer;
+
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
 }
 
 #navi-logo img {
@@ -190,6 +196,22 @@
 	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.5));
 }
 
+.navi-block-content {
+	opacity: 0.7;
+
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+.navi-block-content:hover {
+	opacity: 1;
+	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
+}
+
+
+
 /* VOLUME */
 #volume-container
 {
@@ -198,106 +220,49 @@
 
 	padding-left: 10px;
 	padding-right: 10px;
-
-
-	/* navi button start */
-	opacity: 0.7;
-	cursor: pointer;
-	transition: All 0.2s ease;
-}
-
-#volume-container:hover {
-	opacity: 1;
-	
-	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-}
-
-#volume-container:active {
-
 }
 
 /* SPEAKER */
 #volume-speaker
 {
-	position: relative;
-	text-align: center;
 	width: 75px;
-
-	opacity: 0.7;
-	cursor: pointer;
-	transition: All 0.2s ease;
+	margin-left: 25px;
+	justify-content: right;
 }
 
-#volume-speaker:hover {
-	opacity: 1;
-
-	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-}
-
-#volume-speaker:active {
-
-}
 
 /* VOLUME RANGE */
 #volume-range
 {
-	position: relative;
-	text-align: center;
+
 	width: 100%;
 	height: 100%;
-	margin: 0;
-	cursor: pointer;
-}
-
-#not-volume-container
-{
-	width: 210 px;
 }
 
 /* BACKGROUNG SWITCHER */
 #switch-back
 {
 	width: 75px;
-	text-align: center;
-	display: inline-block;
-	position: relative;
-
-	/* navi button start */
-	opacity: 0.7;
-	cursor: pointer;
-	transition: All 0.2s ease;
+	margin: 0 15px 0 25px;
 }
 
-#switch-back:hover {
-	opacity: 1;
-	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-}
-
-#switch-back:active {
-
-}
 
 /* LISTENERS*/
 #listeners-container
 {
-	display: inline-block;
-	position: relative;
-	text-align: center;
 	font-size: 22pt;
-	opacity: 0.7;
 	width: 100px;
+}
+
+#listeners {
+	position: relative;
+	top: 4px;
 }
 
 #mobile-button{
 	display: none;
 }
 
-#standalone-only{
-
-}
 
 /* S ВЁРСТКА - Прортретная для телефонов */
 @media handheld, only screen and (max-width: 1100px), (max-height: 450px){
@@ -326,11 +291,15 @@
 	}
 
 	#navi-links{
-
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	#navi-air{
-
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	#mobile-button{

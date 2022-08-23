@@ -5,7 +5,7 @@ class Volume {
 		var DEFAULT_VOLUME_VALUE = 0.75;
 		var self = this;
 
-		this.speakerLogo = $("#volume-speaker-logo");
+		this.speakerLogo = $("#volume-speaker");
 		this.speakerLogo.click(function() {
 			self.toggleVolume();
 		});
