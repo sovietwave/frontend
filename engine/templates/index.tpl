@@ -6,23 +6,27 @@
         <meta name="viewport" content="initial-scale=1.0">
 		<meta charset="utf-8">
 
-		<meta name="description" content="Современная отечественная музыка, мечтающая о прошлом.">
+		<meta name="description" content="Современная отечественная музыка, вдохновлённая мечтами из прошлого.">
 		<meta name="keywords" content="радио, ссср, советское, советская волна, советвейв, советвэйв,
         radio, sovietwave, chillwave, retrowave, dreamwave, dreampop, weedwave, indie, ussr, soviet union">
 
-		<meta property="og:image" content="https://<?php echo($_SERVER['HTTP_HOST']); ?>/assets/sprites/social.jpg">
+		<link rel="stylesheet" href="/assets/styles/fonts.css?v<?php echo CLIENT_VERSION; ?>">
+		<link rel="stylesheet" href="/assets/styles/rangeinput.css?v<?php echo CLIENT_VERSION; ?>">
+		<link rel="stylesheet" href="/assets/styles/soviet.css?v<?php echo CLIENT_VERSION; ?>">
+		<link rel="stylesheet" href="/assets/styles/navi.css?v<?php echo CLIENT_VERSION; ?>">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/sprites/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/sprites/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/sprites/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+
+		<meta property="og:image" content="/assets/sprites/favicons/social.jpg">
 		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-title" content="Советская волна">
-		<meta name="application-name" content="Советская волна">
+		<meta name="apple-mobile-web-app-title" content="Советская Волна">
+		<meta name="application-name" content="Советская Волна">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 
-		<link rel="stylesheet" href="assets/styles/fonts.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/rangeinput.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/soviet.css?v<?php echo CLIENT_VERSION; ?>">
-		<link rel="stylesheet" href="assets/styles/navi.css?v<?php echo CLIENT_VERSION; ?>">
-
-		<link rel="apple-touch-icon" href="/assets/sprites/icon-apple.png">
-		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="/assets/sprites/icon-apple.png">
-		<link rel="shortcut icon" sizes="128x128" href="/assets/sprites/icon-android.png">
 
 		<script src="//static.nay.su/js/jquery.js" type="text/javascript"></script>
 		<script src="//static.nay.su/js/util.js" type="text/javascript"></script>
