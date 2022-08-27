@@ -34,7 +34,7 @@
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 
-	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
+	box-shadow: 0 0 5px 10px rgba(0, 0, 0, 1);
 }
 
 .navi-block {
@@ -83,7 +83,6 @@
 
 	opacity: 0.7;	
 	transition: All 0.2s ease;
-	border-radius: 3px;
 }
 
 #navi-links:hover {
@@ -108,7 +107,6 @@
 
 	opacity: 0.7;
 	transition: all 0.2s ease;
-	border-radius: 3px;
 }
 
 #navi-air:hover, #navi-air-mobile:hover {
@@ -147,7 +145,6 @@
 	display: none;
 	opacity: 0;
 	box-shadow:	0 0 7px 2px inset rgba(0, 0, 0, 1);
-	border-radius: 5px;
 }
 
 #panel-active-air
@@ -162,7 +159,6 @@
 	display: none;
 	opacity: 0;
 	box-shadow:	0 0 7px 2px inset rgba(0, 0, 0, 1);
-	border-radius: 5px;
 }
 
 /* LOGO */
@@ -228,15 +224,17 @@
 	width: 75px;
 	margin-left: 25px;
 	justify-content: right;
+	cursor: pointer;
 }
 
 
 /* VOLUME RANGE */
 #volume-range
 {
-
 	width: 100%;
 	height: 100%;
+
+	cursor: pointer;
 }
 
 /* BACKGROUNG SWITCHER */
@@ -252,6 +250,8 @@
 {
 	font-size: 22pt;
 	width: 100px;
+
+	pointer-events: none;
 }
 
 #listeners {

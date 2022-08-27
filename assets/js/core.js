@@ -373,16 +373,14 @@ function toggleFrame(){
 			left: '-30px',
 			right: '-30px',
 			top: '-30px',
-			bottom: '69px',
-			opacity: '0.8'
+			bottom: '69px'
 		}, 600);
 	else
 		frameOverlay.animate({
 			left: '0px',
 			right: '0px',
 			top: '0px',
-			bottom: '69px',
-			opacity: '1'
+			bottom: '69px'
 		}, 400);
 }
 
@@ -470,6 +468,9 @@ function disableBright(){
 }
 
 function hideLeftPanels() {
+	if (!linksIsEnabled && !airIsEnabled)
+		return;
+
 	disableBright();
 	disableAir();
 	disableLinks();

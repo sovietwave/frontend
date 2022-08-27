@@ -23,9 +23,8 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #00000000;
+  background: #000000;
   border: 0px none #ffffff;
-  border-radius: 18px;
 }
 
 ::-webkit-scrollbar-track:hover {

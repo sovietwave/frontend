@@ -11,53 +11,52 @@
 		<div id="panel-bottom-gradient"></div>
 
     	<div id="links-center-back">
-			<a href="https://vk.com/soviet_wave" id="links-button-vk"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/vk.png" class="links-icon" />Community</a>
-
-			<a href="https://www.youtube.com/channel/UCZkZ1JF77v1xv8Vlg1N6QOA" id="links-button-youtube"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/youtube.png" class="links-icon" />Twitch</a>
-
-			<a href="https://tglink.ru/sovietwave" id="links-button-telegram"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/telegram.png" class="links-icon" />Telegram</a>
-
-			<a href="https://tglink.ru/sovietwave_chat" id="links-button-chat"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/chat.png" class="links-icon" />Chat</a>
-
-			<a href="https://soundcloud.com/sovietwave" id="links-button-soundcloud"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/soundcloud.png" class="links-icon" />Soundcloud</a>
-
-			<a href="https://vk.com/lostslides" id="links-button-patreon"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/lostslides.png" class="links-icon" />Lost Slides</a>
-
-			<a href="https://boosty.to/soviet_wave" id="links-button-patreon"
-			class="links-button link" target="_blank"><img
-			src="assets/sprites/icons/boosty.png" class="links-icon" />Donate</a>
-
-
-
-			<!--
-			<a href="https://fb.me/sovietwave" id="links-button-facebook"
-			class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
-			src="assets/sprites/icons/facebook.png" class="links-icon" />Facebook</a>-->
-
-			<div id="links-m3u-container">
-			
-				<a href="/listen.m3u" id="links-button-m3u"
+    		<div id="links-list">
+				<a href="https://vk.com/soviet_wave" id="links-button-vk"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/m3u.png" class="links-icon" />Playlist.m3u</a>
-			
-			<!--<div id="links-text-m3u">Файл для проигрывателей</div>-->
-			</div>
-			
+				src="assets/sprites/icons/vk.png" class="links-icon" />Community</a>
 
+				<a href="https://www.youtube.com/channel/UCZkZ1JF77v1xv8Vlg1N6QOA" id="links-button-youtube"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/youtube.png" class="links-icon" />Twitch</a>
+
+				<a href="https://tglink.ru/sovietwave" id="links-button-telegram"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/telegram.png" class="links-icon" />Telegram</a>
+
+				<a href="https://tglink.ru/sovietwave_chat" id="links-button-chat"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/chat.png" class="links-icon" />Chat</a>
+
+				<a href="https://soundcloud.com/sovietwave" id="links-button-soundcloud"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/soundcloud.png" class="links-icon" />Soundcloud</a>
+
+				<a href="https://vk.com/lostslides" id="links-button-patreon"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/lostslides.png" class="links-icon" />Lost Slides</a>
+
+				<a href="https://boosty.to/soviet_wave" id="links-button-patreon"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/boosty.png" class="links-icon" />Donate</a>
+
+
+
+				<!--
+				<a href="https://fb.me/sovietwave" id="links-button-facebook"
+				class="links-button<?php if ($content['site_mode'] == 'night') echo (' night'); ?> link" target="_blank"><img
+				src="assets/sprites/icons/facebook.png" class="links-icon" />Facebook</a>-->
+
+				<div id="links-m3u-container">
+				
+					<a href="/listen.m3u" id="links-button-m3u"
+					class="links-button link" target="_blank"><img
+					src="assets/sprites/icons/m3u.png" class="links-icon" />Playlist.m3u</a>
+				
+				<!--<div id="links-text-m3u">Файл для проигрывателей</div>-->
+				</div>
+			</div>		
 		</div>
-
 	</div>
 </div>
 
