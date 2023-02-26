@@ -92,7 +92,7 @@ var modes = {
 		"subtitle": "#ambient #experimental #sovietwave",
 		"start": "0:00",
 		"finish": "7:00",
-		"times": "0:00 — 7:00"
+		"times": "1:00 — 7:00"
 	},
 
 	"midnight": {
@@ -100,7 +100,7 @@ var modes = {
 		"subtitle": "#etherial #ambientpop #sovietwave",
 		"start": "0:00",
 		"finish": "7:00",
-		"times": "0:00 — 7:00"
+		"times": "0:00 — 1:00"
 	},
 
 	"event1_space": {

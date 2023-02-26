@@ -11,7 +11,7 @@ $smarty->setCacheDir('engine/cache');
 $smarty->setConfigDir('engine/configs');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 26);
+define ('CLIENT_VERSION', 27);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
@@ -90,12 +90,17 @@ else
 	}
 	else
 	{
-		if ($nowtime >= 0 && $nowtime < 7)
+		$site_mode = 'evening';
+
+		if ($nowtime >= 0 && $nowtime < 1)
+			$site_mode = 'midnight';
+
+		if ($nowtime >= 1 && $nowtime < 7)
 			$site_mode = 'night';
-		else if ($nowtime >= 7 && $nowtime < 19)
+
+		if ($nowtime >= 7 && $nowtime < 19)
 			$site_mode = 'day';
-		else
-			$site_mode = 'evening'; 
+
 
 		/*$currentTrackType = getCurrentTrackType();
 		switch ($currentTrackType) {
