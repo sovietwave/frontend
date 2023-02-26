@@ -3,8 +3,11 @@
 	<div id="panel-left-gradient"></div>
 	
     <div id="links">
-    	<div id="links-title">#sovietwave</div>
-		
+    	
+		<div id="links-title-section">
+			<div id="links-title">#sovietwave</div>
+			<div id="links-subtitle">Современная отечественная музыка<br>вдохновлённая мечтами из прошлого</div>
+		</div>
 
     	<div id="panel-title-gradient"></div>
     	<div id="panel-top-gradient"></div>
@@ -16,9 +19,11 @@
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/vk.png" class="links-icon" />Community</a>
 
-				<a href="https://www.youtube.com/channel/UCZkZ1JF77v1xv8Vlg1N6QOA" id="links-button-youtube"
+				<!--
+				<a href="https://www.twitch.tv/soviet_wave" id="links-button-youtube"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/youtube.png" class="links-icon" />Twitch</a>
+				src="assets/sprites/icons/twitch.png" class="links-icon" />Twitch</a>
+				-->
 
 				<a href="https://tglink.ru/sovietwave" id="links-button-telegram"
 				class="links-button link" target="_blank"><img
