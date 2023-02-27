@@ -25,11 +25,11 @@
 				src="assets/sprites/icons/twitch.png" class="links-icon" />Twitch</a>
 				-->
 
-				<a href="https://tglink.ru/sovietwave" id="links-button-telegram"
+				<a href="https://t.me/sovietwave" id="links-button-telegram"
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/telegram.png" class="links-icon" />Telegram</a>
 
-				<a href="https://tglink.ru/sovietwave_chat" id="links-button-chat"
+				<a href="https://t.me/sovietwave_chat" id="links-button-chat"
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/chat.png" class="links-icon" />Chat</a>
 
