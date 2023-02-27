@@ -35,7 +35,7 @@
 		<script src="/assets/js/radio.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		<script src="/assets/js/core.js?v<?php echo CLIENT_VERSION; ?>" type="text/javascript"></script>
 		
-		<title>Радио &laquo;Советская волна&raquo;</title>
+		<title>Радио &laquo;Советская Волна&raquo;</title>
     </head>
 
     <body>
