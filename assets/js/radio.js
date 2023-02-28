@@ -258,7 +258,11 @@ function setArtistLink(link) {
 
 	if (link) {
 		artistObj.attr('href', link);
-		
+
+        artistObj.css({
+            'text-decoration': 'underline'
+        });
+        
 		artistObj.off();
 	} else {
 		artistObj.attr('href', '#');
