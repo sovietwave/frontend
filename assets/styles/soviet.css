@@ -85,10 +85,13 @@ a.night
 #player-artist span {
 	box-shadow: inset 0 -3px 0 rgba(238, 241,  220, 0.5);
 	-webkit-box-shadow: inset 0 -3px 0 rgba(238, 241,  220, 0.5);
+
+	/*
 	-webkit-box-decoration-break: clone;
 	-ms-box-decoration-break: clone;
 	-o-box-decoration-break: clone;
 	box-decoration-break: clone;
+	*/
 }
 
 #player-title
@@ -109,14 +112,17 @@ a.night
     opacity: 0.8;
     margin-bottom: 6pt;
     transition: All 0.2s ease;
+
+	filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.75));
+	-webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.75));
 }
 
 #player-switch:hover
 {
 	opacity: 1;
-	transform: scale(115%, 115%);
+
 	filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
-	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));	
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(255, 222, 128, 0.7));
 }
 
 #player-city
@@ -128,14 +134,14 @@ a.night
 .player-switch-stalled
 {
 	background-size: 50px 50px !important;
-	background: url('../sprites/play.png') no-repeat center;
+	background: url('../sprites/play.svg') no-repeat center;
 	background-position: center!important;
 }
 
 .player-switch-playing
 {
 	background-size: 50px 50px !important;
-	background: url('../sprites/paused.png') no-repeat center;
+	background: url('../sprites/pause.svg') no-repeat center;
 }
 
 /* LINKS (left) */
