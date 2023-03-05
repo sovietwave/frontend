@@ -180,6 +180,9 @@
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	-o-user-select: none;
+
+	filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.5));
+	-webkit-filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.5));
 }
 
 #navi-logo img {

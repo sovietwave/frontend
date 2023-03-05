@@ -483,7 +483,7 @@ function sfxPlayClick() {
 	if (isMobileMode()) return;
 
 	//sfxClick.playbackRate = 0.9 + Math.random(0.2);	
-	sfxClick.volume = volumeValue - 0.3;
+	sfxClick.volume = Math.max(0, volumeValue - 0.3);
 	sfxClick.play();
 }
 
@@ -491,7 +491,7 @@ function sfxPlaySlide() {
 	if (isMobileMode()) return;
 
 	//sfxSlide.playbackRate = 0.7 + Math.random(0.3);
-	sfxSlide.volume = volumeValue - 0.1;
+	sfxSlide.volume = Math.max(0, volumeValue - 0.1);
 	sfxSlide.play();
 }
 

@@ -90,7 +90,7 @@ function radioPlay(channel) {
 
 		radioPlayer.onloadstart = function() {
 			if (nowPlaying)
-				setTempTitle('Буферизация...');
+				setTempTitle('Настройка частоты...');
 		}
 
 		radioPlayer.play();
@@ -154,7 +154,7 @@ function getCurrentTrack(onSuccess, isBrief) {
 	}).done(function(data) {
 		onSuccess(data);
 	}).fail(function(jq, jx) {
-		setTrackInfo('- нет связи -');
+		setTrackInfo('Связь потеряна');
 	});
 }
 

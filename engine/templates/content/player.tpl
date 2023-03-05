@@ -5,7 +5,7 @@
 		</div>
 
 		<div id="player-title" class="player-track">
-			Соединение...
+			
 		</div>
 
 		<div id="player-switch" class="player-switch-stalled" onclick="radioToggle()"></div>
