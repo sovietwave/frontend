@@ -17,7 +17,7 @@
     		<div id="links-list">
 				<a href="https://vk.com/soviet_wave" id="links-button-vk"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/vk.svg" width="32" class="links-icon" />Community</a>
+				src="assets/sprites/icons/vk.svg" width="32" class="links-icon" />Сообщество</a>
 
 				<!--
 				<a href="https://www.twitch.tv/soviet_wave" id="links-button-youtube"
@@ -31,7 +31,7 @@
 
 				<a href="https://t.me/sovietwave_chat" id="links-button-chat"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/chat.svg" width="32" class="links-icon" />Chat</a>
+				src="assets/sprites/icons/chat.svg" width="32" class="links-icon" />Кухонька</a>
 
 				<a href="https://soundcloud.com/sovietwave" id="links-button-soundcloud"
 				class="links-button link" target="_blank"><img
