@@ -206,7 +206,7 @@ function init() {
 					SITE_MODE = 'day';
 					setTheme('day');
 				}
-			} else if (      (t >= 23 && m >= 20)       ||         t <= 1) // midnight
+			} else if (t >= 0       &&        t < 1) // midnight
 			{
 				if (SITE_MODE != 'midnight') {
 					SITE_MODE = 'midnight';
