@@ -69,7 +69,7 @@ function radioPlay(channel) {
 
 		radioPlayer.onerror = function() {
 			if (nowPlaying) {
-				setTempTitle('Сбой, рестарт через секунду...');
+				setTempTitle('Сигнал потерян...');
 				radioStop();
 
 				clearTimeout(playerRestartTimer);
@@ -85,7 +85,7 @@ function radioPlay(channel) {
 		}
 
 		radioPlayer.onstalled = function() {
-			setTempTitle('Низкая скорость, жду буфер...');
+			setTempTitle('Слабый сигнал...');
 		}
 
 		radioPlayer.onloadstart = function() {
@@ -260,7 +260,8 @@ function setArtistLink(link) {
 		artistObj.attr('href', link);
 
         artistObj.css({
-            'text-decoration': 'underline'
+            'text-decoration': 'underline',
+            'pointer-events': 'auto'
         });
         
 		artistObj.off();
@@ -268,7 +269,8 @@ function setArtistLink(link) {
 		artistObj.attr('href', '#');
 
 		artistObj.css({
-			'text-decoration': 'none'
+			'text-decoration': 'none',
+			'pointer-events': 'none'
 		});
 
 		artistObj.click(function() {

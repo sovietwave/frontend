@@ -33,7 +33,7 @@
  input[type="range"]::-webkit-slider-runnable-track,
  input[type="range"]::-webkit-slider-thumb {
      -webkit-appearance: none;
-     transition: all ease 100ms;
+     transition: All 0.2s ease;
      height: var(--thumb-height);
  }
  
@@ -94,7 +94,7 @@
  input[type="range"]::-moz-range-track,
  input[type="range"]::-moz-range-thumb {
      appearance: none;
-     transition: all ease 100ms;
+     transition: All 0.2s ease;
      height: var(--thumb-height);
  }
  
@@ -124,7 +124,7 @@
  input[type="range"]::-moz-range-progress {
      appearance: none;
      background: currentColor;
-     transition-delay: 30ms;
+     transition: All 0.2s ease;
  }
  
  input[type="range"]::-moz-range-track,

@@ -76,7 +76,7 @@ var modes = {
 		"subtitle": "#chillwave #dreamwave #sovietwave",
 		"start": "7:00",
 		"finish": "19:00",
-		"times": "7:00 — 19:00"
+		"times": "7:00 — 19:00 МСК"
 	},
 
 	"evening": {
@@ -84,7 +84,7 @@ var modes = {
 		"subtitle": "#synthpop #postpunk #sovietwave",
 		"start": "19:00",
 		"finish": "0:00",
-		"times": "19:00 — 0:00"
+		"times": "19:00 — 0:00 МСК"
 	},
 
 	"night": {
@@ -92,7 +92,7 @@ var modes = {
 		"subtitle": "#ambient #experimental #sovietwave",
 		"start": "0:00",
 		"finish": "7:00",
-		"times": "1:00 — 7:00"
+		"times": "1:00 — 7:00 МСК"
 	},
 
 	"midnight": {
@@ -100,7 +100,7 @@ var modes = {
 		"subtitle": "#etherial #ambientpop #sovietwave",
 		"start": "0:00",
 		"finish": "7:00",
-		"times": "0:00 — 1:00"
+		"times": "0:00 — 1:00 МСК"
 	},
 
 	"event1_space": {
@@ -146,6 +146,8 @@ var coverImage;
 var volumeValue = 1;
 var frameMobileMode = false;
 var player;
+var volumeSpeaker;
+var volumeContainer;
 
 function isMobileMode()
 {
@@ -173,7 +175,10 @@ function init() {
 	frameOverlay = $('#frame-overlay');
 	coverImage = $('#cover-image');
 	player = $("#player-wrapper");
-	
+	volumeSpeaker = $("#volume-container");
+	volumeContainer = $("#volume-speaker");
+
+
  	sfxSlide = new Audio('../assets/sfx/slide.ogg');
  	sfxClick = new Audio('../assets/sfx/click.ogg');
 	// Randomize fist pic
@@ -314,6 +319,8 @@ function enableLinks(){
 		links.css({left: '0', opacity: '1'});
 		activeLinks.show();
 		activeLinks.css({opacity: '1'});
+		volumeSpeaker.hide();
+		volumeContainer.hide();
 		return;
 	}
 
@@ -341,6 +348,8 @@ function disableLinks(){
 	{
 		links.hide();
 		activeLinks.hide();
+		volumeSpeaker.show();
+		volumeContainer.show();
 		return;
 	}
 
@@ -399,6 +408,9 @@ function enableAir(){
 		air.css({left: '0', opacity: '1'});
 		activeAir.show();
 		activeAir.css({opacity: '1'});
+		
+		volumeSpeaker.hide();
+		volumeContainer.hide();
 		return;
 	}
 
@@ -426,6 +438,8 @@ function disableAir(){
 	{
 		air.hide();
 		activeAir.hide();
+		volumeSpeaker.show();
+		volumeContainer.show();
 		return;
 	}
 
@@ -531,10 +545,14 @@ function toggleNavi() {
 			right: '0px',
 			top: '0px',
 			bottom: '0px'
-		  }, durationShow);	
+		  }, durationHide);	
+
+		logo.animate({
+			bottom: '25px'
+		  }, durationHide * 0.15);
 
 		logo.find('img').animate({
-			height: '70',
+			height: '75px'
 		  }, durationHide);
 
 		//coverImage.animate({'background-size': 'cover 100%'}, durationHide);
@@ -561,10 +579,14 @@ function toggleNavi() {
 			right: '-30px',
 			top: '-30px',
 			bottom: '-30px'
-		  }, durationHide);
+		  }, durationShow);
+
+		logo.animate({
+			bottom: '5px'
+		  }, durationShow);
 
 		logo.find('img').animate({
-			height: '60',
+			height: '60px'
 		  }, durationShow);
 
 		//coverImage.animate({'background-size': 'cover 105%'}, durationShow);

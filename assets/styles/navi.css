@@ -228,6 +228,7 @@
 	margin-left: 25px;
 	justify-content: right;
 	cursor: pointer;
+	transition: All 0.2s ease;
 }
 
 
@@ -266,11 +267,43 @@
 	display: none;
 }
 
-
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px), (max-height: 450px){
+@media handheld, only screen and (max-width: 1100px), (max-height: 500px){
 	
-	#volume-container, #volume-speaker, #standalone-only
+	#volume-container
+	{
+		position: fixed;
+    	left: -moz-calc(50% - 62px);
+    	left: -webkit-calc(50% - 62px);
+    	left: -o-calc(50% - 62px);
+    	left: calc(50% - 62px);
+		top: 333px;
+
+		filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.75));
+		-webkit-filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.75));
+
+		width: 150px;
+		height: auto;
+		opacity: 0.8;
+	}
+
+	#volume-speaker
+	{
+		position: fixed;
+    	left: -moz-calc(50% - 120px);
+    	left: -webkit-calc(50% - 120px);
+    	left: -o-calc(50% - 120px);
+    	left: calc(50% - 120px);
+		top: 330px;
+
+		filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.75));
+		-webkit-filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.75));
+		opacity: 0.8;
+
+		width: auto;
+	}
+
+	#standalone-only
 	{
 		display: none;
 	}
@@ -340,9 +373,7 @@
     	width: -o-calc((50% - 100px)*0.5);
     	width: calc((50% - 100px)*0.5);
 	}
-}
 
-@media handheld, only screen and (max-width: 500px){
 	#navi-logo{
 		display: none;
 	}
@@ -358,5 +389,18 @@
 	#panel-active-air{
 		width: 25%;
 		left: 25%;
+	}
+}
+
+@media handheld, only screen and (max-width: 700px), (max-height: 500px){
+
+	#volume-container
+	{
+		top: 287px;
+	}
+
+	#volume-speaker
+	{
+		top: 284px;
 	}
 }
