@@ -11,7 +11,7 @@ $smarty->setCacheDir('engine/cache');
 $smarty->setConfigDir('engine/configs');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 28);
+define ('CLIENT_VERSION', 29);
 
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
