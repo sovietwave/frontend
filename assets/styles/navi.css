@@ -267,8 +267,14 @@
 	display: none;
 }
 
+@media handheld, only screen and (max-width: 1100px){
+	#navi-logo{
+		display: none;
+	}
+}
+
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px), (max-height: 500px){
+@media handheld, only screen and (max-width: 800px), (max-height: 500px){
 	
 	#volume-container
 	{
@@ -397,6 +403,7 @@
 	}
 }
 
+/*
 @media handheld, only screen and (max-width: 700px), (max-height: 500px){
 
 	#volume-container
@@ -409,3 +416,4 @@
 		top: 284px;
 	}
 }
+*/

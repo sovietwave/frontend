@@ -151,8 +151,8 @@ var volumeContainer;
 
 function isMobileMode()
 {
-	if ((document.documentElement.scrollWidth < 1100) ||
-		(document.documentElement.scrollHeight < 450))
+	if ((document.documentElement.scrollWidth <= 800) ||
+		(document.documentElement.scrollHeight <= 500))
 			return true;
 	return false;
 }

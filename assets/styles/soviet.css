@@ -514,9 +514,15 @@ a.night
 	}
 }
 
+@media handheld, only screen and (max-width: 1100px){
+	#frame-overlay {
+		display: none;
+	}
+}
+
 
 /* S ВЁРСТКА - Прортретная для телефонов */
-@media handheld, only screen and (max-width: 1100px), (max-height: 500px){
+@media handheld, only screen and (max-width: 800px), (max-height: 500px){
 	#panel, #air-panel{
 		position: fixed;
 		width: 100%;
