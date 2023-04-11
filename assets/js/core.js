@@ -61,7 +61,14 @@ var backs = {
 
 	"event": {
 		"backs": [
-			"/assets/sprites/bg/event.jpg"
+			"/assets/sprites/bg/event_space/1.jpg",
+			"/assets/sprites/bg/event_space/2.jpg",
+			"/assets/sprites/bg/event_space/3.jpg",
+			"/assets/sprites/bg/event_space/4.jpg",
+			"/assets/sprites/bg/event_space/5.jpg",
+			"/assets/sprites/bg/event_space/6.jpg",
+			"/assets/sprites/bg/event_space/7.jpg",
+			"/assets/sprites/bg/event_space/8.jpg"
 		],
 
 		"backs_mobile": [
@@ -103,12 +110,12 @@ var modes = {
 		"times": "0:00 — 1:00 МСК"
 	},
 
-	"event1_space": {
+	"event": {
 		"title": "День Космонавтики",
 		"subtitle": "#sovietwave",
 		"start": "12 апреля",
 		"finish": "14 апреля",
-		"times": "12 апреля"
+		"times": "12—14 апреля"
 	},
 
 	"event2_ssw": {
