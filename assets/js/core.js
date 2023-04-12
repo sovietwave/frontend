@@ -72,7 +72,14 @@ var backs = {
 		],
 
 		"backs_mobile": [
-			"/assets/sprites/bg/mobile/event.jpg"
+			"/assets/sprites/bg/event_space/1.jpg",
+			"/assets/sprites/bg/event_space/2.jpg",
+			"/assets/sprites/bg/event_space/3.jpg",
+			"/assets/sprites/bg/event_space/4.jpg",
+			"/assets/sprites/bg/event_space/5.jpg",
+			"/assets/sprites/bg/event_space/6.jpg",
+			"/assets/sprites/bg/event_space/7.jpg",
+			"/assets/sprites/bg/event_space/8.jpg"
 		]
 	}
 };
