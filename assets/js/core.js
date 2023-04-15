@@ -122,7 +122,7 @@ var modes = {
 		"subtitle": "#sovietwave",
 		"start": "12 апреля",
 		"finish": "14 апреля",
-		"times": "12—14 апреля"
+		"times": "12—18 апреля"
 	},
 
 	"event2_ssw": {
