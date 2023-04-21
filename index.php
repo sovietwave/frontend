@@ -11,10 +11,10 @@ $smarty->setCacheDir('engine/cache');
 $smarty->setConfigDir('engine/configs');
 
 // Change me when css/js is changed
-define ('CLIENT_VERSION', 31);
+define ('CLIENT_VERSION', 32);
 
 // Set me to true when the site works in a special (event) mode
-define ('EVENT_OVERRIDE', true);
+define ('EVENT_OVERRIDE', false);
 
 $route = explode('/', $_GET['route']);
 
