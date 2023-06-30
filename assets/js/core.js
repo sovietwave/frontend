@@ -61,25 +61,15 @@ var backs = {
 
 	"event": {
 		"backs": [
-			"/assets/sprites/bg/event_space/1.jpg",
-			"/assets/sprites/bg/event_space/2.jpg",
-			"/assets/sprites/bg/event_space/3.jpg",
-			"/assets/sprites/bg/event_space/4.jpg",
-			"/assets/sprites/bg/event_space/5.jpg",
-			"/assets/sprites/bg/event_space/6.jpg",
-			"/assets/sprites/bg/event_space/7.jpg",
-			"/assets/sprites/bg/event_space/8.jpg"
+			"/assets/sprites/bg/event_vnuku/1.jpg",
+			"/assets/sprites/bg/event_vnuku/2.jpg",
+			"/assets/sprites/bg/event_vnuku/3.jpg"
 		],
 
 		"backs_mobile": [
-			"/assets/sprites/bg/event_space/1.jpg",
-			"/assets/sprites/bg/event_space/2.jpg",
-			"/assets/sprites/bg/event_space/3.jpg",
-			"/assets/sprites/bg/event_space/4.jpg",
-			"/assets/sprites/bg/event_space/5.jpg",
-			"/assets/sprites/bg/event_space/6.jpg",
-			"/assets/sprites/bg/event_space/7.jpg",
-			"/assets/sprites/bg/event_space/8.jpg"
+			"/assets/sprites/bg/event_vnuku/1m.jpg",
+			"/assets/sprites/bg/event_vnuku/2m.jpg",
+			"/assets/sprites/bg/event_vnuku/3m.jpg"
 		]
 	}
 };
@@ -118,6 +108,14 @@ var modes = {
 	},
 
 	"event": {
+		"title": "Выходные на улице Карла Юхана",
+		"subtitle": "",
+		"start": "30 июня",
+		"finish": "3 июля",
+		"times": "30 июня — 3 июля"
+	},
+
+	"event_space": {
 		"title": "День Космонавтики",
 		"subtitle": "#sovietwave",
 		"start": "12 апреля",
