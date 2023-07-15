@@ -348,6 +348,7 @@ function setTrackInfo(track) {
 		}
 
 		$("#player-artist-link").text(trackStruct['artist']);
+		$("#player-artist-link-stream").text(trackStruct['artist']);
 		$("#player-title").text(trackStruct['title']);
 
 		if (trackStruct['city'] && trackStruct['city'] !== "Unknown") {
