@@ -71,6 +71,15 @@ var backs = {
 			"/assets/sprites/bg/event_vnuku/2m.jpg",
 			"/assets/sprites/bg/event_vnuku/3m.jpg"
 		]
+	},
+
+	"stream": {
+		"backs": [
+			"/stream/day.jpg",
+			"/stream/evening.jpg",
+			"/stream/midnight.jpg",
+			"/stream/night.jpg"
+		]
 	}
 };
 
@@ -160,6 +169,7 @@ var frameMobileMode = false;
 var player;
 var volumeSpeaker;
 var volumeContainer;
+var streamOverride = false;
 
 function isMobileMode()
 {
@@ -167,6 +177,24 @@ function isMobileMode()
 		(document.documentElement.scrollHeight <= 500))
 			return true;
 	return false;
+}
+
+function getCurrentMode()
+{
+	var d = new Date();
+	var	nd = new Date(d.getTime() + (10800000)); // 3600000 * 3 (3 - MSK, UTC+3)
+	var t = nd.getUTCHours();
+
+	if (t >= 1       &&        t < 7) // night
+		return 'night';
+
+	if (t >= 7       &&        t < 19)
+		return 'day';
+
+	if (t >= 0       &&        t < 1)
+		return 'midnight';
+
+	return 'evening';
 }
 
 function init() {
@@ -190,26 +218,29 @@ function init() {
 	volumeSpeaker = $("#volume-container");
 	volumeContainer = $("#volume-speaker");
 
-
  	sfxSlide = new Audio('../assets/sfx/slide.ogg');
  	sfxClick = new Audio('../assets/sfx/click.ogg');
 	// Randomize fist pic
 	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
 	frameIndex = rnd(0, framesCount);
 
+	if (SITE_MODE == 'stream'){
+		streamOverride = true;
+		console.log("streamOverride");
+	}
+
+	SITE_MODE = getCurrentMode();
+
 	setTheme(SITE_MODE);
 
 	if (SITE_MODE != 'event' || !siteModeOverridden)
 		setInterval(function() {
-			if (siteModeOverridden)
-				return;
-
 			var
-				d = new Date(),
-				nd = new Date(d.getTime() + (10800000)), // 3600000 * 3 (3 - MSK, UTC+3)
+			d = new Date(),
+			nd = new Date(d.getTime() + (10800000)), // 3600000 * 3 (3 - MSK, UTC+3)
 
-				t = nd.getUTCHours();
-				m = nd.getUTCMinutes();
+			t = nd.getUTCHours();
+			m = nd.getUTCMinutes();
 
 			if (t >= 1        &&        t < 7) // night
 			{
@@ -236,10 +267,11 @@ function init() {
 					setTheme('evening');
 				}
 			}
-		}, 30000); // check every 30s
+		}, 30000); // check every 30s  30000
 }
 
 function setTheme(mode) {
+	console.log("setTheme " + mode + " / " + SITE_MODE);
 
 	if (modes[mode]) {
 		var modeContent = modes[mode];
@@ -255,8 +287,22 @@ function setTheme(mode) {
 }
 
 function switchBackground(mode) {
+	console.log("switchBackground " + mode + " / " + SITE_MODE);
+
 	if (mode != SITE_MODE) {
 		console.log("Backgrounds can be changed only for current (" + SITE_MODE + ") site mode");
+		return;
+	}
+
+
+	if (streamOverride){
+		var bg = 0;
+		console.log(backs['stream'].backs[0]);
+		if (mode == 'evening') bg = 1;
+		else if (mode == 'midnight') bg = 2;
+		else if (mode == 'night') bg = 3;
+
+		coverImage.css({'background-image': 'url(' + backs['stream'].backs[bg] + ')'});
 		return;
 	}
 
@@ -273,6 +319,7 @@ function switchBackground(mode) {
 	if (nextIndex > backsCount - 1)
 		nextIndex = 0;
 	
+
 	if (isMobileMode())
 		coverImage.css({'background-image': 'url(' + currentModeAssets.backs_mobile[currentIndex] + ')'});
 	else

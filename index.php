@@ -16,6 +16,14 @@ define ('CLIENT_VERSION', 51);
 // Set me to true when the site works in a special (event) mode
 define ('EVENT_OVERRIDE', false);
 
+function console_log($data){
+    if(is_array($data) || is_object($data)){
+		echo("<script>console.log('PHP: ".json_encode($data)."');</script>");
+	} else {
+		echo("<script>console.log('PHP: ".$data."');</script>");
+	}
+}
+
 $route = explode('/', $_GET['route']);
 
 if (empty(trim($route[0])))
@@ -43,7 +51,11 @@ if ($route[0] === 'tracktype') {
 		case 'midnight':
 			die('midnight');
 			break;
-		
+
+		case 'stream':
+			die('stream');
+			break;
+
 		default:
 			die('evening');
 			break;
@@ -54,10 +66,8 @@ if ($route[0] === 'tracktype') {
 $content_template = get_template ($route[0]);
 $page_title = get_title($route[0]);
 
-
 $nowtime = (int)date('G');
-$site_mode = 'night';
-
+$site_mode = 'evening';
 
 if (EVENT_OVERRIDE)
 	$site_mode = 'event';
@@ -83,48 +93,21 @@ else
 				$site_mode = 'midnight';
 				break;
 
+			case 'stream':
+				$site_mode = 'stream';
+				break;
+
 			default:
 				$site_mode = 'night';
 				break;
 		}
 	}
-	else
-	{
-		$site_mode = 'evening';
-
-		if ($nowtime >= 0 && $nowtime < 1)
-			$site_mode = 'midnight';
-
-		if ($nowtime >= 1 && $nowtime < 7)
-			$site_mode = 'night';
-
-		if ($nowtime >= 7 && $nowtime < 19)
-			$site_mode = 'day';
-
-
-		/*$currentTrackType = getCurrentTrackType();
-		switch ($currentTrackType) {
-			case 'night':
-				$site_mode = 'night';
-				break;
-
-			case 'day':
-				$site_mode = 'day';
-				break;
-
-			case 'evening':
-				$site_mode = 'evening';
-				break;
-			
-			default:
-				$site_mode = 'evening';
-				break;
-		}*/
-	}
 }
+
 
 //$bg_color  = ($site_mode == 'day') ? '5fb0e8' : '202020';
 $bg_color = '000000';
+
 
 if (isset($_GET['ajax']))
 {
@@ -147,7 +130,12 @@ else
 	$smarty->assign('title', $page_title.' &ndash; Советская волна');
 	$smarty->assign('logo', '#sovietwave');
 
-	$smarty->display('engine/templates/index.tpl');
+	if ($site_mode == 'stream'){
+		$smarty->display('stream/stream.htm');
+	}
+	else{
+		$smarty->display('engine/templates/index.tpl');
+	}
 
 	die();
 }
