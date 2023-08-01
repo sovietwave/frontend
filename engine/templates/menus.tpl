@@ -19,31 +19,35 @@
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/vk.svg" width="32" class="links-icon" />Сообщество</a>
 
-				<!--
-				<a href="https://www.twitch.tv/soviet_wave" id="links-button-youtube"
-				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/twitch.svg" width="32" class="links-icon" />Twitch</a>
-				-->
-
+				<a href="https://www.twitch.tv/soviet_wave" id="links-button-twitch"
+				class="links-button-new link" target="_blank"><img
+				src="assets/sprites/icons/twitch_new.svg" width="32" class="links-icon-new" />Twitch!</a>
+				
 				<a href="https://t.me/sovietwave" id="links-button-telegram"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/telegram.svg" width="32" class="links-icon" />Telegram</a>
+				src="assets/sprites/icons/telegram.svg" width="32" class="links-icon" />Телеграм</a>
 
 				<a href="https://t.me/sovietwave_chat" id="links-button-chat"
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/chat.svg" width="32" class="links-icon" />Кухонька</a>
 
+				<!--
 				<a href="https://soundcloud.com/sovietwave" id="links-button-soundcloud"
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/soundcloud.svg" width="32" class="links-icon" />Soundcloud</a>
+				-->
 
-				<a href="https://vk.com/lostslides" id="links-button-patreon"
+				<a href="https://vk.com/lostslides" id="links-button-lostslides"
 				class="links-button link" target="_blank"><img
 				src="assets/sprites/icons/lostslides.svg" width="32" class="links-icon" />Lost Slides</a>
 
-				<a href="https://boosty.to/soviet_wave" id="links-button-patreon"
+				<a href="https://www.donationalerts.com/r/soviet_wave" id="links-button-donate"
 				class="links-button link" target="_blank"><img
-				src="assets/sprites/icons/boosty.svg" width="32" class="links-icon" />Donate</a>
+				src="assets/sprites/icons/donate.svg" width="32" class="links-icon" />Donate</a>
+
+				<a href="https://boosty.to/soviet_wave" id="links-button-boosty"
+				class="links-button link" target="_blank"><img
+				src="assets/sprites/icons/boosty.svg" width="32" class="links-icon" />Subscribe</a>
 
 
 
@@ -54,9 +58,9 @@
 
 				<div id="links-m3u-container">
 				
-					<a href="/listen.m3u" id="links-button-m3u"
+					<a href="/sovietwave.m3u" id="links-button-m3u"
 					class="links-button link" target="_blank"><img
-					src="assets/sprites/icons/m3u.svg" width="32" class="links-icon" />Playlist.m3u</a>
+					src="assets/sprites/icons/m3u.svg" width="32" class="links-icon" />sovietwave.m3u</a>
 				
 				<!--<div id="links-text-m3u">Файл для проигрывателей</div>-->
 				</div>
