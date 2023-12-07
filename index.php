@@ -67,7 +67,7 @@ $content_template = get_template ($route[0]);
 $page_title = get_title($route[0]);
 
 $nowtime = (int)date('G');
-$site_mode = 'evening';
+$site_mode = '';
 
 if (EVENT_OVERRIDE)
 	$site_mode = 'event';

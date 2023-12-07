@@ -7,12 +7,14 @@ var localStorageAvailable = false,
 var backs = {
 	"day": {
 		"backs": [
+			"/assets/sprites/bg/day0.jpg",
 			"/assets/sprites/bg/day1.jpg",
 			"/assets/sprites/bg/day2.jpg",
 			"/assets/sprites/bg/day3.jpg"
 		],
 
 		"backs_mobile": [
+			"/assets/sprites/bg/mobile/day0.jpg",
 			"/assets/sprites/bg/mobile/day1.jpg",
 			"/assets/sprites/bg/mobile/day2.jpg",
 			"/assets/sprites/bg/mobile/day3.jpg"
@@ -21,12 +23,14 @@ var backs = {
 
 	"evening": {
 		"backs": [
+			"/assets/sprites/bg/evening0.jpg",
 			"/assets/sprites/bg/evening1.jpg",
 			"/assets/sprites/bg/evening2.jpg",
 			"/assets/sprites/bg/evening3.jpg"
 		],
 
 		"backs_mobile": [
+			"/assets/sprites/bg/mobile/evening0.jpg",
 			"/assets/sprites/bg/mobile/evening1.jpg",
 			"/assets/sprites/bg/mobile/evening2.jpg",
 			"/assets/sprites/bg/mobile/evening3.jpg"
@@ -35,12 +39,14 @@ var backs = {
 
 	"night": {
 		"backs": [
+			"/assets/sprites/bg/night0.jpg",
 			"/assets/sprites/bg/night1.jpg",
 			"/assets/sprites/bg/night2.jpg",
 			"/assets/sprites/bg/night3.jpg"
 		],
 
 		"backs_mobile": [
+			"/assets/sprites/bg/mobile/night0.jpg",
 			"/assets/sprites/bg/mobile/night1.jpg",
 			"/assets/sprites/bg/mobile/night2.jpg",
 			"/assets/sprites/bg/mobile/night3.jpg"
@@ -49,11 +55,13 @@ var backs = {
 
 	"midnight": {
 		"backs": [
+			"/assets/sprites/bg/midnight0.jpg",
 			"/assets/sprites/bg/midnight1.jpg",
 			"/assets/sprites/bg/midnight2.jpg"
 		],
 
 		"backs_mobile": [
+			"/assets/sprites/bg/mobile/midnight0.jpg",
 			"/assets/sprites/bg/mobile/midnight1.jpg",
 			"/assets/sprites/bg/mobile/midnight2.jpg"
 		]
@@ -185,7 +193,9 @@ function getCurrentMode()
 	var	nd = new Date(d.getTime() + (10800000)); // 3600000 * 3 (3 - MSK, UTC+3)
 	var t = nd.getUTCHours();
 
-	if (t >= 1       &&        t < 7) // night
+	console.log("TTTT " + t);
+
+	if (t >= 1       &&        t < 7) 
 		return 'night';
 
 	if (t >= 7       &&        t < 19)
@@ -220,8 +230,9 @@ function init() {
 
  	sfxSlide = new Audio('../assets/sfx/slide.ogg');
  	sfxClick = new Audio('../assets/sfx/click.ogg');
-	// Randomize fist pic
-	currentIndex = rnd(0, backs[SITE_MODE].backs.length);
+	
+	currentIndex = -1;
+	//currentIndex = rnd(0, backs[SITE_MODE].backs.length); // Randomize fist pic
 	frameIndex = rnd(0, framesCount);
 
 	if (SITE_MODE == 'stream'){
@@ -229,10 +240,12 @@ function init() {
 		console.log("streamOverride");
 	}
 
-	SITE_MODE = getCurrentMode();
+	if (SITE_MODE == "")
+		SITE_MODE = getCurrentMode();
 
 	setTheme(SITE_MODE);
 
+/*
 	if (SITE_MODE != 'event' || !siteModeOverridden)
 		setInterval(function() {
 			var
@@ -268,6 +281,8 @@ function init() {
 				}
 			}
 		}, 30000); // check every 30s  30000
+		*/
+
 }
 
 function setTheme(mode) {

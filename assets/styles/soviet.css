@@ -165,7 +165,24 @@ a.night
 
 .link {
 	display: block;
-	margin: 15px;
+	margin: 5px;
+}
+
+.links-label
+{
+	margin-left: -20px;
+	margin-top: 50px;
+	opacity: 0.5;
+	width: fit-content;
+}
+
+.links-label-new
+{
+	margin-left: -20px;
+	margin-top: 50px;
+	opacity: 1;
+	width: fit-content;
+	color: #BE3618;
 }
 
 .links-button
@@ -174,11 +191,16 @@ a.night
 	width: fit-content;
 }
 
+.links-button:hover
+{
+	opacity: 1;
+}
+
 .links-button-new
 {
 	opacity: 0.8;
 	width: fit-content;
-	color: #B788FF;
+	color: #BE3618;
 }
 
 .links-button-new:hover{
@@ -187,10 +209,6 @@ a.night
 	-webkit-filter: drop-shadow(0px 0px 3px rgba(183, 136, 255, 0.7));	
 }
 
-.links-button:hover
-{
-	opacity: 1;
-}
 
 .links-icon
 {
@@ -202,7 +220,7 @@ a.night
 
 .links-icon-new
 {
-	margin-right: 20px;
+	margin-right: 5px;
 	display: inline-block;
 	vertical-align: middle;
 	opacity: 0.8;
@@ -252,7 +270,7 @@ a.night
 #links-center-back {
 	position: absolute;
 
-	padding-top: 30px;
+	
 	top: 150px;
 	bottom: 70px;
 	width: 100%;
@@ -264,10 +282,7 @@ a.night
 #links-list {
 	position: static;
 
-	height: -moz-calc(100% - 30px);
-	height: -webkit-calc(100% - 30px);
-	height: -o-calc(100% - 30px);
-	height: calc(100% - 30px);
+
 
 	justify-items: center;
 	font-size: 16pt;
